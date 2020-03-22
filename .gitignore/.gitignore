@@ -1,7 +1,7 @@
-.bash_logout
-.bashrc
-.cache/
-.gitconfig
-.gitignore
-.profile
-.ssh/
+*.bash_logout
+*.bashrc
+*.cache/
+*.gitconfig
+*.gitignore
+*.profile
+*.ssh/
