@@ -1,0 +1,44 @@
+﻿aid;oid;fecha_inicio;fecha_termino;periodo
+1;1;1479;1480;Renacimiento
+2;2;1472;1475;Renacimiento
+2;3;1472;1475;Renacimiento
+3;4;1300;1305;Gotico
+4;5;1602;1604;Barroco
+4;6;1504;1506;Renacimiento
+4;7;1600;1601;Barroco
+4;8;1607;1608;Barroco
+4;9;1596;1597;Barroco
+5;10;1453;1455;Renacimiento
+6;11;1829;1830;Romanticismo
+7;12;1541;1563;Renacimiento
+8;13;2018;2019;Neoclasicismo Romano de mediados del siglo XVII 1/2
+8;14;2019;2020;Neoclasicismo Romano de mediados del siglo XVII 1/2
+9;15;1573;1574;Renacimiento
+10;16;1648;1651;Barroco
+10;17;1618;1619;Barroco
+10;18;1645;1652;Barroco
+10;19;1666;1667;Barroco
+10;20;1656;1667;Barroco
+10;21;1622;1625;Barroco
+11;12;1541;1563;Renacimiento
+12;22;1309;1310;Gotico
+12;23;1300;1304;Gotico
+12;24;1299;1300;Gotico
+13;25;1805;1807;Neoclasicismo
+14;26;1618;1619;Barroco
+15;13;2018;2019;Neoclasicismo Romano de mediados del siglo XVII 1/2
+16;3;1472;1475;Renacimiento
+16;27;1495;1498;Renacimiento
+16;2;1472;1475;Renacimiento
+16;28;1503;1519;Renacimiento
+17;29;1498;1499;Renacimiento
+17;30;1501;1504;Renacimiento
+17;31;1513;1515;Renacimiento
+17;32;1500;1511;Renacimiento
+17;33;1537;1541;Renacimiento
+18;34;1508;1524;Renacimiento
+18;35;1517;1520;Renacimiento
+18;36;1513;1514;Renacimiento
+18;37;1504;1505;Renacimiento
+19;38;1477;1478;Renacimiento
+19;39;1482;1485;Renacimiento
