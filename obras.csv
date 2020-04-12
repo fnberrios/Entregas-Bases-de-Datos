@@ -1,0 +1,40 @@
+﻿oid;lid;lnombre;onombre;tipo
+1;1;Museo del Louvre;San Sebastian;pintura
+2;2;Galeria Uffizi;La Anunciacion;pintura
+3;2;Galeria Uffizi;Bautismo de Cristo;pintura
+4;3;La basilica de San Pedro;La Estatua de San Pedro;escultura
+5;4;Museos Vaticanos;El Santo Entierro;pintura
+6;5;Royal Academy of Arts;Tondo Taddei;escultura
+7;6;Basilica de Santa Maria del Popolo;Crucifixion de San Pedro;pintura
+8;7;El Museo de Bellas Artes de Nancy;La Anunciacion;pintura
+9;2;Galeria Uffizi;La cabeza de Medusa;pintura
+10;8;Museo de la Opera del duomo;Maria Magdalena Penitente;escultura
+11;1;Museo del Louvre;La Libertad guiando al pueblo;pintura
+12;9;Santa Maria del Fiore;El juicio Final;fresco
+13;10;Piazza di Floros;Pitufiescultura;escultura
+14;1;Museo del Louvre;PitufiFresco;fresco
+15;11;Piazza Navona;La Fuente de Neptuno;escultura
+16;11;Piazza Navona;La Fuente de los Cuatro Rios;escultura
+17;1;Museo del Louvre;La anunciacion;fresco
+18;12;Iglesia de Santa Maria de la Victoria;Extasis de Santa Teresa;escultura
+19;13;Piazza della Minerva;Pulcin della Minerva;escultura
+20;14;Piazza San Pietro;Santos Piazza San Pietro;escultura
+21;15;Galeria Borghese;Apolo y Dafne;escultura
+22;2;Galeria Uffizi;Maesta di Ognissanti;pintura
+23;1;Museo del Louvre;La anunciacion;fresco
+24;2;Galeria Uffizi;Polittico di Badia;pintura
+25;1;Museo del Louvre;La consagracion de Napoleon;pintura
+26;16;Museo de la ciudad de Bruselas;Manneken Pis;escultura
+27;17;Santa Maria delle Grazie;La ultima cena;fresco
+28;1;Museo del Louvre;La Mona Lisa;pintura
+29;3;La basilica de San Pedro;La Piedad;escultura
+30;18;Galeria de la Academia;El David;escultura
+31;19;San Pietro in Vincoli;El Moises;escultura
+32;20;Capilla Sixtina;La creacion de Adan;fresco
+33;20;Capilla Sixtina;El Juicio Final;fresco
+34;4;Museos Vaticanos;Estancias de Rafael;fresco
+35;4;Museos Vaticanos;La transfiguracion;pintura
+36;21;Galeria de Pinturas de los Maestros Antiguos;Madonna Sixtina;pintura
+37;22;Museo Conde;Las Gracias;pintura
+38;2;Galeria Uffizi;La primavera;pintura
+39;2;Galeria Uffizi;El nacimiento de Venus;pintura
