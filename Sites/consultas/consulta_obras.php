@@ -22,7 +22,7 @@
 
       <?php
         foreach ($obras as $o) {
-          echo "<tr> <td>$o[0]</td> </tr>";
+          echo "<tr><td>$o[0]</td></tr>";
       }
       ?>
 
