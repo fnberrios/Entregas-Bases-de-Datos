@@ -12,7 +12,7 @@
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$obras = $result -> fetchAll();
   ?>
 
   <table>
