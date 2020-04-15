@@ -16,12 +16,12 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
+  <h3 align="center"> Muestre todos los nombres de las plazas que contengan al menos una escultura de “Gian Lorenzo Bernini" </h3>
 
-  <form align="center" action="consultas/consulta_stats.php" method="post">
-    Id:
+  <form align="center" action="consultas/consulta_dos.php" method="post">
+    <!-- Id: 
     <input type="text" name="id_elegido">
-    <br/><br/>
+    <br /><br /> -->
     <input type="submit" value="Buscar">
   </form>
 
@@ -34,7 +34,7 @@
   <form align="center" action="consultas/consulta_altura.php" method="post">
     Altura Mínima:
     <input type="text" name="altura">
-    <br/><br/>
+    <br /><br />
     <input type="submit" value="Buscar">
   </form>
   <br>
@@ -46,9 +46,9 @@
   <?php
   #Primero obtenemos todos los tipos de pokemones
   require("config/conexion.php");
-  $result = $db -> prepare("SELECT DISTINCT tipo FROM ejercicio_ayudantia;");
-  $result -> execute();
-  $dataCollected = $result -> fetchAll();
+  $result = $db->prepare("SELECT DISTINCT tipo FROM ejercicio_ayudantia;");
+  $result->execute();
+  $dataCollected = $result->fetchAll();
   ?>
 
   <form align="center" action="consultas/consulta_tipo.php" method="post">
@@ -70,4 +70,5 @@
   <br>
   <br>
 </body>
+
 </html>
