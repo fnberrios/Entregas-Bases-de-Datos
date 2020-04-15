@@ -30,7 +30,7 @@
   <br>
   <br>
 
-  <h3 align="center"> Ingrese el nombre de un país. Muestre el nombre de todos 
+  <h3 align="center"> Ingrese el nombre de un país. Muestre el nombre de todos
     los museos de ese país que tengan obras del renacimiento.</h3>
 
   <form align="center" action="consultas/consulta_tres.php" method="post">
@@ -42,6 +42,20 @@
   <br>
   <br>
   <br>
+
+
+
+  <h3 align="center"> Para cada artista, entregue su nombre
+     y el número de obras en las que ha participado. </h3>
+
+  <form align="center" action="consultas/consulta_cuatro.php" method="post">
+    <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
+
+
 
   <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
 
