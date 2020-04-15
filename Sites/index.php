@@ -95,7 +95,6 @@
     en la base de datos.</h3>
 
   <form align="center" action="consultas/consulta_cinco.php" method="post">
-t" name="ciudad">
     <br /><br />
     <input type="submit" value="Buscar">
   </form>
