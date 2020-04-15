@@ -11,12 +11,12 @@
 
 
     <?php
-    $user = 'grupoXX';
-    $password = 'grupoXX';
-    $databaseName = 'grupoXX';
+    $user = 'grupo30';
+    $password = 'grupo30';
+    $databaseName = 'grupo30e2';
     $db = new PDO("pgsql:dbname=$databaseName;host=localhost;port=5432;user=$user;password=$password");
 
-    $query_string = "SELECT * FROM tabla;";
+    $query_string = "SELECT * FROM Artistas;";
     $query = $db->prepare($query_string);
     $query->execute();
     $result = $query->fetchAll();
