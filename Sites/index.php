@@ -33,7 +33,7 @@
   <h3 align="center"> Ingrese el nombre de un país. Muestre el nombre de todos 
     los museos de ese país que tengan obras del renacimiento.</h3>
 
-  <form align="center" action="consultas/consulta_altura.php" method="post">
+  <form align="center" action="consultas/consulta_tres.php" method="post">
     País:
     <input type="text" name="pais">
     <br /><br />
