@@ -9,6 +9,7 @@
   <h3 align="center"> Todos los Nombres Distintos de las Obras de Arte</h3>
 
   <form align="center" action="consultas/consulta_obras.php" method="post">
+    <input type="submit" value="Buscar">
   </form>
 
   <br>
