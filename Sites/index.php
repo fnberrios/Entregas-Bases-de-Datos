@@ -94,7 +94,7 @@
     iglesia que tenga obras de todos los periodos del arte que existan
     en la base de datos.</h3>
 
-  <form align="center" action="consultas/consulta_cinco.php" method="post">
+  <form align="center" action="consultas/consulta_seis.php" method="post">
     <br /><br />
     <input type="submit" value="Buscar">
   </form>
