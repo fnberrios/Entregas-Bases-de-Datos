@@ -88,6 +88,21 @@
   <br>
   <br>
 
+  <!-------------- CONSULTA 6 ---------------->
+
+  <h3 align="center">Encuentre el nombre de cada museo, plaza o
+    iglesia que tenga obras de todos los periodos del arte que existan
+    en la base de datos.</h3>
+
+  <form align="center" action="consultas/consulta_cinco.php" method="post">
+t" name="ciudad">
+    <br /><br />
+    <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
+
 
 
   <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
