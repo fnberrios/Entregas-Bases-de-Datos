@@ -1,44 +1,80 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<?php include('header.html');   ?>
 
 <body>
+    <h1 align="center">Biblioteca Pokemón </h1>
+    <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
 
+    <br>
 
+    <h3 align="center"> ¿Quieres buscar un Pokemón por tipo y/o nombre?</h3>
+
+    <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
+        Tipo:
+        <input type="text" name="tipo_elegido">
+        <br />
+        Nombre:
+        <input type="text" name="nombre_pokemon">
+        <br /><br />
+        <input type="submit" value="Buscar">
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
+
+    <form align="center" action="consultas/consulta_stats.php" method="post">
+        Id:
+        <input type="text" name="id_elegido">
+        <br /><br />
+        <input type="submit" value="Buscar">
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+
+    <form align="center" action="consultas/consulta_altura.php" method="post">
+        Altura Mínima:
+        <input type="text" name="altura">
+        <br /><br />
+        <input type="submit" value="Buscar">
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
 
     <?php
-    $user = 'grupo30';
-    $password = 'grupo30';
-    $databaseName = 'grupo30e2';
-    $db = new PDO("pgsql:dbname=$databaseName;host=localhost;port=5432;user=$user;password=$password");
-
-    $query_string = "SELECT * FROM Artistas;";
-    $query = $db->prepare($query_string);
-    $query->execute();
-    $result = $query->fetchAll();
+    #Primero obtenemos todos los tipos de pokemones
+    require("config/conexion.php");
+    $result = $db->prepare("SELECT DISTINCT tipo FROM ejercicio_ayudantia;");
+    $result->execute();
+    $dataCollected = $result->fetchAll();
     ?>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Nacimiento</th>
-            <th>Descripcion</th>
-        </tr>
+    <form align="center" action="consultas/consulta_tipo.php" method="post">
+        Seleccinar un tipo:
+        <select name="tipo">
+            <?php
+            #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+            foreach ($dataCollected as $d) {
+                echo "<option value=$d[0]>$d[0]</option>";
+            }
+            ?>
+        </select>
+        <br><br>
+        <input type="submit" value="Buscar por tipo">
+    </form>
 
-    <?php
-        foreach ($result as $r) {
-            echo "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr></tr>";
-        }
-
-        ?>
-    </table>
-
-
-
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 
 </html>
