@@ -14,7 +14,7 @@
     JOIN Obras ON Obras.lid = Lugares.lid
     JOIN Creo ON Creo.oid = Obras.oid 
     WHERE Lugares.tipo = 'museo' AND Creo.periodo = 'Renacimiento'
-    AND Ciudades.cpais = >=$altura;";
+    AND Ciudades.cpais>=$altura;";
     
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
