@@ -5,7 +5,6 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $id_nuevo = $_POST["id_elegido"];
 
  	$query = "SELECT Lugares.lnombre FROM Artistas
     JOIN Creo ON Artistas.aid = Creo.aid 

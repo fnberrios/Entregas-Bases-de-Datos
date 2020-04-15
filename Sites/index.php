@@ -31,10 +31,10 @@
   <br>
 
   <h3 align="center"> Ingrese el nombre de un país. Muestre el nombre de todos 
-    los museos de ese pa ́ıs que tengan obras del renacimiento.</h3>
+    los museos de ese país que tengan obras del renacimiento.</h3>
 
   <form align="center" action="consultas/consulta_altura.php" method="post">
-    Altura Mínima:
+    País:
     <input type="text" name="pais">
     <br /><br />
     <input type="submit" value="Buscar">

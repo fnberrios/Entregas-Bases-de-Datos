@@ -6,8 +6,7 @@
     require("../config/conexion.php");
 
     #Se obtiene el valor del input del usuario
-    $pais = $_POST["altura"];
-    $pais = intval($pais);
+    $pais = $_POST["pais"];
 
     #Se construye la consulta como un string
     $query = "SELECT DISTINCT lnombre FROM Lugares
