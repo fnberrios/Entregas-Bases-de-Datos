@@ -16,7 +16,8 @@
   <br>
   <br>
 
-  <h3 align="center"> Muestre todos los nombres de las plazas que contengan al menos una escultura de “Gian Lorenzo Bernini" </h3>
+  <h3 align="center"> Muestre todos los nombres de las plazas que contengan
+    al menos una escultura de “Gian Lorenzo Bernini" </h3>
 
   <form align="center" action="consultas/consulta_dos.php" method="post">
     <!-- Id: 
@@ -29,11 +30,12 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+  <h3 align="center"> Ingrese el nombre de un país. Muestre el nombre de todos 
+    los museos de ese pa ́ıs que tengan obras del renacimiento.</h3>
 
   <form align="center" action="consultas/consulta_altura.php" method="post">
     Altura Mínima:
-    <input type="text" name="altura">
+    <input type="text" name="pais">
     <br /><br />
     <input type="submit" value="Buscar">
   </form>
