@@ -22,6 +22,9 @@
     $result = $query->fetchAll();
     ?>
 
+    </table>
+
+
     <table>
         <tr>
             <th>ID</th>
