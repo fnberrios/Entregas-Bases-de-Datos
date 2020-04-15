@@ -25,7 +25,6 @@
           echo "<tr><td>$o</td><</tr>";
       }
       ?>
-
   </table>
 
 <?php include('../templates/footer.html'); ?>
