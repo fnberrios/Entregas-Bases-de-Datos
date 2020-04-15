@@ -25,7 +25,7 @@
 
     <table>
         <tr>
-            <th>Nombres de los museos que con obras del renacimiento </th>
+            <th>Nombres de los museos</th>
         </tr>
 
         <?php
