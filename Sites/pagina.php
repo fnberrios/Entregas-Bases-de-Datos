@@ -7,7 +7,6 @@
 
 <body>
 
-    <h1>Hola</h1>
 
 
     <?php
@@ -33,6 +32,15 @@
         <?php
         foreach ($result as $r) {
             echo "<tr><td>$r[0]</td><</tr>";
+        }
+        foreach ($result as $r) {
+            echo "<tr><td>$r[1]</td><</tr>";
+        }
+        foreach ($result as $r) {
+            echo "<tr><td>$r[2]</td><</tr>";
+        }
+        foreach ($result as $r) {
+            echo "<tr><td>$r[3]</td><</tr>";
         }
         ?>
     </table>
