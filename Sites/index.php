@@ -35,7 +35,7 @@
 
   <form align="center" action="consultas/consulta_tres.php" method="post">
     País:
-    <input type="text" name="pais">
+    <input type="text" name="npais">
     <br /><br />
     <input type="submit" value="Buscar">
   </form>
