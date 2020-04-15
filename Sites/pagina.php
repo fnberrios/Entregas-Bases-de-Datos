@@ -22,6 +22,19 @@
     $result = $query->fetchAll();
     ?>
 
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Nacimiento</th>
+            <th>Descripcion</th>
+        </tr>
+
+        <?php
+        foreach ($result as $r) {
+            echo "<tr><td>$r[0]</td><</tr>";
+        }
+        ?>
     </table>
 
 
