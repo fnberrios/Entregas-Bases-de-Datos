@@ -1,8 +1,8 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <h1 align="center">Biblioteca Pokemón </h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
+  <h1 align="center">Obras de Arte</h1>
+  <p style="text-align:center;">Aquí podrás encontrar información sobre obras de arte.</p>
 
   <br>
 
@@ -17,7 +17,7 @@
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
-  
+
   <br>
   <br>
   <br>
@@ -30,7 +30,7 @@
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
-  
+
   <br>
   <br>
   <br>
