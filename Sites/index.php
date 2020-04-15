@@ -67,7 +67,8 @@
   <!-------------- CONSULTA 5 ---------------->
 
   <h3 align="center"> ¿Quieres conocer los nombres de las iglesias
-    ubicadas en una ciudad, abiertas entre algunas horas(inclusive) junto a
+    ubicadas en una ciudad,</h3>
+  <h3 align="center"> abiertas entre algunas horas(inclusive) junto a
     todos los nombres de los frescos que se encuentra en cada una de ellas?
   </h3>
 
