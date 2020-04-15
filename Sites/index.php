@@ -6,16 +6,9 @@
 
   <br>
 
-  <h3 align="center"> ¿Quieres buscar un Pokemón por tipo y/o nombre?</h3>
+  <h3 align="center"> Todos los Nombres Distintos de las Obras de Arte</h3>
 
-  <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
-    Tipo:
-    <input type="text" name="tipo_elegido">
-    <br/>
-    Nombre:
-    <input type="text" name="nombre_pokemon">
-    <br/><br/>
-    <input type="submit" value="Buscar">
+  <form align="center" action="consultas/consulta_obras.php" method="post">
   </form>
 
   <br>
