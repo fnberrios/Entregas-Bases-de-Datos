@@ -17,9 +17,9 @@
     INNER JOIN Obras ON Obras.lid = Lugares.lid
     INNER JOIN Ciudades ON Ciudades.cid = Lugares.cid
     WHERE Ciudades.cnombre = '$city'
-    AND LugaresIglesia.hora_apertura $<=$ '$open' AND
+    AND LugaresIglesia.hora_apertura <= '$open' AND
     LugaresIglesia.hora_cierre
-    $>=$ '$cierre' AND Obras.tipo = 'fresco';";
+    >= '$cierre' AND Obras.tipo = 'fresco';";
 
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
