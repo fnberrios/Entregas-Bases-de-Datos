@@ -73,10 +73,10 @@
     Una fila por cada tupla.</h3>
 
   <form align="center" action="consultas/consulta_cinco.php" method="post">
-    Hora de Apertura:
+    Hora de Apertura (Formato XX:XX:XX):
     <input type="text" name="hora_apertura">
     <br /><br />
-    Hora de Cierre:
+    Hora de Cierre (Formato XX:XX:XX):
     <input type="text" name="hora_cierre">
     <br /><br />
     Ciudad:
