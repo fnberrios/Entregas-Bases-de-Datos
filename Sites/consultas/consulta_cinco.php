@@ -16,7 +16,7 @@
     Lugares.lid = LugaresIglesia.lid
     INNER JOIN Obras ON Obras.lid = Lugares.lid
     INNER JOIN Ciudades ON Ciudades.cid = Lugares.cid
-    WHERE upper(Ciudades.cnombre) = upper('$city')
+    WHERE upper(Ciudades.cnombre) LIKE upper('%$city%')
     AND LugaresIglesia.hora_apertura <= '$open' AND
     LugaresIglesia.hora_cierre
     >= '$cierre' AND Obras.tipo = 'fresco';";
