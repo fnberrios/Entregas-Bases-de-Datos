@@ -29,19 +29,11 @@
             <th>Descripcion</th>
         </tr>
 
-        <?php
+    <?php
         foreach ($result as $r) {
-            echo "<tr><td>$r[0]</td><</tr>";
+            echo "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr></tr>";
         }
-        foreach ($result as $r) {
-            echo "<tr><td>$r[1]</td><</tr>";
-        }
-        foreach ($result as $r) {
-            echo "<tr><td>$r[2]</td><</tr>";
-        }
-        foreach ($result as $r) {
-            echo "<tr><td>$r[3]</td><</tr>";
-        }
+
         ?>
     </table>
 
