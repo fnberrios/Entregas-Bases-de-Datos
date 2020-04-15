@@ -14,7 +14,7 @@
     JOIN Obras ON Obras.lid = Lugares.lid
     JOIN Creo ON Creo.oid = Obras.oid 
     WHERE Lugares.tipo = 'museo' AND Creo.periodo = 'Renacimiento'
-    AND Ciudades.cpais>=$pais;";
+    AND Ciudades.cpais = $pais;";
     
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -25,7 +25,7 @@
 
     <table>
         <tr>
-            <th>Nombres de los museos en $<pais> </th>
+            <th>Nombres de los museos </th>
         </tr>
 
         <?php
