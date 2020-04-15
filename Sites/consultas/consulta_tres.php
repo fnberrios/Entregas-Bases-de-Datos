@@ -25,7 +25,7 @@
 
     <table>
         <tr>
-            <th>Nombres de los museos</th>
+            <th>Nombres de los museos en $pais </th>
         </tr>
 
         <?php

@@ -19,7 +19,7 @@
     <tr>
       <th>Nombre</th>
     </tr>
-
+ 
       <?php
         foreach ($obras as $o) {
           echo "<tr><td>$o[0]</td></tr>";
