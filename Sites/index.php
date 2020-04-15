@@ -1,8 +1,8 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <h1 align="center">Obras de Arte</h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre obras de arte.</p>
+  <h1 align="center">Agencia de Viajes Tía Ale</h1>
+  <p style="text-align:center;">¡Aquí podrás encontrar información sobre obras de arte!</p>
 
   <br>
 
