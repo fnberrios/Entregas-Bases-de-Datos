@@ -7,7 +7,7 @@ DECLARE
 BEGIN
 	FOR tupla IN SELECT * FROM Personas LOOP
 		concat = tupla.nombre || tupla.apellido;
-		insert into PersonasCompleto values (tupla.rut, concat);
+		insert into PersonasCompleto values (tupla.run, concat);
 	END LOOP;
 END
 $$ language plpgsql
