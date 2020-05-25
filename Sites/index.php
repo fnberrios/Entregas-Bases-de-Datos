@@ -32,7 +32,7 @@
   $contador = 0;
   foreach ($valores as $v) {
     $contador = $contador + 1;
-    echo "<button id=$contador type="button" onclick=""> $v[0]</button>"
+    echo "<button id=$contador type="button" onclick="" > $v[0]</button>";
   }
   ?>
 
