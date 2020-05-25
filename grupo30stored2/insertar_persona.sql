@@ -1,4 +1,3 @@
-%%sql
 CREATE OR REPLACE FUNCTION insertar_persona (rut varchar, nombre varchar, apellido varchar)
 RETURNS void AS
 $$
