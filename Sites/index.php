@@ -14,27 +14,29 @@
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
 
-  
-  <h3 align="left">Artistas</h3>
+  <div>
+    <h3 align="left">Artistas</h3>
 
-  <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-  require("config/conexion.php");
-  #Se construye la consulta como un string
-  $query = " SELECT anombre FROM Artistas;";
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db->prepare($query);
-  $result->execute();
-  $valores = $result->fetchAll();
-  ?>
-  <form>
     <?php
-    foreach ($valores as $v) {
-      echo "<input type='submit' name='submit' value='$v[0]'>";
-    }
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+    require("config/conexion.php");
+    #Se construye la consulta como un string
+    $query = " SELECT anombre FROM Artistas;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db->prepare($query);
+    $result->execute();
+    $valores = $result->fetchAll();
     ?>
-  </form>
-  
+    <form>
+      <?php
+      foreach ($valores as $v) {
+        echo "<input type='submit' name='$v[0]' value='$v[0]'>";
+      }
+      ?>
+    </form>
+  </div>
+
+
 
 
 
