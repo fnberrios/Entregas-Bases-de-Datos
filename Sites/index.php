@@ -13,6 +13,24 @@
   <br>
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
+
+  <head>
+    <style>
+      h1 {
+        color: blue;
+        font-family: verdana;
+        font-size: 300%;
+      }
+
+      p {
+        color: red;
+        font-family: courier;
+        font-size: 160%;
+      }
+    </style>
+  </head>
+
+
   <ul>
     <li><a href="default.html">Home</a></li>
     <li><a href="news.asp">News</a></li>
