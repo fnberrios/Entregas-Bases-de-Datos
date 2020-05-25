@@ -12,6 +12,20 @@
 
   <br>
 
+  <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
+
+
+  <h3 align="left">Artistas</h3>
+
+  <form align="left" action="consultas/consulta_uno.php" method="post">
+    <input type="submit" value="Buscar">
+  </form>
+
+  <br>
+  <br>
+  <br>
+
+
   <!-------------- CONSULTA 1 ---------------->
 
 
