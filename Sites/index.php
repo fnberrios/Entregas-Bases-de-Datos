@@ -58,15 +58,6 @@
   </head>
 
 
-  <ul>
-    <?php
-    foreach ($valores as $v) {
-      echo "<li><a href="default.html">'$v[0]'</a></li>";
-    }
-    ?>
-  </ul>
-
-
 
 
     <h3 align="left">Artistas</h3>
