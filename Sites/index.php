@@ -17,9 +17,27 @@
 
   <h3 align="left">Artistas</h3>
 
-  <form align="left" action="consultasE3/consultas_por_artistas.php" method="get">
-    <input type="submit" value="Buscar">
-  </form>
+  <?php
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+  require("../config/conexion.php");
+  #Se construye la consulta como un string
+  $query = " SELECT aid FROM Artistas;";
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db->prepare($query);
+  $result->execute();
+  $valores = $result->fetchAll();
+  ?>
+  <table>
+      <tr>
+          <th>Artistas</th>
+      </tr>
+      <?php
+      foreach ($valores as $v) {
+          echo "<tr><td>$v[0]</td></tr>";
+      }
+      ?>
+  </table>
+  <?php
 
   <br>
   <br>
