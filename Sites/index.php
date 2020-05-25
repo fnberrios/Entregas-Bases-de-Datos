@@ -75,7 +75,7 @@
     <ul>
       <?php
       foreach ($valores as $v) {
-        echo "<li><a href="default.html">'$v[0]'</a></li>";
+        echo "<li><a href='' >$v[0]</a></li>";
       }
       ?>
     </ul>
