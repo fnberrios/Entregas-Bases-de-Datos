@@ -19,7 +19,7 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-  require("../config/conexion.php");
+  require("config/conexion.php");
   #Se construye la consulta como un string
   $query = " SELECT aid FROM Artistas;";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
