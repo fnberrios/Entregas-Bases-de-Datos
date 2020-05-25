@@ -1,21 +1,19 @@
 <?php include('templates/header.html');   ?>
 
+
+<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+
+
 <body>
   <h1 align="center">Agencia de Viajes Splinter S.A.</h1>
   <p style="text-align:center;">¡Aquí podrás encontrar información sobre obras de arte!</p>
 
   <br>
 
-  <ul>
-    <li>Coffee</li>
-    <li>Tea</li>
-    <li>Milk</li>
-  </ul>
-
   <!-------------- CONSULTA 1 ---------------->
 
 
-  <h3 align="center"> ¿Quieres saber todos los nombres distintos de las obras?</h3>
+  <h3 align="center">¿Quieres saber todos los nombres distintos de las obras?</h3>
 
   <form align="center" action="consultas/consulta_uno.php" method="post">
     <input type="submit" value="Buscar">
