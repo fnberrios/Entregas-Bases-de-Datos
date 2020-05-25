@@ -1,7 +1,7 @@
 <?php include('templates/header.html');   ?>
 
 
-<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+<a href="google.com"><img alt="" src="https://lh3.googleusercontent.com/-IhVc_Wxy6dY/AAAAAAAAAAI/AAAAAAAAAAA/fl45Fty4PEI/photo.jpg" style="width: 154px; height: 47px;" /></a>
 
 
 <body>
