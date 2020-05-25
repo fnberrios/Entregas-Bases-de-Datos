@@ -6,6 +6,12 @@
 
   <br>
 
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
   <!-------------- CONSULTA 1 ---------------->
 
 
@@ -38,7 +44,7 @@
 
   <!-------------- CONSULTA 3 ---------------->
 
-  <h3 align="center"> ¿Quieres conocer  el nombre de todos
+  <h3 align="center"> ¿Quieres conocer el nombre de todos
     los museos de un país que tengan obras del renacimiento?</h3>
 
   <form align="center" action="consultas/consulta_tres.php" method="post">
