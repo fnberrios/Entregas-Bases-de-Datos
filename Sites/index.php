@@ -21,71 +21,38 @@
         font-family: verdana;
         font-size: 300%;
       }
-
       p {
         color: red;
         font-family: courier;
         font-size: 160%;
       }
-
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 200px;
-        background-color: #f1f1f1;
-        border: 1px solid #555;
-      }
-
-      li a {
-        display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
-      }
-
-      /* Change the link color on hover */
-      li a:hover {
-        background-color: #555;
-        color: white;
-      }
-
-      .active {
-        background-color: #4CAF50;
-        color: white;
-      }
     </style>
+    <link rel="stylesheet" href="barra_vertical.css">
   </head>
 
 
 
 
-    <h3 align="left">Artistas</h3>
+  <h3 align="left">Artistas</h3>
 
+  <?php
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+  require("config/conexion.php");
+  #Se construye la consulta como un string
+  $query = " SELECT anombre FROM Artistas;";
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db->prepare($query);
+  $result->execute();
+  $valores = $result->fetchAll();
+  ?>
+  <ul>
     <?php
-    #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-    require("config/conexion.php");
-    #Se construye la consulta como un string
-    $query = " SELECT anombre FROM Artistas;";
-    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result = $db->prepare($query);
-    $result->execute();
-    $valores = $result->fetchAll();
+    foreach ($valores as $v) {
+      echo "<li><a href='' >$v[0]</a></li>";
+    }
     ?>
-    <ul>
-      <?php
-      foreach ($valores as $v) {
-        echo "<li><a href='' >$v[0]</a></li>";
-      }
-      ?>
-    </ul>
-    <form>
-      <?php
-      foreach ($valores as $v) {
-        echo "<input type='submit' name='$v[0]' value='$v[0]'>";
-      }
-      ?>
-    </form>
+  </ul>
+
 
 
 
