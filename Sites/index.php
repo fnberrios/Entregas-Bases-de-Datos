@@ -35,7 +35,7 @@
           </tr>
           <?php
           foreach ($valores as $v) {
-            echo "<tr><td>$v[0]</td></tr>";
+            echo "<tr><td> <input type="submit" value="$v[0]"> </td></tr>";
           }
           ?>
         </table>
