@@ -27,14 +27,14 @@
   $result->execute();
   $valores = $result->fetchAll();
   ?>
-
-  <?php
-  $contador = 0;
-  foreach ($valores as $v) {
-    $contador = $contador + 1;
-    echo "<button id=$contador type="button" onclick="" > $v[0]</button>";
-  }
-  ?>
+  <form>
+    <?php
+    foreach ($valores as $v) {
+      echo "<input type='submit' name='submit' value='$v[0]'>";
+    }
+    ?>
+  </form>
+  
 
 
 
