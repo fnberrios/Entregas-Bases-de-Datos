@@ -27,7 +27,7 @@
         font-size: 160%;
       }
     </style>
-    <link rel="stylesheet" href="barra_vertical.css">
+    <link rel="stylesheet" href="styles/barra_vertical.css">
   </head>
 
 
