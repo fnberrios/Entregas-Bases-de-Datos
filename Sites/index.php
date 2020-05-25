@@ -17,7 +17,7 @@
   <head>
     <style>
       h1 {
-        color: blue;
+        color: blueviolet;
         font-family: verdana;
         font-size: 300%;
       }
@@ -34,6 +34,7 @@
         padding: 0;
         width: 200px;
         background-color: #f1f1f1;
+        border: 1px solid #555;
       }
 
       li a {
@@ -48,21 +49,26 @@
         background-color: #555;
         color: white;
       }
+
+      .active {
+        background-color: #4CAF50;
+        color: white;
+      }
     </style>
   </head>
 
 
   <ul>
-    <li><a href="default.html">Home</a></li>
-    <li><a href="news.asp">News</a></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><a href="about.asp">About</a></li>
+    <?php
+    foreach ($valores as $v) {
+      echo "<li><a href="default.html">'$v[0]'</a></li>";
+    }
+    ?>
   </ul>
 
 
 
 
-  <div>
     <h3 align="left">Artistas</h3>
 
     <?php
@@ -75,6 +81,13 @@
     $result->execute();
     $valores = $result->fetchAll();
     ?>
+    <ul>
+      <?php
+      foreach ($valores as $v) {
+        echo "<li><a href="default.html">'$v[0]'</a></li>";
+      }
+      ?>
+    </ul>
     <form>
       <?php
       foreach ($valores as $v) {
@@ -82,7 +95,6 @@
       }
       ?>
     </form>
-  </div>
 
 
 
