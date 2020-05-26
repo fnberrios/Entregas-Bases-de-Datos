@@ -62,8 +62,8 @@
         </tr>
         <?php
         foreach ($dataCollected as $p) {
-            echo "<tr> <td><a href='consulta_artistas.php?artista=$p[0]' >$p[0]</td>
-                    <td><a href='consulta_obras.php?obra=$p[1]' >$p[1]</td> <td>$p[2]</td>
+            echo "<tr> <td><a href='consulta_artistas.php?artista=$p[0]' >$p[0]</a></td>
+                    <td><a href='consulta_obras.php?obra=$p[1]' >$p[1]</a></td> <td>$p[2]</td>
                     <td>$p[3]</td> <td>'Comprar Tickets'</td></tr>";
         }
         ?>
