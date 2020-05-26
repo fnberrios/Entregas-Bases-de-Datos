@@ -6,7 +6,9 @@
   require("../config/conexion.php");
 
   $nom = $_GET["artista"];
-  $query = "SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artista.nombre ='$nom';";
+  $query = "SELECT Artistas.aid, Artistas.anombre, Artistas.nacimiento, Artistas.descripcion,
+  ArtistasFallecidos.fallecimiento FROM Artistas LEFT JOIN ArtistasFallecidos ON
+  Artistas.aid=ArtistasFallecidos.aid WHERE Artista.nombre ='$nom';";
   $result = $db->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
@@ -17,8 +19,8 @@
       <th>aid</th>
       <th>Nombre del Artista</th>
       <th>Fecha de Nacimiento</th>
-      <th>Fecha de Fallecimiento</th>
       <th>Descripción</th>
+      <th>Fecha de Fallecimiento</th>
     </tr>
     <?php
     foreach ($dataCollected as $p) {
