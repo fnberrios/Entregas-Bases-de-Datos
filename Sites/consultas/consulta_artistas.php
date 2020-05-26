@@ -54,7 +54,7 @@
     </tr>
     <?php
     foreach ($dataCollected as $p) {
-        echo "<tr><a href='consultas/consulta_uno.php?obra=$p[0]' >$p[0]</a> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td></tr>";
+        echo "<tr><td><a href='consultas/consulta_uno.php?obra=$p[0]' >$p[0]</a></td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td></tr>";
     }
     ?>
   </table>
