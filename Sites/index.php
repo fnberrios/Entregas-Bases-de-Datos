@@ -21,6 +21,7 @@
         font-family: verdana;
         font-size: 300%;
       }
+
       p {
         color: red;
         font-family: courier;
@@ -31,9 +32,7 @@
   </head>
 
 
-
-
-  <h3 align="left">Artistas</h3>
+  <!-------------- Artistas ---------------->
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
@@ -48,10 +47,11 @@
   <ul>
     <?php
     foreach ($valores as $v) {
-      echo "<li><a href='' >$v[0]</a></li>";
+      echo "<li><a href='consultas/consulta_uno.php' >$v[0]</a></li>";
     }
     ?>
   </ul>
+
 
 
 
