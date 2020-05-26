@@ -43,7 +43,7 @@
     <!------------ Buscar Obras que hay en este lugar --------------->
     <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-    $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio,
+    $query = "SELECT Artistas.anombre, Obras.onombre, Obras.oid, Creo.fecha_inicio,
     Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN
     Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid WHERE 
     Lugares.lnombre='$nom';";
@@ -62,9 +62,9 @@
         </tr>
         <?php
         foreach ($dataCollected as $p) {
-            echo "<tr> <td><a href='consulta_artistas.php?artista=$p[0]' >$p[0]</a></td>
-                    <td><a href='consulta_obras.php?obra=$p[1]' >$p[1]</a></td> <td>$p[2]</td>
-                    <td>$p[3]</td> <td></td></tr>";
+            echo "<tr><td><a href='consulta_artistas.php?artista=$p[0]' >$p[0]</a></td>
+            <td><a href='consulta_obras.php?obra=$p[2]' >$p[1]</a></td> <td>$p[3]</td>
+            <td>$p[4]</td> <td></td></tr>";
         }
         ?>
     </table>
