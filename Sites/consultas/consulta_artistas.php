@@ -31,8 +31,13 @@
 
   <?php
   #Se construye la consulta como un string
-  $query = "SELECT Artistas.aid, oid, fecha_inicio, fecha_termino, periodo FROM Creo
-  INNER JOIN Artistas ON Artistas.aid=Creo.aid AND Artistas.anombre='$nom';";
+  $query = "SELECT Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Creo.periodo,
+  Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material FROM Obras
+  INNER JOIN Creo ON Creo.oid=Obras.oid
+  INNER JOIN Artistas ON Artistas.aid=Creo.aid
+  LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid
+  LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
+  AND Artistas.anombre='$nom';";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db->prepare($query);
   $result->execute();
@@ -40,15 +45,17 @@
   ?>
   <table>
     <tr>
-      <th>aid</th>
-      <th>oid</th>
+      <th>Nombre</th>
       <th>Fecha Inicio</th>
       <th>Fecha Termino</th>
       <th>Periodo</th>
+      <th>Tipo</th>
+      <th>Tecnica</th>
+      <th>Material</th>
     </tr>
     <?php
     foreach ($dataCollected as $p) {
-        echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td></tr>";
+        echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td></tr>";
     }
     ?>
   </table>
