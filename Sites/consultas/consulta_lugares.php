@@ -6,16 +6,12 @@
     require("../config/conexion.php");
 
     $nom = $_GET["lugar"];
-    $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino,
-  Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre,
-  Ciudades.cnombre, Ciudades.cpais, Lugares.lid FROM Obras
-  INNER JOIN Creo ON Creo.oid=Obras.oid
-  INNER JOIN Lugares ON Obras.lid=Lugares.lid
-  INNER JOIN Ciudades ON Ciudades.cid=Lugares.cid
-  INNER JOIN Artistas ON Artistas.aid=Creo.aid
-  LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid
-  LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
-  Where Obras.oid='$nom';";
+    $query = "SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais, 
+    Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre, 
+    LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre, 
+    LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid
+    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN 
+    LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre=$nom';";
     $result = $db->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
@@ -23,17 +19,14 @@
 
     <table>
         <tr>
-            <th>Nombre del Artista</th>
-            <th>Nombre de la Obra</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Termino</th>
-            <th>Periodo</th>
+            <th>Nombre del Lugar</th>
+            <th>Ciudad</th>
+            <th>Pais</th>
             <th>Tipo</th>
-            <th>Tecnica</th>
-            <th>Material</th>
-            <th>Nombre Lugar</th>
-            <th>Nombre Ciudad</th>
-            <th>Nombre Pais</th>
+            <th>Hora Apertura</th>
+            <th>Hora Cierre</th>
+            <th>Precio</th>
+    
         </tr>
         <?php
         foreach ($dataCollected as $p) {
