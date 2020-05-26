@@ -6,8 +6,7 @@
   require("../config/conexion.php");
 
   $nom = $_GET["artista"];
-  $query = "SELECT Artistas.aid, Artistas.anombre, Artistas.nacimiento,
-  Artistas.descripcion, ArtistasFallecidos.fallecimiento FROM Artistas
+  $query = "SELECT * FROM Artistas
   LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre ='$nom';";
   $result = $db->prepare($query);
   $result->execute();
