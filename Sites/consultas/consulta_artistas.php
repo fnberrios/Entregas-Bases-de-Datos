@@ -31,7 +31,7 @@
   <?php
   #Se construye la consulta como un string
   $query = "SELECT Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Creo.periodo,
-  Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material FROM Obras
+  Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Obras.oid FROM Obras
   INNER JOIN Creo ON Creo.oid=Obras.oid
   INNER JOIN Artistas ON Artistas.aid=Creo.aid
   LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid
@@ -54,7 +54,7 @@
     </tr>
     <?php
     foreach ($dataCollected as $p) {
-        echo "<tr><td><a href='consulta_obras.php?obra=$p[0]' >$p[0]</a></td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td></tr>";
+        echo "<tr><td><a href='consulta_obras.php?obra=$p[11]' >$p[0]</a></td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td></tr>";
     }
     ?>
   </table>
