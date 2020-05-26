@@ -37,7 +37,7 @@
     </tr>
     <?php
     foreach ($dataCollected as $p) {
-        echo "<tr> <td><a href='consulta_artistas.php?artista=$p[0]' ></td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
+        echo "<tr> <td><a href='consulta_artistas.php?artista=$p[0]'>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
          <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td> <td>$p[7]</td>
          <td><a href='consulta_lugares.php?lugar=$p[11]' >$p[8]</td>
           <td>$p[9]</td> <td>$p[10]</td></tr>";
