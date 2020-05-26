@@ -5,9 +5,9 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $nom = $_GET["artista"];
-  $query = "SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos WHERE anombre ='$nom'
-   AND Artistas.aid=ArtistasFallecidos.aid;";
+  $nom = $_GET["artista"
+  $query = "SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos
+  ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre ='$nom';";
   $result = $db->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
