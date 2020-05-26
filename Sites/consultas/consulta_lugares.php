@@ -46,7 +46,7 @@
     $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio,
     Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN
     Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid WHERE 
-    Lugares.lnombres='$nom';";
+    Lugares.lnombre='$nom';";
     $result = $db->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
