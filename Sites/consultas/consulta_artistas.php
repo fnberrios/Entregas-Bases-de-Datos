@@ -35,9 +35,9 @@
   Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material FROM Obras
   INNER JOIN Creo ON Creo.oid=Obras.oid
   INNER JOIN Artistas ON Artistas.aid=Creo.aid
-  LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid
+  LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid
   LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
-  AND Artistas.anombre='$nom';";
+  Where Artistas.anombre='$nom';";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db->prepare($query);
   $result->execute();
