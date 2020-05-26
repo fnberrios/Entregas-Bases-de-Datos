@@ -31,7 +31,8 @@
 
   <?php
   #Se construye la consulta como un string
-  $query = "SELECT * FROM Creo JOIN ON Artistas.aid=Creo.aid AND Artistas.anombre='$nom';";
+  $query = "SELECT Artistas.aid, oid, fecha_inicio, fecha_termino, periodo FROM Creo
+  INNER JOIN Artistas ON Artistas.aid=Creo.aid AND Artistas.anombre='$nom';";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db->prepare($query);
   $result->execute();
