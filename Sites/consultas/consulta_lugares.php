@@ -39,4 +39,36 @@
         }
         ?>
     </table>
+
+    <!------------ Buscar Obras que hay en este lugar --------------->
+    <?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+    require("../config/conexion.php");
+
+    $nom = $_GET["lugar"];
+    $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio,
+    Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN
+    Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid WHERE 
+    Lugares.lnombres='$nom';";
+    $result = $db->prepare($query);
+    $result->execute();
+    $dataCollected = $result->fetchAll();
+    ?>
+
+    <table>
+        <tr>
+            <th>Artistas</th>
+            <th>Obra en este lugar</th>
+            <th>Año Inicio</th>
+            <th>Año Termino</th>
+            <th>Comprar</th>
+        </tr>
+        <?php
+        foreach ($dataCollected as $p) {
+            echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
+            </tr>";
+        }
+        ?>
+    </table>
+
     <?php include('../templates/footer.html'); ?>
