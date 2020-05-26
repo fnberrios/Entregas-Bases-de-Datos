@@ -29,4 +29,27 @@
     ?>
   </table>
 
+  <?php
+  #Se construye la consulta como un string
+  $query = "SELECT * FROM Creo JOIN ON Artistas.aid=Creo.aid AND Artistas.anombre='$nom';";
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db->prepare($query);
+  $result->execute();
+  $dataCollected = $result->fetchAll();
+  ?>
+  <table>
+    <tr>
+      <th>aid</th>
+      <th>oid</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Termino/th>
+      <th>Periodo</th>
+    </tr>
+    <?php
+    foreach ($dataCollected as $p) {
+        echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td></tr>";
+    }
+    ?>
+  </table>
+
   <?php include('../templates/footer.html'); ?>
