@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $nom = $_GET["artista"]
+  $nom = $_GET["artista"];
   $query = "SELECT * FROM  Artistas WHERE anombre ='$nom';";
   $result = $db->prepare($query);
   $result->execute();
