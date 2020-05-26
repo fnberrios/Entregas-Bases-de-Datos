@@ -6,7 +6,7 @@
   require("../config/conexion.php");
 
   $nom = $_GET["obra"];
-  $query = "SELECT Artista.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino,
+  $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino,
   Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre,
   Ciudades.cnombre, Ciudades.pais, FROM Obras
   INNER JOIN Creo ON Creo.oid=Obras.oid
