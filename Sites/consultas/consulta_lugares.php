@@ -31,7 +31,7 @@
         <?php
         foreach ($dataCollected as $p) {
             echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
-            <td>$p[4]</td> <td>$p[5] $p[7]</td> <td>$p[6] $p[8]</td> 
+            <td>$p[4]</td> <td>'$p[5] $p[7]'</td> <td>'$p[6] $p[8]'</td> 
             <td>$p[9]</td></tr>";
         }
         ?>
