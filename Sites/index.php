@@ -47,7 +47,7 @@
   <ul>
     <?php
     foreach ($valores as $v) {
-      echo "<li><a href='consultas/consulta_por_artistas.php' >$v[0]</a></li>";
+      echo "<li><a href='consultas/consulta_artistas.php?artista=$v[0]' >$v[0]</a></li>";
       # echo "<li><input type="button" style="display:inline" value=$v[0]/></li>";
       # echo "<input type="submit" value="$v[0]">";
     }
