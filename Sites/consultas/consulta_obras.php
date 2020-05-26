@@ -8,7 +8,7 @@
   $nom = $_GET["obra"];
   $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino,
   Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre,
-  Ciudades.cnombre, Ciudades.cpais FROM Obras
+  Ciudades.cnombre, Ciudades.cpais, Lugares.lid FROM Obras
   INNER JOIN Creo ON Creo.oid=Obras.oid
   INNER JOIN Lugares ON Obras.lid=Lugares.lid
   INNER JOIN Ciudades ON Ciudades.cid=Lugares.cid
@@ -38,8 +38,8 @@
     <?php
     foreach ($dataCollected as $p) {
         echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
-         <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td> <td>$p[7]</td> 
-         <td><a href='consulta_obras.php?obra=$p[8]' >$p[8]</td>
+         <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td> <td>$p[7]</td>
+         <td><a href='consulta_lugares.php?lugar=$p[11]' >$p[8]</td>
           <td>$p[9]</td> <td>$p[10]</td></tr>";
     }
     ?>
