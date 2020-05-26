@@ -8,7 +8,7 @@
   $nom = $_GET["obra"];
   $query = "SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino,
   Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre,
-  Ciudades.cnombre, Ciudades.pais, FROM Obras
+  Ciudades.cnombre, Ciudades.cpais, FROM Obras
   INNER JOIN Creo ON Creo.oid=Obras.oid
   INNER JOIN Lugares ON Obras.lid=Lugares.lid
   INNER JOIN Ciudades ON Ciudades.cid=Lugares.cid
