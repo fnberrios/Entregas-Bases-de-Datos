@@ -42,7 +42,7 @@
       <th>aid</th>
       <th>oid</th>
       <th>Fecha Inicio</th>
-      <th>Fecha Termino/th>
+      <th>Fecha Termino</th>
       <th>Periodo</th>
     </tr>
     <?php
