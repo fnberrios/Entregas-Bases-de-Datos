@@ -57,10 +57,10 @@
     <form align="center" action="consultas/consulta_itinerario.php" method="post">
     <?php
     foreach ($valores as $v) {
-      echo "<input type= 'checkbox' name='artista[]' value=$v[0]>$v[0]<br/>";
+      echo "<input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]<br/>";
     }
     ?>
-    <input type="submit" value="Buscar">
+    <input type="submit" value="Enviar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
 
