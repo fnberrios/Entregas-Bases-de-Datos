@@ -38,7 +38,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
   require("config/conexion.php");
   #Se construye la consulta como un string
-  $query = " SELECT anombre FROM Artistas;";
+  $query = " SELECT anombre, aid FROM Artistas;";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db->prepare($query);
   $result->execute();
@@ -57,8 +57,7 @@
     <form align="center" action="consultas/consulta_itinerario.php" method="post">
     <?php
     foreach ($valores as $v) {
-      $v_junto= str_replace(' ', '-', $v[0]);
-      echo "<input type= 'checkbox' name='artistas[]' value=$v_junto>$v[0]<br/>";
+      echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
     }
     ?>
     <input type="submit" value="Enviar">
