@@ -8,7 +8,7 @@
   $nom = $_GET["artista"];
   $query = "SELECT Artistas.anombre, Artistas.nacimiento, Artistas.descripcion,
   ArtistasFallecidos.fallecimiento FROM Artistas LEFT JOIN ArtistasFallecidos ON
-  Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre ='$nom';";
+  Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.aid ='$nom';";
   $result = $db->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
