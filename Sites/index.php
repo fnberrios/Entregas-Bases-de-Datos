@@ -62,6 +62,9 @@
     ?>
   </ul>
 
+  <form align="center" action="consultas/consulta_dos.php" method="post">
+    <input type="submit" value="Buscar">
+  </form>
   <!-------------- CONSULTA 1 ---------------->
 
 
