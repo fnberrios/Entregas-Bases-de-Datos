@@ -94,7 +94,6 @@
 
 
   <!-------------- CONSULTA 3 ---------------->
-  --------- CONSULTA 3 ---------------->
 
     <h3 align="center"> ¿Quieres conocer el nombre de todos
       los museos de un país que tengan obras del renacimiento?</h3>
