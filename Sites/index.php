@@ -53,15 +53,15 @@
     }
     ?>
   </ul>
-
-
-
-
-
-
-
-
-
+  <ul>
+    <?php
+    foreach ($valores as $v) {
+      echo "<input type= 'checkbox' name=$v[0]";
+      # echo "<li><input type="button" style="display:inline" value=$v[0]/></li>";
+      # echo "<input type="submit" value="$v[0]">";
+    }
+    ?>
+  </ul>
 
   <!-------------- CONSULTA 1 ---------------->
 
