@@ -94,24 +94,21 @@
 
 
   <!-------------- CONSULTA 3 ---------------->
+  --------- CONSULTA 3 ---------------->
 
-  <h3 align="center"> ¿Quieres conocer el nombre de todos
-    los museos de un país que tengan obras del renacimiento?</h3>
+    <h3 align="center"> ¿Quieres conocer el nombre de todos
+      los museos de un país que tengan obras del renacimiento?</h3>
 
-  <form align="center" action="consultas/consulta_tres.php" method="post">
-    <p>
-          País:
-          <select name="taskOption">
-            <option value="1">First</option>
-            <option value="2">Second</option>
-            <option value="3">Third</option>
-          </select>
-      </p>
-    <input type="submit" value="Buscar">
-  </form>
-  <br>
-  <br>
-  <br>
+    <form align="center" action="consultas/consulta_tres.php" method="post">
+      País:
+      <input type="text" name="npais">
+      <br /><br />
+      <input type="submit" value="Buscar">
+    </form>
+    <br>
+    <br>
+    <br>
+
 
   <!-------------- CONSULTA 4 ---------------->
 
