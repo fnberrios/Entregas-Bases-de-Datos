@@ -62,7 +62,7 @@
     ?>
   </ul>
 
-  <form action="consultas/consulta_dos.php" method="post">
+  <form align="center" action="consultas/consulta_artistas.php?artistas=$artistas;" method="post">
     <input type="submit" value="Buscar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
