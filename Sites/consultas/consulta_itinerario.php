@@ -6,7 +6,7 @@
   require("../config/conexion.php");
   if(isset($_POST["artistas"]))
     foreach ($_POST["artistas"] as $artista) {
-      echo $artista
+      echo $artista;
     }
   ?>
 
