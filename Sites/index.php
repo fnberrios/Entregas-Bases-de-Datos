@@ -57,7 +57,7 @@
   <ul>
     <?php
     foreach ($valores as $v) {
-      echo "<center><input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]</center><br/>";
+      echo "<td align='center'><input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]</td><br/>";
     }
     ?>
   </ul>
