@@ -56,9 +56,7 @@
   <ul>
     <?php
     foreach ($valores as $v) {
-      echo "<input type= 'checkbox' name=$v[0]";
-      if (isset($_POST['$v[0]'])) echo ' checked';
-      echo " {$row->$v[0]} /> $v[0]";
+      echo "<input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]><br/>";
       # echo "<li><input type="button" style="display:inline" value=$v[0]/></li>";
       # echo "<input type="submit" value="$v[0]">";
     }
