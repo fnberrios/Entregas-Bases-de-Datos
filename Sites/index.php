@@ -99,9 +99,13 @@
     los museos de un país que tengan obras del renacimiento?</h3>
 
   <form align="center" action="consultas/consulta_tres.php" method="post">
-    País:
-    <input type="text" name="npais">
-    <br /><br />
+    <p>
+          Select one from the given options:
+          <select id="select1">
+              <option value="free">Free</option>
+              <option value="basic">Basic</option>
+          </select>
+      </p>
     <input type="submit" value="Buscar">
   </form>
   <br>
