@@ -100,10 +100,11 @@
 
   <form align="center" action="consultas/consulta_tres.php" method="post">
     <p>
-          Select one from the given options:
-          <select id="select1">
-              <option value="free">Free</option>
-              <option value="basic">Basic</option>
+          País:
+          <select name="taskOption">
+            <option value="1">First</option>
+            <option value="2">Second</option>
+            <option value="3">Third</option>
           </select>
       </p>
     <input type="submit" value="Buscar">
