@@ -53,18 +53,12 @@
     }
     ?>
   </ul>
+
   <ul>
     <?php
     foreach ($valores as $v) {
       echo "<input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]<br/>";
     }
-
-    $artistas = $_POST['artistas[]'];
-    if (isset($artistas) {
-      foreach($artistas as $artista){
-        echo $operacion;
-    }
-}
     ?>
   </ul>
 
