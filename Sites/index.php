@@ -54,7 +54,7 @@
     ?>
   </ul>
 
-    <form align="center" action="consultas/consulta_artistas.php" method="post">
+    <form align="center" action="consultas/consulta_itinerario.php" method="post">
     <?php
     foreach ($valores as $v) {
       echo "<input type= 'checkbox' name='artista[]' value=$v[0]>$v[0]<br/>";
