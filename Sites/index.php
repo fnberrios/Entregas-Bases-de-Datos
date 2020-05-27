@@ -57,7 +57,8 @@
     <form align="center" action="consultas/consulta_itinerario.php" method="post">
     <?php
     foreach ($valores as $v) {
-      echo "<input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]<br/>";
+      $v_junto= str_replace(' ', '-', $v[0]);
+      echo "<input type= 'checkbox' name='artistas[]' value=$v_junto>$v[0]<br/>";
     }
     ?>
     <input type="submit" value="Enviar">
