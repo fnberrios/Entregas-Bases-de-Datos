@@ -36,7 +36,7 @@
   INNER JOIN Artistas ON Artistas.aid=Creo.aid
   LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid
   LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
-  Where Artistas.anombre='$nom';";
+  Where Artistas.aid='$nom';";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db->prepare($query);
   $result->execute();
