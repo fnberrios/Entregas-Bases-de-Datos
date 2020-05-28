@@ -60,7 +60,7 @@
   <h4 align="center">Selecciona un artista:</h4>
   <form align="center" action="consultas/consulta_artistas.php" method="post">
   <div style="text-align: left; margin: 1em auto; width: 10%;">
-  <select name = "dropdown">
+  <select name = "artista">
   <?php
   foreach ($valores as $v) {
     echo "<option value=$v[1]>$v[0]</option>";
