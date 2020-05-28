@@ -9,7 +9,7 @@
   $query = "SELECT Artistas.anombre, Artistas.nacimiento, Artistas.descripcion,
   ArtistasFallecidos.fallecimiento FROM Artistas LEFT JOIN ArtistasFallecidos ON
   Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.aid ='$nom';";
-  $result = $db->prepare($query);
+  $result = $db30->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
   ?>
@@ -38,7 +38,7 @@
   LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
   Where Artistas.aid='$nom';";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db->prepare($query);
+  $result = $db30->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
   ?>

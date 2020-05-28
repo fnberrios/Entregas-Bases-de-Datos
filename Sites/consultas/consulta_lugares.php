@@ -12,7 +12,7 @@
     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid
     LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN
     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lid='$nom';";
-    $result = $db->prepare($query);
+    $result = $db30->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
     ?>
@@ -47,7 +47,7 @@
     Creo.fecha_termino, Artistas.aid FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN
     Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid WHERE
     Lugares.lid='$nom';";
-    $result = $db->prepare($query);
+    $result = $db30->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
     ?>

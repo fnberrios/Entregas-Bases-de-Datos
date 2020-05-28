@@ -16,7 +16,7 @@
   LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid
   LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid
   Where Obras.oid='$nom';";
-  $result = $db->prepare($query);
+  $result = $db30->prepare($query);
   $result->execute();
   $dataCollected = $result->fetchAll();
   ?>
