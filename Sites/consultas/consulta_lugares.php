@@ -11,7 +11,7 @@
     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,
     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid
     LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN
-    LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='$nom';";
+    LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lid='$nom';";
     $result = $db->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
