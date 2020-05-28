@@ -45,17 +45,6 @@
   $valores = $result->fetchAll();
   ?>
 
-
-  <ul>
-    <?php
-    foreach ($valores as $v) {
-      echo "<li><a href='consultas/consulta_artistas.php?artista=$v[1]' >$v[0]</a></li>";
-      # echo "<li><input type="button" style="display:inline" value=$v[0]/></li>";
-      # echo "<input type="submit" value="$v[0]">";
-    }
-    ?>
-  </ul>
-
   <h3 align="center">¡Conoce más sobre tus artistas favoritos!</h3>
   <h4 align="center">Selecciona un artista:</h4>
   <form align="center" action="consultas/consulta_artistas.php" method="post">
