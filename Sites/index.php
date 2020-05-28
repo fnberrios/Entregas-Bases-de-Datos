@@ -56,8 +56,8 @@
     ?>
   </ul>
 
-  <h3 align="center">¡Conoce más sobre tus artistas favoritos!</h3>
-  <h4 align="center">Selecciona un artista:</h4>
+  <h2 align="center">¡Conoce más sobre tus artistas favoritos!</h2>
+  <h3 align="center">Selecciona un artista:</h3>
   <form align="center" action="consultas/consulta_artistas.php" method="post">
   <div style="text-align: left; margin: 1em auto; width: 10%;">
   <select name = "artista">
@@ -71,8 +71,8 @@
     <input type="submit" value="Enviar">
   </form>
 
-  <h3 align="center">¡Crea tu itinerario para visitar las obras de tus artistas favoritos!</h3>
-  <h4 align="center"> Selecciona los artistas: </h4>
+  <h2 align="center">¡Crea tu itinerario para visitar las obras de tus artistas favoritos!</h2>
+  <h3 align="center"> Selecciona los artistas: </h3>
   <form align="center" action="consultas/consulta_itinerario.php" method="post">
   <div style="text-align: left; margin: 1em auto; width: 18%;">
   <?php
