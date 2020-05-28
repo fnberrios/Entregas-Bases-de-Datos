@@ -58,7 +58,6 @@
 
   <h3 align="center">Conoce sobre artista</h3>
   <form align="center" action="consultas/consulta_artistas.php" method="post">
-  <div style="text-align: left; margin: 1em auto; width: 18%;">
   <select name = "dropdown">
   <?php
   foreach ($valores as $v) {
@@ -66,7 +65,6 @@
   }
   ?>
   </select>
-  </div>
     <input type="submit" value="Enviar">
   </form>
 
