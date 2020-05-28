@@ -70,6 +70,9 @@
   }
   ?>
   </div>
+  Ciudad de origen:
+  <input type="text" name="nciudad">
+  <br /><br />
     <input type="submit" value="Enviar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
