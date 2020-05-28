@@ -8,7 +8,7 @@
     foreach ($_POST["artistas"] as $artista) {
       echo $artista;
     }
-    $fecha_inicio = $_POST["fecha_inicio"];
+    $fecha_inicio = $_POST["fecha-inicio"];
     echo $fecha_inicio;
     $ciudad = $_POST["nciudad"];
     echo $ciudad;
