@@ -8,6 +8,10 @@
     foreach ($_POST["artistas"] as $artista) {
       echo $artista;
     }
+    $fecha_inicio = $_POST["fecha_inicio"];
+    echo $fecha_inicio;
+    $ciudad = $_POST["nciudad"];
+    echo $ciudad;
   ?>
 
   <?php include('../templates/footer.html'); ?>
