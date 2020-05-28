@@ -54,12 +54,14 @@
     ?>
   </ul>
 
-    <form align="center" action="consultas/consulta_itinerario.php" method="post">
-    <?php
-    foreach ($valores as $v) {
-      echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
-    }
-    ?>
+  <form align="center" action="consultas/consulta_itinerario.php" method="post">
+  <ul>
+  <?php
+  foreach ($valores as $v) {
+    echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
+  }
+  ?>
+  </ul>
     <input type="submit" value="Enviar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
