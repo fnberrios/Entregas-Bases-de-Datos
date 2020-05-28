@@ -56,7 +56,8 @@
     ?>
   </ul>
 
-  <h3 align="center">Conoce sobre artista</h3>
+  <h3 align="center">¡Conoce más sobre tus artistas favoritos!</h3>
+  <h4 align="center">Selecciona un artista:</h4>
   <form align="center" action="consultas/consulta_artistas.php" method="post">
   <div style="text-align: left; margin: 1em auto; width: 10%;">
   <select name = "dropdown">
