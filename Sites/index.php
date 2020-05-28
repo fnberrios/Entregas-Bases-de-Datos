@@ -85,7 +85,7 @@
   <select name = "nciudad">
   <?php
   foreach ($ciudades as $v) {
-    echo "<option value=$v[1]>$v[0]</option>";
+    echo "<option value=$v[0]>$v[0]</option>";
   }
   ?>
   </select>
