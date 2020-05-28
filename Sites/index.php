@@ -130,6 +130,9 @@
     y el número de obras en las que ha participado? </h3>
 
   <form align="center" action="consultas/consulta_cuatro.php" method="post">
+    <input type="date" id="start" name="fecha-inicio"
+           value="2020-05-28"
+           min="2020-05-28" max="2999-12-31">
     <input type="submit" value="Buscar">
   </form>
   <br>
