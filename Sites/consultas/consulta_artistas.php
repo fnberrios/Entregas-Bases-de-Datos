@@ -5,8 +5,10 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $nom = $_POST["artista"];
-  $nom = $_GET["artista"];
+  if(isset($_POST["artistas"]))
+    $nom = $_POST["artista"];
+  else
+    $nom = $_GET["artista"];
   $query = "SELECT Artistas.anombre, Artistas.nacimiento, Artistas.descripcion,
   ArtistasFallecidos.fallecimiento FROM Artistas LEFT JOIN ArtistasFallecidos ON
   Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.aid ='$nom';";
