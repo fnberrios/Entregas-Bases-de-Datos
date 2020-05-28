@@ -61,8 +61,8 @@
     echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
   }
   ?>
-    <input type="submit" value="Enviar">
   </div>
+    <input type="submit" value="Enviar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
 
