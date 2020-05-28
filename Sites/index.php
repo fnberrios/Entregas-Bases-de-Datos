@@ -55,7 +55,7 @@
   </ul>
 
   <form align="center" action="consultas/consulta_itinerario.php" method="post">
-  <div style="text-align: left; margin: 1em auto; width: 5%;">
+  <div style="text-align: left; margin: 1em auto; width: 10%;">
   <?php
   foreach ($valores as $v) {
     echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
