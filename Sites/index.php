@@ -73,6 +73,9 @@
   Ciudad de origen:
   <input type="text" name="nciudad">
   <br /><br />
+  Fecha de inicio:
+  <input type="text" name="fecha">
+  <br /><br />
     <input type="submit" value="Enviar">
   </form>
   <!-------------- CONSULTA 1 ---------------->
