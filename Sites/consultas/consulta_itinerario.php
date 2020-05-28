@@ -10,7 +10,7 @@
     }
     $fecha_inicio = $_POST["fecha-inicio"];
     echo $fecha_inicio;
-    $ciudad = $_POST["nciudad"];
+    $ciudad = $_GET["nciudad"];
     echo $ciudad;
   ?>
 

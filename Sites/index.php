@@ -89,6 +89,7 @@
   }
   ?>
   </select>
+  <br /><br />
   Fecha de inicio:
   <input type="date" id="start" name="fecha-inicio"
          value="2020-05-28"
