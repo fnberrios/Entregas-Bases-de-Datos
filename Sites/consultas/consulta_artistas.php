@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  if(isset($_POST["artistas"]))
+  if(isset($_POST["artista"]))
     $nom = $_POST["artista"];
   else
     $nom = $_GET["artista"];
