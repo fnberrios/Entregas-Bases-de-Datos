@@ -60,6 +60,17 @@
     <input type="submit" value="Enviar">
   </form>
 
+  <?php
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+  require("config/conexion.php");
+  #Se construye la consulta como un string
+  $query = " SELECT DISTINCT ciudad_origen FROM Destinos;";
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db53->prepare($query);
+  $result->execute();
+  $ciudades = $result->fetchAll();
+  ?>
+
   <h2 align="center">¡Crea tu itinerario para visitar las obras de tus artistas favoritos!</h2>
   <h3 align="center"> Selecciona los artistas: </h3>
   <form align="center" action="consultas/consulta_itinerario.php" method="post">
@@ -71,8 +82,13 @@
   ?>
   </div>
   Ciudad de origen:
-  <input type="text" name="nciudad">
-  <br /><br />
+  <select name = "nciudad">
+  <?php
+  foreach ($ciudades as $v) {
+    echo "<option value=$v[1]>$v[0]</option>";
+  }
+  ?>
+  </select>
   Fecha de inicio:
   <input type="date" id="start" name="fecha-inicio"
          value="2020-05-28"
