@@ -54,6 +54,7 @@
     ?>
   </ul>
 
+  <h3 align="center">¡Crea tu itinerario para visitar las obras de tus artistas favoritos!</h3>
   <form align="center" action="consultas/consulta_itinerario.php" method="post">
   <div style="text-align: left; margin: 1em auto; width: 15%;">
   <?php
