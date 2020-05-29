@@ -18,7 +18,7 @@
 
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result = $db->prepare($query);
+    $result = $db30->prepare($query);
     $result->execute();
     $valores = $result->fetchAll();
     ?>
