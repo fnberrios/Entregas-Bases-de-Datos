@@ -25,8 +25,8 @@
 
     <table>
         <tr>
-            <th>Nombres de Artista </th>
-            <th>Nombres de Obra </th>
+            <th>Nombre del Artista </th>
+            <th>Nombre de la Obra </th>
             <th>Lugar donde se encuentra</th>
             <th>Ciudad donde se encuentra</th>
         </tr>
