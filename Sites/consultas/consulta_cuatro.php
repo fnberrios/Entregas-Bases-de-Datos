@@ -6,10 +6,10 @@
   require("../config/conexion.php");
 
 
-  $query = "SELECT Artistas.anombre, COUNT(Creo.aid) 
+  $query = "SELECT Artistas.anombre, COUNT(Creo.aid)
   AS cantidad_de_obras FROM Artistas
   JOIN Creo ON Creo.aid = Artistas.aid GROUP BY Artistas.anombre;";
-  $result = $db->prepare($query);
+  $result = $db30->prepare($query);
   $result->execute();
   $anombres = $result->fetchAll();
   ?>
