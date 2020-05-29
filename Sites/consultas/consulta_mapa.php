@@ -15,7 +15,7 @@
      JOIN Obras ON Obras.oid=Creo.oid
      JOIN Lugares ON Lugares.lid=Obras.lid
      JOIN Ciudades ON Ciudades.cid=Lugares.cid
-     WHERE Ciudades.cpais='$pais';";
+     WHERE Ciudades.cpais=$pais;";
 
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
