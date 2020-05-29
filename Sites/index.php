@@ -60,6 +60,19 @@
     <input type="submit" value="Enviar">
   </form>
 
+
+  <h2 align="center">¿Quieres conocer obras que se encuentran en algun pais?</h2>
+  <h3 align="center">¡Cliquea algún país en el mapa!</h3>
+  <img src="img/mapa.jpeg" usemap="#mapa">
+  <map name="mapa">
+  <area shape="circle" coords="136,287,70" href="consultas/consulta_cuatro.php">
+  <area shape="circle" coords="75,125,50" href="consultas/consulta_cuatro.php">
+  <area shape="circle" coords="266,161,60" href="consultas/consulta_cuatro.php">
+  <area shape="circle" coords="307,371,50" href="consultas/consulta_cuatro.php">
+  <area shape="circle" coords="170,181,20" href="consultas/consulta_cuatro.php">
+
+
+
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
   require("config/conexion.php");
@@ -193,16 +206,6 @@
   <br>
   <br>
   <br>
-
-  <h2 align="center">¿Quieres conocer obras que se encuentran en algun pais?</h2>
-  <h3 align="center">¡Cliquea algún país en el mapa!</h3>
-  <img src="img/mapa.jpeg" usemap="#mapa">
-  <map name="mapa">
-  <area shape="circle" coords="136,287,70" href="consultas/consulta_cuatro.php">
-  <area shape="circle" coords="75,125,50" href="consultas/consulta_cuatro.php">
-  <area shape="circle" coords="266,161,60" href="consultas/consulta_cuatro.php">
-  <area shape="circle" coords="307,371,50" href="consultas/consulta_cuatro.php">
-  <area shape="circle" coords="170,181,20" href="consultas/consulta_cuatro.php">
 
   <br>
 </body>
