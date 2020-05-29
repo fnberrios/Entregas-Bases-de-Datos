@@ -9,7 +9,7 @@
     $pais = $_GET["pais"];
 
     #Se construye la consulta como un string
-    $query = "SELECT anombre, onombre, lnombre, cnombre FROM Artistas
+    $query = "SELECT DISTINCT anombre, onombre, lnombre, cnombre FROM Artistas
      JOIN Creo ON Artistas.aid=Creo.aid
      JOIN Obras ON Obras.oid=Creo.oid
      JOIN Lugares ON Lugares.lid=Obras.lid
