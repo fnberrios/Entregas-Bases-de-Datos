@@ -7,6 +7,7 @@
 
     #Se obtiene el valor del input del usuario
     $pais = $_GET["pais"];
+    echo $pais;
 
     #Se construye la consulta como un string
     $query = "SELECT anombre, onombre, lnombre, cnombre FROM Artistas
