@@ -194,6 +194,14 @@
   <br>
   <br>
 
+  <img src="img/mapa.jpeg" usemap="#mapa">
+  <map name="mapa">
+  <area shape="circle" coords="136,287,70" href="francia.html">
+  <area shape="circle" coords="75,125,50" href="uk.html">
+  <area shape="circle" coords="266,161,60" href="alemania.html">
+  <area shape="circle" coords="307,371,50" href="italia.html">
+  <area shape="circle" coords="170,181,20" href="belgica.html">
+
   <br>
 </body>
 
