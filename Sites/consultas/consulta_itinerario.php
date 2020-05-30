@@ -5,7 +5,13 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
   if (isset($_POST["artistas"]))
-    $lista_artistas = $_POST["artistas"];
+    $artistas = $_POST["artistas"];
+  $query = "ARRAY(SELECT * FROM Artistas INNER JOIN unnest($artistas) lista ON 
+      Artistas.aid=lista);";
+  $result = $db30->prepare($query);
+  $result->execute();
+  $lista_artistas = $result->fetchAll();
+
   $fecha_inicio = $_POST["fecha-inicio"];
   $ciudad_origen = $_POST["nciudad"];
 
