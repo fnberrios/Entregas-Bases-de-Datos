@@ -11,18 +11,10 @@
       $nom = str_replace('-', ' ', $artista);
       array_push($lista_artistas, $nom);
     }
-  echo $lista_artistas[0];
-  echo $lista_artistas[1];
-  echo $lista_artistas;
   $fecha_inicio = $_POST["fecha-inicio"];
   $c_origen = $_POST["nciudad"];
-  print_r ($lista_artistas);
-  echo gettype($lista_artistas);
-  echo gettype($lista_artistas[0]);
-  echo gettype($c_origen);
   $lista_artistas_sql = implode(",", $lista_artistas);
-  echo $lista_artistas_sql;
-  $query = "SELECT * FROM itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
+  $query = "SELECT DISTINCT * FROM itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
@@ -42,7 +34,7 @@
 
 
   <?php
-  $query = "SELECT * FROM itinerario_tres_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
+  $query = "SELECT DISTINCT * FROM itinerario_tres_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_tres_ciudades = $result->fetchAll();
@@ -63,7 +55,7 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  $query = "SELECT * FROM itinerario_cuatro_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
+  $query = "SELECT DISTINCT * FROM itinerario_cuatro_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_cuatro_ciudades = $result->fetchAll();
