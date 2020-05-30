@@ -18,6 +18,7 @@
   $c_origen = $_POST["nciudad"];
   print_r ($lista_artistas);
   echo implode(',',$lista_artistas);
+  echo explode(',', $lista_artistas);
 
   $query = "SELECT * FROM itinerario_dos_ciudades(".implode(',',$lista_artistas).", '$c_origen');";
   $result = $db30->prepare($query);
