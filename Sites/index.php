@@ -90,7 +90,7 @@
   <div style="text-align: left; margin: 1em auto; width: 18%;">
   <?php
   foreach ($valores as $v) {
-    echo "<input type= 'checkbox' name='artistas[]' value=$v[0]>$v[0]<br/>";
+    echo "<input type= 'checkbox' name='artistas[]' value=$v[1]>$v[0]<br/>";
   }
   ?>
   </div>
