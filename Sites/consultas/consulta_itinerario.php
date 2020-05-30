@@ -17,7 +17,9 @@
   $fecha_inicio = $_POST["fecha-inicio"];
   $c_origen = $_POST["nciudad"];
   print_r ($lista_artistas);
-
+  echo gettype($lista_artistas);
+  echo gettype($lista_artistas[0]);
+  echo gettype($c_origen);
   $query = "SELECT * FROM itinerario_dos_ciudades($lista_artistas, $c_origen);";
   $result = $db30->prepare($query);
   $result->execute();
