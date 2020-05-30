@@ -8,8 +8,8 @@
     $lista_artistas_2 = $_POST["artistas"];
     $lista_artistas=[];
     foreach ($lista_artistas_2 as $artista){
-      $nom = str_replace('-', ' ', $artista);
-      array_push($lista_artistas, '$nom');
+      $nom = str_replace('-', ' ', '$artista');
+      array_push($lista_artistas, $nom);
     }
   echo $lista_artistas[0];
   echo $lista_artistas[1];
@@ -20,7 +20,7 @@
   echo gettype($lista_artistas);
   echo gettype($lista_artistas[0]);
   echo gettype($c_origen);
-  $query = "SELECT * FROM itinerario_dos_ciudades($lista_artistas, $c_origen);";
+  $query = "SELECT * FROM itinerario_dos_ciudades($lista_artistas, '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
