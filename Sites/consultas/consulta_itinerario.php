@@ -6,9 +6,10 @@
   require("../config/conexion.php");
   if (isset($_POST["artistas"]))
     $lista_artistas_2 = $_POST["artistas"];
-    $lista_artistas=[];
+    $lista_artistas=ARRAY();
     foreach ($lista_artistas_2 as $artista){
-      $nom = str_replace('-', ' ', '$artista');
+      $nom = str_replace('-', ' ', $artista);
+      $nom ='$nom';
       array_push($lista_artistas, $nom);
     }
   echo $lista_artistas[0];
