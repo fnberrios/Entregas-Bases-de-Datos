@@ -22,7 +22,7 @@
   echo gettype($c_origen);
   $lista_artistas_sql = implode(",", $lista_artistas);
   echo $lista_artistas_sql;
-  $query = "SELECT * FROM itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), $c_origen);";
+  $query = "SELECT * FROM itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
@@ -42,7 +42,7 @@
 
 
   <?php
-  $query = "SELECT * FROM itinerario_tres_ciudades(string_to_array('$lista_artistas_sql',','), '$ciudad_origen');";
+  $query = "SELECT * FROM itinerario_tres_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_tres_ciudades = $result->fetchAll();
@@ -63,7 +63,7 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  $query = "SELECT * FROM itinerario_cuatro_ciudades(string_to_array($lista_artistas_sql,','), '$ciudad_origen');";
+  $query = "SELECT * FROM itinerario_cuatro_ciudades(string_to_array($lista_artistas_sql,','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_cuatro_ciudades = $result->fetchAll();
