@@ -38,7 +38,7 @@
 
 
   <?php
-  $query = "SELECT * FROM itinerario_tres_ciudades($lista_artistas, $ciudad_origen);";
+  $query = "SELECT * FROM itinerario_tres_ciudades($lista_artistas, '$ciudad_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
@@ -59,7 +59,7 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  $query = "SELECT * FROM itinerario_cuatro_ciudades($lista_artistas, $ciudad_origen);";
+  $query = "SELECT * FROM itinerario_cuatro_ciudades($lista_artistas, '$ciudad_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
