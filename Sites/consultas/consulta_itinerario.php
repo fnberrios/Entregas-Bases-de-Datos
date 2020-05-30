@@ -13,6 +13,7 @@
     }
   echo $lista_artistas[0];
   echo $lista_artistas[1];
+  echo $lista_artistas;
   $fecha_inicio = $_POST["fecha-inicio"];
   $ciudad_origen = $_POST["nciudad"];
 
