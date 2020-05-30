@@ -20,7 +20,8 @@
   echo gettype($lista_artistas);
   echo gettype($lista_artistas[0]);
   echo gettype($c_origen);
-  # $lista_artistas_sql = '{' + implode(",", $lista_artistas) + '}';
+  $lista_artistas_sql = implode(",", $lista_artistas);
+  echo $lista_artistas_sql;
   $query = "SELECT * FROM itinerario_dos_ciudades({$lista_artistas_sql}, '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
