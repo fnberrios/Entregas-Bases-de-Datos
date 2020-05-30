@@ -22,7 +22,6 @@
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
-  echo $itinerario_dos_ciudades[0];
   ?>
   <table>
     <tr>
