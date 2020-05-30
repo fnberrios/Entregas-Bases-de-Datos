@@ -9,7 +9,7 @@
     $lista_artistas=[];
     foreach ($lista_artistas_2 as $artista){
       $nom = str_replace('-', ' ', $artista);
-      array_push($lista_artistas, $nom);
+      array_push($lista_artistas, '$nom');
     }
   echo $lista_artistas[0];
   echo $lista_artistas[1];
