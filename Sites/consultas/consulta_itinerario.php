@@ -6,6 +6,7 @@
   require("../config/conexion.php");
   if (isset($_POST["artistas"]))
     $lista_artistas = $_POST["artistas"];
+  echo $lista_artistas;
   $fecha_inicio = $_POST["fecha-inicio"];
   $ciudad_origen = $_POST["nciudad"];
 
