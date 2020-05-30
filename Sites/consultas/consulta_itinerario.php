@@ -7,7 +7,7 @@
   if (isset($_POST["artistas"]))
     $lista_artistas_2 = $_POST["artistas"];
     $lista_artistas=[];
-    foreach ($lista_artistas_2 as $artistaa){
+    foreach ($lista_artistas_2 as $artista){
       $nom = str_replace('-', ' ', $artista);
       array_push($lista_artistas, $nom);
     }
