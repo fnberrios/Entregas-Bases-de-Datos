@@ -18,7 +18,7 @@
   $c_origen = $_POST["nciudad"];
   echo $c_origen;
 
-  $query = "SELECT * FROM itinerario_dos_ciudades($lista_artistas, $c_origen);";
+  $query = "SELECT * FROM itinerario_dos_ciudades('$lista_artistas', '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
@@ -38,10 +38,10 @@
 
 
   <?php
-  $query = "SELECT * FROM itinerario_tres_ciudades($lista_artistas, '$ciudad_origen');";
+  $query = "SELECT * FROM itinerario_tres_ciudades('$lista_artistas', '$ciudad_origen');";
   $result = $db30->prepare($query);
   $result->execute();
-  $itinerario_dos_ciudades = $result->fetchAll();
+  $itinerario_tres_ciudades = $result->fetchAll();
   ?>
   <table>
     <tr>
@@ -49,7 +49,7 @@
       <th>Artistas que puedes ver</th>
     </tr>
     <?php
-    foreach ($itinerario_dos_ciudades as $p) {
+    foreach ($itinerario_tres_ciudades as $p) {
       echo "<tr> <td>$p[0]</td> <td>$p[1]</td></tr>";
     }
     ?>
@@ -59,10 +59,10 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  $query = "SELECT * FROM itinerario_cuatro_ciudades($lista_artistas, '$ciudad_origen');";
+  $query = "SELECT * FROM itinerario_cuatro_ciudades('$lista_artistas', '$ciudad_origen');";
   $result = $db30->prepare($query);
   $result->execute();
-  $itinerario_dos_ciudades = $result->fetchAll();
+  $itinerario_cuatro_ciudades = $result->fetchAll();
   ?>
   <table>
     <tr>
@@ -70,7 +70,7 @@
       <th>Artistas que puedes ver</th>
     </tr>
     <?php
-    foreach ($itinerario_dos_ciudades as $p) {
+    foreach ($itinerario_cuatro_ciudades as $p) {
       echo "<tr> <td>$p[0]</td> <td>$p[1]</td></tr>";
     }
     ?>
