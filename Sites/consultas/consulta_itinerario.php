@@ -5,7 +5,12 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
   if (isset($_POST["artistas"]))
-    $lista_artistas = $_POST["artistas"];
+    $lista_artistas_2 = $_POST["artistas"];
+    $lista_artistas=[];
+    foreach ($lista_artistas_2 as $artistaa){
+      $nom = str_replace('-', ' ', $artista);
+      array_push($lista_artistas, $nom);
+    }
   echo $lista_artistas[0];
   $fecha_inicio = $_POST["fecha-inicio"];
   $ciudad_origen = $_POST["nciudad"];
