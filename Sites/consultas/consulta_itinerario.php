@@ -9,7 +9,6 @@
   $lista_artistas = array();
   foreach ($lista_artistas_2 as $artista) {
     $prov = str_replace('-', ' ', $artista);
-    $nom = str_replace('"','',$prov);
     array_push($lista_artistas, $nom);
   }
   $fecha_inicio = $_POST["fecha-inicio"];
