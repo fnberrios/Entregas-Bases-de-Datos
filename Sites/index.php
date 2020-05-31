@@ -12,6 +12,11 @@
 
   <br>
 
+  <h3 align="center"> Ingresa a tu cuenta</h3>
+  <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
+    <input type="submit" value="Ingresar">
+  </form>
+
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
 
   <head>
