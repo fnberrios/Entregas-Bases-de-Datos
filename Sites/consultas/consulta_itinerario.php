@@ -17,7 +17,7 @@
   $lista_artistas_sql = implode(',', $lista_artistas);
   echo $lista_artistas_sql;
   echo $c_origen;
-  $query = "SELECT * FROM itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
+  $query = "SELECT * FROM itinerario_dos_ciudades(string_to_array($lista_artistas_sql,','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
   $itinerario_dos_ciudades = $result->fetchAll();
