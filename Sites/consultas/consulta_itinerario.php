@@ -37,6 +37,7 @@
   $query = "SELECT * FROM info_itinerario_tres_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
   $result = $db30->prepare($query);
   $result->execute();
+  $correr_funcion = $result->fetchAll();
   $query = "SELECT * FROM medios_precios;";
   $result = $db30->prepare($query);
   $result->execute();
