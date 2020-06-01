@@ -1,5 +1,9 @@
 <?php
   session_start();
+  $user = NULL;
+  if (isset($_SESSION['user_id'])){
+    $user = $_SESSION['user_id'];
+  }
 ?>
 <?php include('templates/header.html');   ?>
 
@@ -15,18 +19,6 @@
 
   <br>
 
-  <!-------------- INGRESAR E3 ---------------->
-  <h3 align="center"> Ingresa a tu cuenta</h3>
-  <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
-    <input type="submit" value="Ingresar">
-  </form>
-
-  <br>
-  <!-------------- REGISTRARSE E3 ---------------->
-  <h3 align="center"> Regístrate como usuario:</h3>
-  <form align="center" action="consultas/consulta_registrar.php" method="post">
-    <input type="submit" value="Registrarme">
-  </form>
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
 
@@ -46,35 +38,55 @@
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
   </head>
-
-
-  <!-------------- Artistas ---------------->
+  <br>
 
   <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-  require("config/conexion.php");
-  #Se construye la consulta como un string
-  $query = " SELECT anombre, aid FROM Artistas;";
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db30->prepare($query);
-  $result->execute();
-  $valores = $result->fetchAll();
-  ?>
+  if (!empty($user)):?>
+    <!-------------- Artistas ---------------->
+    <?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+    require("config/conexion.php");
+    #Se construye la consulta como un string
+    $query = " SELECT anombre, aid FROM Artistas;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db30->prepare($query);
+    $result->execute();
+    $valores = $result->fetchAll();
+    ?>
 
-  <h2 align="center">¡Conoce más sobre tus artistas favoritos!</h2>
-  <h3 align="center">Selecciona un artista:</h3>
-  <form align="center" action="consultas/consulta_artistas.php" method="post">
-  <div style="text-align: left; margin: 1em auto; width: 10%;">
-  <select name = "artista">
-  <?php
-  foreach ($valores as $v) {
-    echo "<option value=$v[1]>$v[0]</option>";
-  }
-  ?>
-  </select>
-  </div>
-    <input type="submit" value="Enviar">
-  </form>
+    <h2 align="center">¡Conoce más sobre tus artistas favoritos!</h2>
+    <h3 align="center">Selecciona un artista:</h3>
+    <form align="center" action="consultas/consulta_artistas.php" method="post">
+      <div style="text-align: left; margin: 1em auto; width: 10%;">
+        <select name = "artista">
+          <?php
+          foreach ($valores as $v) {
+            echo "<option value=$v[1]>$v[0]</option>";
+          }
+          ?>
+        </select>
+      </div>
+      <input type="submit" value="Enviar">
+    </form>
+
+    <?php
+  else:?>
+    <!-------------- INGRESAR E3 ---------------->
+    <h3 align="center"> Ingresa a tu cuenta</h3>
+    <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
+      <input type="submit" value="Ingresar">
+    </form>
+
+    <br>
+    <!-------------- REGISTRARSE E3 ---------------->
+    <h3 align="center"> Regístrate como usuario:</h3>
+    <form align="center" action="consultas/consulta_registrar.php" method="post">
+      <input type="submit" value="Registrarme">
+    </form>
+
+
+
+
 
 
   <h2 align="center">¿Quieres conocer obras que se encuentran en algun pais?</h2>
