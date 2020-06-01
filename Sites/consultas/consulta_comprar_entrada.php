@@ -1,9 +1,17 @@
+<?php
+  session_start();
+?>
 <?php include('../templates/header.html');   ?>
 
 <body>
-<?php
-   require("../config/conexion.php");
-?>
+    <?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+    require("../config/conexion.php");
 
-<p> Usted ha comprado una entrada </p>
-<?php include('../templates/footer.html'); ?>
+    $lugar = $_GET["lugar"];
+    $date = date('Y-m-d');
+    echo "$date";
+
+
+
+    <?php include('../templates/footer.html'); ?>
