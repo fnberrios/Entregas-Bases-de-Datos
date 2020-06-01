@@ -94,6 +94,6 @@
     ?>
   </table>
 
-    <a href="logout.php">Logout</a>
+    <a href="/consulta_logout.php">Logout</a>
 
 <?php include('../templates/footer.html'); ?>
