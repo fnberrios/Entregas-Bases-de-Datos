@@ -9,7 +9,6 @@
    $ho = $_GET["hotel"];
    $_SESSION['reserva'] = $ho;
 
- }
 ?>
 <h3 align="center">Ingrese el periodo de reserva</h3>
 
