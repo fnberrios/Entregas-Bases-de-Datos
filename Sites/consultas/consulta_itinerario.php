@@ -11,11 +11,16 @@
     $nom = str_replace('-', ' ', $artista);
     array_push($lista_artistas, $nom);
   }
+
   $fecha_inicio = $_POST["fecha-inicio"];
   $c_origen = $_POST["nciudad"];
   $lista_artistas_sql = implode(',', $lista_artistas);
 
   $query = "SELECT * FROM info_itinerario_dos_ciudades(string_to_array('$lista_artistas_sql',','), '$c_origen');";
+  $result = $db30->prepare($query);
+  $result->execute();
+  $correr_funcion = $result->fetchAll();
+  $query = "SELECT * FROM medios_precios;";
   $result = $db30->prepare($query);
   $result->execute();
   $medios_precios = $result->fetchAll();
@@ -25,7 +30,7 @@
   $itinerario_dos_ciudades = $result->fetchAll();
   ?>
 
-  <h2 align="center">Itinerario Sin Escalas</h2>
+  <h2 align="center">Itinerario Sin Escala</h2>
   <table>
     <tr>
       <th>ID_Itinerario</th>
