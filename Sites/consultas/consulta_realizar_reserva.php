@@ -9,14 +9,6 @@
    $ho = $_GET["hotel"];
    $_SESSION['reserva'] = $ho;
 
-   $rid = "SELECT MAX(rid)+1 FROM reservas;";
-   $result1 = $db53 -> prepare($rid);
-   $result1 -> execute();
-   $dataCollected1 = $result1 -> fetchAll();
-
-   foreach ($dataCollected1 as $r) {
-     $rid_actual = $r[0];
-     echo "$rid_actual";
  }
 ?>
 <h3 align="center">Ingrese el periodo de reserva</h3>
