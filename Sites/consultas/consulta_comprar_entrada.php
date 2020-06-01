@@ -6,7 +6,7 @@
   <?php
   require("../config/conexion.php");
   $lugar_ = $_SESSION['entrada'];
-  echo "$lugar_"
+  echo "$lugar_";
 
   $date = date('Y-m-d');
   $query1 = "INSERT INTO entradas (uid, lid, fecha_actual) VALUES (:uid,'$lugar_','$date');";
