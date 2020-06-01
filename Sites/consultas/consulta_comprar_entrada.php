@@ -8,13 +8,15 @@
   $lugar_ = $_SESSION['entrada'];
   $user__ = $_SESSION['user_id'];
   echo "$lugar_";
+  echo "$user__";
 
   $date = date('Y-m-d');
   echo "$date";
-  $query1 = "INSERT INTO entradas (uid, lid, fecha_actual) VALUES ($user__,'$lugar_','$date');";
+  $query1 = "INSERT INTO entradas (uid, lid, fecha_actual) VALUES ('$user__','$lugar_','$date');";
   $result1 = $db30 -> prepare($query1);
   // $result1 -> bindParam(':uid', $_SESSION['user_id']); #se relacionan
   $result1 -> execute();
+  $dataCollected = $result1->fetchAll();
 
   ?>
 
