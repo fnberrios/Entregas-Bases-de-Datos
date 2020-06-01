@@ -49,6 +49,9 @@
         background-color:blueviolet;
         border: none;
       }
+      .link{
+        color: #fff;
+      }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
   </head>
@@ -58,8 +61,8 @@
   if (!empty($user)):?>
     <nav>
       <ul class= "nav_links">
-        <li><a href="contultas/consulta_perfil.php">Perfil</a></li>
-        <li><a href="consultas/consulta_logout.php">Logout</a></li>
+        <li><a href="constultas/consulta_perfil.php" class="link">Perfil</a></li>
+        <li><a href="consultas/consulta_logout.php" class="link">Logout</a></li>
       </ul>
     </nav>
 
