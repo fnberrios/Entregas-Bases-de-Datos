@@ -46,7 +46,7 @@
   <table>
     <tr>
       <th>ID_Itinerario</th>
-      <th>Precio TotalArtistas que puedes ver</th>
+      <th>Precio Total</th>
     </tr>
     <?php
     foreach ($itinerario_dos_ciudades as $p) {
@@ -92,7 +92,7 @@
   <table>
     <tr>
       <th>ID_Itinerario</th>
-      <th>Precio TotalArtistas que puedes ver</th>
+      <th>Precio Total</th>
     </tr>
     <?php
     foreach ($itinerario_tres_ciudades as $p) {
@@ -136,7 +136,7 @@
   <table>
     <tr>
       <th>ID_Itinerario</th>
-      <th>Precio TotalArtistas que puedes ver</th>
+      <th>Precio Total</th>
     </tr>
     <?php
     foreach ($itinerario_cuatro_ciudades as $p) {
