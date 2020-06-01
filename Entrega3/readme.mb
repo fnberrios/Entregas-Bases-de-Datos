@@ -1,0 +1,20 @@
+# Entrega 3: Bases de Datos
+## I. Supuestos
+
+* En los itinerarios no necesariamente todas las ciudades que presenta como solución tiene obras de algun artista que se entrega como input. Por ejemplo, suponinendo que los artistas solo se encuentrán en paris y roma, la solución paris->florencia->roma es igual de valida que paris->roma.
+* En los itinerarios la fecha de inicio del viaje no es considerada, ya que no influye en la combinación. Cualquier escala/viaje, sin importar la duración y hora, será posible. Por lo tanto, el problema se reduce a encontrar una secuencia de viajes. #Issue278
+## II. Ejecución
+### a. LOGIN
+* Registrarse: Se debe seleccionar el boton "Registrarse", este llevara a una página que permitira ingresar los datos necesarios para crear un nuevo usuario,
+luego se indicara que este fue creado exitosamente en una nueva pestaña que tendra un boton para volver a la pagina inicial.
+* Ingresar: Se debe seleccionar el boton "Ingresar", el que lleva a la pagina en la que se soliciatan los datos y se revisa si estos son correctos.
+* Navegación: La navegación estara principalmente ayudada por el navbar que se activa una vez ha ingresado algun usuario. Esta permite ir al inicio, al perfil del usuario, salir de la cuenta y ver los hoteles en los cuales puede realizar resrvas. La navegación de las paginas pedidas comenzara en la página de inicio una vez haya un usuario logeado, comenzando en la seccion que se le pregunta al usuario si desea conocer a sus artistas, al apretar esta opción se le derivara a otra pagina en la que se encontraran links que le iran derivando de pagina en pagina con el fin de que pueda recorrerlas todas. Al llegar a la pagina de los museos se le permite comprar la entrada, preguntandole si en verdad desea comprar esta. En el navbar se tiene la opcion Hoteles que le permite al usuario ver todos los hoteles y realizar las reservas que desea.
+### b. Funcionalidad Extra
+* Input: País (Varchar).
+* Output: Todas las obras que se encuentren en el país ingresado (Tabla).
+
+  Al apretar algún país del mapa (Francia, Italia, Inglaterra, Bruselas y Dresde) se redirige a la pagína con la consulta 'consulta_mapa.php'.
+
+  ### c. Itinerarios
+* Input: Artistas(Array), Ciudad(Varchar), Fecha(date).
+* Output: Itinerario con viajes sin escalas (dos ciudades visitadas), una escala (tres ciudades visitadas) y dos escalas (cuatro ciudades visitadas). Para mostrar esta información se desplegan 6 tablas, dos por cada tipo de viaje, en donde la primera entrega los detalles de cada itinerario y la segunda ordena los itinerarios según su precio total.
