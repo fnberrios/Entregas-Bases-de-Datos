@@ -1,9 +1,9 @@
 <?php
   session_start();
 ?>
-<?php include('../templates/header.html');   ?>
 <?php
   if (isset($_SESSION['eliminado'])):?>
+      <?php include('../templates/header.html');   ?>
     	<h3>Su cuenta a sido eliminada exitosamente.</h3>
       <?php
         session_unset();
