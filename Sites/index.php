@@ -12,9 +12,17 @@
 
   <br>
 
+  <!-------------- INGRESAR E3 ---------------->
   <h3 align="center"> Ingresa a tu cuenta</h3>
   <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
     <input type="submit" value="Ingresar">
+  </form>
+
+  <br>
+  <!-------------- REGISTRARSE E3 ---------------->
+  <h3 align="center"> Regístrate como usuario:</h3>
+  <form align="center" action="consultas/registrar.php" method="post">
+    <input type="submit" value="Registrarme">
   </form>
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
