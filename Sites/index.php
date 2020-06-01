@@ -69,7 +69,7 @@
       <input type="submit" value="Enviar">
     </form>
 
-    <?php
+  <?php
   else:?>
     <!-------------- INGRESAR E3 ---------------->
     <h3 align="center"> Ingresa a tu cuenta</h3>
@@ -83,6 +83,7 @@
     <form align="center" action="consultas/consulta_registrar.php" method="post">
       <input type="submit" value="Registrarme">
     </form>
+  <?php endif;?>
 
 
 
