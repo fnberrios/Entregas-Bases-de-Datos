@@ -8,7 +8,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require("../config/conexion.php");
 
-    $query = "SELECT hoteles.nombrehotel, ciudades.nombreciudad, paises.nombrepais, hoteles.direccionhotel, hoteles.telefono, hoteles.precio FROM ciudades, paises, hoteles WHERE hoteles.cid = ciudades.cid AND ciudades.pid = paises.pid;";
+    $query = "SELECT hoteles.nombrehotel, ciudades.nombreciudad, paises.nombrepais, hoteles.direccionhotel, hoteles.telefono, hoteles.precio, hoteles.hid FROM ciudades, paises, hoteles WHERE hoteles.cid = ciudades.cid AND ciudades.pid = paises.pid;";
     $result = $db53->prepare($query);
     $result->execute();
     $dataCollected = $result->fetchAll();
