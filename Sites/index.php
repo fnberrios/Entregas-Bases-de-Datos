@@ -40,6 +40,7 @@
         justify-content: space-around;
         align-items: center;
         background-color:blueviolet;
+        color: white;
       }
       .nav_links{
         display: flex;
@@ -57,8 +58,8 @@
   if (!empty($user)):?>
     <nav>
       <ul class= "nav_links">
-        <li><a href="consulta_perfil.php">Perfil</a></li>
-        <li><a href="consulta_logout.php">Logout</a></li>
+        <li><a href="contultas/consulta_perfil.php">Perfil</a></li>
+        <li><a href="consultas/consulta_logout.php">Logout</a></li>
       </ul>
     </nav>
 
