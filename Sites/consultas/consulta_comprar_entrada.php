@@ -6,6 +6,7 @@
   <?php
   require("../config/conexion.php");
   $lugar_ = $_SESSION['entrada'];
+  echo "$lugar_"
 
   $date = date('Y-m-d');
   $query1 = "INSERT INTO entradas (uid, lid, fecha_actual) VALUES (:uid,'$lugar_','$date');";
@@ -16,6 +17,6 @@
   ?>
 
 
-<p> Su compra se ha realizado con exito <?php "$lugar"?>; </p>
+<p> Su compra se ha realizado con exito </p>
 
 <?php include('../templates/footer.html'); ?>
