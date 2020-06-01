@@ -53,7 +53,7 @@
       </ul>
     </nav>
 
-    <!-------------- Artistas ---------------->
+    <!-------------- ARTISTAS E3 ---------------->
     <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
     require("config/conexion.php");
@@ -84,21 +84,21 @@
   else:?>
 
     <!-------------- INGRESAR E3 ---------------->
-    <h3 align="center"> Ingresa a tu cuenta</h3>
+    <h2 align="center"> Ingresa a tu cuenta</h2>
     <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
       <input type="submit" value="Ingresar">
     </form>
 
     <br>
     <!-------------- REGISTRARSE E3 ---------------->
-    <h3 align="center"> Regístrate como usuario:</h3>
+    <h2 align="center"> Regístrate como usuario:</h2>
     <form align="center" action="consultas/consulta_registrar.php" method="post">
       <input type="submit" value="Registrarme">
     </form>
   <?php endif;?>
 
 
-
+    <!-------------- FUNCIONALIDAD EXTRA E3 ---------------->
   <h2 align="center">¿Quieres conocer obras que se encuentran en algun pais?</h2>
   <h3 align="center">¡Cliquea algún país en el mapa!</h3>
   <img src="img/mapa.jpeg" usemap="#mapa">
@@ -110,7 +110,7 @@
   <area shape="circle" coords="170,181,20" href="consultas/consulta_mapa.php?pais='Belgica'">
 
 
-
+    <!-------------- ITINERARIOS E3 ---------------->
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
   require("config/conexion.php");
