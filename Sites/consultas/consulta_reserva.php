@@ -23,6 +23,7 @@
 
   foreach ($dataCollected1 as $r) {
     $rid_actual = $r[0];
+  }
   echo "$rid_actual";
 
   // $sql1_ = "INSERT INTO reservas (rid, hid, fechainicio, fechatermino) VALUES ('$rid_actual','$hotel','$fechainicio','$fechatermino')";
