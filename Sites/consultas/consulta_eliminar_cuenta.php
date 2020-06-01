@@ -6,9 +6,9 @@
 
   $user = $_SESSION['user_id'];
 
-  $query = "DELETE FROM usuarios WHERE username = '$user';";
+  $query = "DELETE FROM usuarios WHERE uid = '$user';";
   $result = $db53->prepare($query);
-  $result -> execute();
+  $result->execute();
   $dataCollected = $result -> fetchAll();
 
 
