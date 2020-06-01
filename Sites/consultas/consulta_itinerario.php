@@ -25,7 +25,7 @@
   $itinerario_dos_ciudades = $result->fetchAll();
   ?>
 
-  <h2 align="center">Itinerario Sin Escalas?</h2>
+  <h2 align="center">Itinerario Sin Escalas</h2>
   <table>
     <tr>
       <th>ID_Itinerario</th>
@@ -71,7 +71,7 @@
   $itinerario_tres_ciudades = $result->fetchAll();
   ?>
 
-  <h2 align="center">Itinerario Una Escala?</h2>
+  <h2 align="center">Itinerario Una Escala</h2>
   <table>
     <tr>
       <th>ID_Itinerario</th>
@@ -115,7 +115,7 @@
   $result->execute();
   $itinerario_cuatro_ciudades = $result->fetchAll();
   ?>
-  <h2 align="center">Itinerario Dos Escala?</h2>
+  <h2 align="center">Itinerario Dos Escalas</h2>
   <table>
     <tr>
       <th>ID_Itinerario</th>
