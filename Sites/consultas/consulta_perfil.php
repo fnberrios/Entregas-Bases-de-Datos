@@ -11,19 +11,19 @@
 
     if (isset($_SESSION['user_id'])){
       $query = "SELECT uid,username,correo,contrasena FROM usuarios WHERE uid = :uid ;";
-      $result = $db53 -> prepare($query);
+      $result = $db -> prepare($query);
       $result->bindParam(':uid', $_SESSION['user_id']);
       $result -> execute();
       $users_ = $result -> fetchAll();
 
       $query1 = "SELECT reservas.fechainicio, reservas.fechatermino, hoteles.direccionhotel  FROM realiza, reservas,  hoteles WHERE realiza.uid = :uid AND realiza.rid = reservas.rid AND reservas.hid = hoteles.hid;";
-      $result1 = $db53 -> prepare($query1);
+      $result1 = $db -> prepare($query1);
       $result1->bindParam(':uid', $_SESSION['user_id']); #se relacionan
       $result1 -> execute();
       $reservas = $result1 -> fetchAll();
 
       $query2 = "SELECT tickets.asiento, tickets.fechacompra, tickets.fechaviaje, destinos.ciudad_origen, ciudades.nombreciudad FROM tickets,destinos,viaje,ciudades WHERE tickets.uid = :uid AND tickets.did = destinos.did AND viaje.did = destinos.did AND viaje.cid = ciudades.cid; ";
-      $result2 = $db53 -> prepare($query2);
+      $result2 = $db -> prepare($query2);
       $result2->bindParam(':uid', $_SESSION['user_id']); #se relacionan
       $result2 -> execute();
       $tickets = $result2 -> fetchAll();
@@ -62,10 +62,10 @@
     <table>
       <tr>
         <th>n° asiento</th>
-        <th>Fecha de inicio</th>
-        <th>Fecha de termino</th>
-        <th>Ciudad de compra</th>
-        <th>Ciudad del viaje</th>
+        <th>Fecha de compra</th>
+        <th>Fecha del viaje</th>
+        <th>Ciudad de origen</th>
+        <th>Ciudad de destino</th>
       </tr>
       <?php
       foreach ($tickets as $t){
@@ -74,6 +74,6 @@
       ?>
     </table>
 
-    <a href="consulta_logout.php">Logout</a>
+    <a href="logout.php">Logout</a>
 
 <?php include('../templates/footer.html'); ?>
