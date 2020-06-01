@@ -35,7 +35,15 @@ posibles_artistas := ARRAY
     RETURN QUERY
     SELECT *
     FROM itinerario_ciudades
-    WHERE itinerario_ciudades.artistas=lista_artistas;
+    WHERE 
+ARRAY(
+    SELECT unnest(itinerario_ciudades.artistas)
+    ORDER BY 1
+    )=
+ARRAY
+    (SELECT unnest(lista_artistas)
+    ORDER BY 1
+    );
     RETURN;
     END;
 $$ language plpgsql
