@@ -35,6 +35,9 @@
         font-family: courier;
         font-size: 160%;
       }
+      nav{
+        float:left;
+      }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
   </head>
@@ -42,6 +45,13 @@
 
   <?php
   if (!empty($user)):?>
+    <nav>
+      <ul>
+        <li><a href="consulta_perfil.php">Logout</a></li>
+        <li><a href="consulta_logout.php">Logout</a></li>
+      </ul>
+    </nav>
+
     <!-------------- Artistas ---------------->
     <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
