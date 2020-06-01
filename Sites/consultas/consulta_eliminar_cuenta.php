@@ -4,7 +4,7 @@
 
   $_SESSION['eliminado'] = "1";
 
-  $user = $_POST["username"];
+  $user = $_SESSION["user_id"];
 
   $query = "DELETE FROM usuarios WHERE username = '$user';";
   $result = $db53 -> prepare($query);
