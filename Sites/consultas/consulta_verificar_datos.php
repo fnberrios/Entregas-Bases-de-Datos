@@ -36,6 +36,7 @@
           $_SESSION['user_id'] = $uid;
           $a = $_SESSION['user_id'];
           $_SESSION['eliminado'] = NULL;
+          $_SESSION['entrada'] = NULL;
       ?>
           <h3 align="center"> Has ingresado con exito a tu cuenta</h3>
           <form align="center" action="../consultas/consulta_perfil.php" method="post">
