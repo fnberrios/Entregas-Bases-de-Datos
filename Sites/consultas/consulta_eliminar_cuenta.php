@@ -14,5 +14,4 @@
 
   header('Location: ../consultas/consulta_logout.php');
 
-
 ?>
