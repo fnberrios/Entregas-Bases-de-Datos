@@ -11,7 +11,7 @@
     $lugar = $_GET["lugar"];
     $date = date('Y-m-d');
     echo "$date";
+    ?>
 
 
-
-    <?php include('../templates/footer.html'); ?>
+<?php include('../templates/footer.html'); ?>
