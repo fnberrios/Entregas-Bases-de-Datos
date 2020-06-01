@@ -67,7 +67,7 @@
         foreach ($dataCollected as $p) {
             echo "<tr><td><a href='consulta_artistas.php?artista=$p[5]' >$p[0]</a></td>
             <td><a href='consulta_obras.php?obra=$p[2]' >$p[1]</a></td> <td>$p[3]</td>
-            <td>$p[4]</td> <td><a href='consulta_comprar_entrada.php?lugar=$nom' >Comprar entrada</a></td></tr>";
+            <td>$p[4]</td> <td><a href='consulta_confirmar_compra.php?lugar=$nom' >Comprar entrada</a></td></tr>";
         }
         ?>
     </table>
