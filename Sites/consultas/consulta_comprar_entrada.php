@@ -17,6 +17,6 @@
   ?>
 
 
-<p> Su compra se ha realizado con exito <?php$lugar?>; </p>
+<p> Su compra se ha realizado con exito <?php "$lugar"?>; </p>
 
 <?php include('../templates/footer.html'); ?>
