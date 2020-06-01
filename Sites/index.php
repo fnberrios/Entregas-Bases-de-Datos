@@ -39,11 +39,14 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        background-color:blueviolet;
       }
       .nav_links{
         display: flex;
         justify-content: space-around;
         width: 35%;
+        background-color:blueviolet;
+        border: none;
       }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
@@ -54,7 +57,7 @@
   if (!empty($user)):?>
     <nav>
       <ul class= "nav_links">
-        <li><a href="consulta_perfil.php">Logout</a></li>
+        <li><a href="consulta_perfil.php">Perfil</a></li>
         <li><a href="consulta_logout.php">Logout</a></li>
       </ul>
     </nav>
