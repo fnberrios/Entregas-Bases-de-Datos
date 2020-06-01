@@ -7,6 +7,7 @@
 <?php
    require("../config/conexion.php");
    $ho = $_GET["hotel"];
+   echo "$ho";
    $_SESSION['reserva'] = $ho;
 
 ?>
