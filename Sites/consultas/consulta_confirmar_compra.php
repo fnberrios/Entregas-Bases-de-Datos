@@ -7,6 +7,7 @@
 <?php
    require("../config/conexion.php");
    $lugar = $_GET["lugar"];
+   echo "$lugar";
 ?>
   <form align="center" action="consulta_comprar_entrada.php?lugar=<?php "$lugar" ?>" method="get">
   	<p>¿Seguro quieres comprar esta entrada?</p>

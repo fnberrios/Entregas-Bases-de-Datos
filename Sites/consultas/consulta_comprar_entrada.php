@@ -7,7 +7,6 @@
   require("../config/conexion.php");
 
   $lugar = $_GET["lugar"];
-  echo "$lugar";
   $date = date('Y-m-d');
   $query1 = "INSERT INTO entradas (uid, lid, fecha_actual) VALUES (:uid,'$lugar','$date');";
   $result1 = $db30 -> prepare($query1);
