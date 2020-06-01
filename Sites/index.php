@@ -35,25 +35,9 @@
         font-family: courier;
         font-size: 160%;
       }
-      nav{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color:blueviolet;
-        color: white;
-      }
-      .nav_links{
-        display: flex;
-        justify-content: space-around;
-        width: 35%;
-        background-color:blueviolet;
-        border: none;
-      }
-      .link{
-        color: #fff;
-      }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
+    <link rel="stylesheet" href="styles/navbar.css">
   </head>
   <br>
 
