@@ -61,7 +61,7 @@
   if (!empty($user)):?>
     <nav>
       <ul class= "nav_links">
-        <li><a href="constultas/consulta_perfil.php" class="link">Perfil</a></li>
+        <li><a href="consultas/consulta_perfil.php" class="link">Perfil</a></li>
         <li><a href="consultas/consulta_logout.php" class="link">Logout</a></li>
       </ul>
     </nav>
