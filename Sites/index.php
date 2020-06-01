@@ -36,7 +36,14 @@
         font-size: 160%;
       }
       nav{
-        float:left;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .nav_links{
+        display: flex;
+        justify-content: space-around;
+        width: 35%;
       }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
@@ -46,7 +53,7 @@
   <?php
   if (!empty($user)):?>
     <nav>
-      <ul>
+      <ul class= "nav_links">
         <li><a href="consulta_perfil.php">Logout</a></li>
         <li><a href="consulta_logout.php">Logout</a></li>
       </ul>
