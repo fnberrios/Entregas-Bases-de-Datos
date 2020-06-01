@@ -6,6 +6,10 @@
   $fechatermino= $_POST["ft"];
   $hotel = $_SESSION['reserva'];
   $usuario_actual = $_SESSION['user_id'];
+  echo "$fechainicio";
+  echo "$fechatermino";
+  echo "$hotel";
+  echo "$usuario_actual";
 
 
   $rid = "SELECT MAX(rid)+1 FROM reservas;";
@@ -15,7 +19,7 @@
 
   foreach ($dataCollected1 as $r) {
     $rid_actual = $r[0];
-    echo "$rid_actual";
+  echo "$rid_actual";
 
   $sql1 = "INSERT INTO reservas (rid, hid, fechainicio, fechatermino) VALUES ('$rid_actual','$hotel','$fechainicio','$fechatermino')";
   $result2 = $db53 -> prepare($sql1);
@@ -28,5 +32,4 @@
   $dataCollected3 = $result3 -> fetchAll();
 
   header('Location: consulta_hoteles.php');
-
 ?>
