@@ -38,6 +38,7 @@
           $_SESSION['eliminado'] = NULL;
           $_SESSION['entrada'] = NULL;
       ?>
+          <?php include('../templates/navbar.html'); ?>
           <h3 align="center"> Has ingresado con exito a tu cuenta</h3>
           <form align="center" action="../consultas/consulta_perfil.php" method="post">
             <input type="submit" value="Ver Perfil">
