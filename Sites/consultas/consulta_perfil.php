@@ -28,7 +28,7 @@
       $result2 -> execute();
       $tickets = $result2 -> fetchAll();
 
-      $query3 = "SELECT entradas.fecha_actual, lugares.nombre, lugaresmuseo.hora_apertura, lugaresmuseo.hora_cierre FROM lugares, lugaresmuseo, entradas WHERE entradas.uid = :uid AND entradas.lid = lugaresmuseo.lid AND entradas.lid = lugares.lid;";
+      $query3 = "SELECT entradas.fecha_actual, lugares.lnombre, lugaresmuseo.hora_apertura, lugaresmuseo.hora_cierre FROM lugares, lugaresmuseo, entradas WHERE entradas.uid = :uid AND entradas.lid = lugaresmuseo.lid AND entradas.lid = lugares.lid;";
       $result3 = $db30 -> prepare($query3);
       $result3->bindParam(':uid', $_SESSION['user_id']); #se relacionan
       $result3 -> execute();
