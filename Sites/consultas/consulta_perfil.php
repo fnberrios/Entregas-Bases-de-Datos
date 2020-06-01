@@ -11,13 +11,13 @@
 
     if (isset($_SESSION['user_id'])){
       $query = "SELECT uid,username,correo,contrasena FROM usuarios WHERE uid = :uid ;";
-      $result = $db -> prepare($query);
+      $result = $db53 -> prepare($query);
       $result->bindParam(':uid', $_SESSION['user_id']);
       $result -> execute();
       $users_ = $result -> fetchAll();
 
       $query1 = "SELECT reservas.fechainicio, reservas.fechatermino, hoteles.direccionhotel  FROM realiza, reservas, hoteles WHERE realiza.uid = :uid AND realiza.rid = reservas.rid AND reservas.hid = hoteles.hid;";
-      $result1 = $db -> prepare($query1);
+      $result1 = $db53 -> prepare($query1);
       $result1->bindParam(':uid', $_SESSION['user_id']);
       $result1 -> execute();
       $reservas = $result1 -> fetchAll();
@@ -53,6 +53,6 @@
       ?>
     </table>
 
-    <a href="logout.php">Logout</a>
+    <a href="consulta_logout.php">Logout</a>
 
 <?php include('../templates/footer.html'); ?>

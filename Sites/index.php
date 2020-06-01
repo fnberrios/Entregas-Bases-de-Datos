@@ -21,7 +21,7 @@
   <br>
   <!-------------- REGISTRARSE E3 ---------------->
   <h3 align="center"> Regístrate como usuario:</h3>
-  <form align="center" action="consultas/registrar.php" method="post">
+  <form align="center" action="consultas/consulta_registrar.php" method="post">
     <input type="submit" value="Registrarme">
   </form>
 
