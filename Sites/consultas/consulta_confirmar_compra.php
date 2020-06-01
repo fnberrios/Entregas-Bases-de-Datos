@@ -9,7 +9,7 @@
    $lugar = $_GET["lugar"];
    echo "$lugar";
 ?>
-  <form align="center" action="consulta_comprar_entrada.php?lugar_=<?php "$lugar" ?>" method="get">
+  <form align="center" action="consulta_comprar_entrada.php?lugar_=<?php "$lugar" ?>" method="post">
   	<p>¿Seguro quieres comprar esta entrada?</p>
   	<p>
     <input type="submit" name="Respuesta" value="Si">
