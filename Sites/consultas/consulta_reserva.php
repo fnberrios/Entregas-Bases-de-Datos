@@ -6,6 +6,7 @@
   $fechatermino= $_POST["ft"];
   $hotel = $_SESSION['reserva'];
   $usuario_actual = $_SESSION['user_id'];
+
   echo "$fechainicio";
   echo "$fechatermino";
   echo "$hotel";
@@ -31,5 +32,5 @@
   $result3 -> execute();
   $dataCollected3 = $result3 -> fetchAll();
 
-  header('Location: consulta_hoteles.php');
+  // header('Location: consulta_hoteles.php');
 ?>
