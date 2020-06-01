@@ -37,6 +37,7 @@
           $a = $_SESSION['user_id'];
           $_SESSION['eliminado'] = NULL;
           $_SESSION['entrada'] = NULL;
+          $_SESSION['reserva'] = NULL;
       ?>
           <?php include('../templates/navbar.html'); ?>
           <h3 align="center"> Has ingresado con exito a tu cuenta</h3>

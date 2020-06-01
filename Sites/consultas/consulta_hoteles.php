@@ -28,7 +28,7 @@
         <?php
         foreach ($dataCollected as $h) {
             echo "<tr> <td>$h[0]</td> <td>$h[1]</td> <td>$h[2]</td> <td>$h[3]</td>
-            <td>$h[4]</td> <td>$h[5]</td> <td> </td> </tr>";
+            <td>$h[4]</td> <td>$h[5]</td> <td><a href='consulta_realizar_reserva.php?hotel=$h[6]'>reservar</a></td> </tr>";
         }
         ?>
     </table>
