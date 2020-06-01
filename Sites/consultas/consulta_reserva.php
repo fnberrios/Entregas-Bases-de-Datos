@@ -2,7 +2,6 @@
   session_start();
 ?>
 <?php
-  include('../templates/header.html');
 
   require("../config/conexion.php");
   $fechainicio = $_POST["fi"];
