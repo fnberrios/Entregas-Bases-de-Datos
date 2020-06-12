@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request, abort, json
 from pymongo import MongoClient
-# import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
-USER_KEYS = ['name', 'age', 'description']
-MSG_KEYS = ['message', 'sender','receptant','lat','long','date']
+USER_KEYS = ['uid','name', 'age', 'description']
+MSG_KEYS = ['mid', 'message', 'sender','receptant','lat','long','date']
 
 USER = "grupo30"
 PASS = "grupo30"
@@ -60,7 +60,7 @@ def plot():
     # con nuestra API
 
     # Obtenermos todos los usuarios
-    users = usuarios.find({}, {"_id": 0})
+    users = usuarios.find({}, {"uid": 0})
 
     # Hacemos un data frame (tabla poderosa) con la columna
     # 'name' indexada
