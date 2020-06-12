@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, abort, json
 from pymongo import MongoClient
-import pandas as pd
-import matplotlib.pyplot as plt
+# import pandas as pd
+# import matplotlib.pyplot as plt
 import os
 
 # Para este ejemplo pediremos la id
@@ -13,14 +13,19 @@ USER = "grupo35"
 PASS = "grupo35"
 DATABASE = "grupo35"
 
+''' COMO CONECTARSE A NUESTRO SERVIDOR SEGUN AYUDANTÍA
+uri = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
+# La uri 'estándar' es "mongodb://user:password@ip/database"
+client = MongoClient(uri)
+db = client.get_database()
+
+'''
 # El cliente se levanta en la URL de la wiki
 # URL = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
 URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}"
 client = MongoClient(URL)
-
 # Utilizamos la base de datos del grupo
 db = client["grupoXX"]
-
 # Seleccionamos la collección de usuarios
 usuarios = db.usuarios
 
