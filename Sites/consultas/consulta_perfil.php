@@ -2,7 +2,7 @@
   session_start();
 ?>
 <?php include('../templates/header.html');   ?>
-
+<?php include('../templates/navbar.html'); ?>
 <body>
   <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -27,6 +27,12 @@
       $result2->bindParam(':uid', $_SESSION['user_id']); #se relacionan
       $result2 -> execute();
       $tickets = $result2 -> fetchAll();
+
+      $query3 = "SELECT entradas.fecha_actual, lugares.lnombre, lugaresmuseo.hora_apertura, lugaresmuseo.hora_cierre FROM lugares, lugaresmuseo, entradas WHERE entradas.uid = :uid AND entradas.lid = lugaresmuseo.lid AND entradas.lid = lugares.lid;";
+      $result3 = $db30 -> prepare($query3);
+      $result3->bindParam(':uid', $_SESSION['user_id']); #se relacionan
+      $result3 -> execute();
+      $entradas = $result3 -> fetchAll();
     }
 
   ?>
@@ -73,7 +79,19 @@
       }
       ?>
     </table>
+  </br>
+  <table>
+    <tr>
+      <th>Fecha de compra</th>
+      <th>Museo</th>
+      <th>Hora de apertura</th>
+      <th>Hora de cierre</th>
+    </tr>
+    <?php
+    foreach ($entradas as $e){
+      echo "<tr><td>$e[0]</td><td>$e[1]</td><td>$e[2]</td><td>$e[3]</td></tr>";
+    }
+    ?>
+  </table>
 
-    <a href="logout.php">Logout</a>
-
-<?php include('../templates/footer.html'); ?>
+  <a href="consulta_confirmar_eliminar.php">Eliminar</a>

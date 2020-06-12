@@ -1,12 +1,11 @@
 <?php
   session_start();
+  $user = NULL;
+  if (isset($_SESSION['user_id'])){
+    $user = $_SESSION['user_id'];
+  }
 ?>
 <?php include('templates/header.html');   ?>
-
-
-<a href="google.com"><img alt="" src="https://lh3.googleusercontent.com/-IhVc_Wxy6dY/AAAAAAAAAAI/AAAAAAAAAAA/fl45Fty4PEI/photo.jpg" style="width: 154px; height: 47px;" /></a>
-
-<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
 
 
 <body>
@@ -15,18 +14,6 @@
 
   <br>
 
-  <!-------------- INGRESAR E3 ---------------->
-  <h3 align="center"> Ingresa a tu cuenta</h3>
-  <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
-    <input type="submit" value="Ingresar">
-  </form>
-
-  <br>
-  <!-------------- REGISTRARSE E3 ---------------->
-  <h3 align="center"> Regístrate como usuario:</h3>
-  <form align="center" action="consultas/consulta_registrar.php" method="post">
-    <input type="submit" value="Registrarme">
-  </form>
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
 
@@ -45,38 +32,68 @@
       }
     </style>
     <link rel="stylesheet" href="styles/barra_vertical.css">
+    <link rel="stylesheet" href="styles/navbar.css">
   </head>
-
-
-  <!-------------- Artistas ---------------->
+  <br>
 
   <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-  require("config/conexion.php");
-  #Se construye la consulta como un string
-  $query = " SELECT anombre, aid FROM Artistas;";
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db30->prepare($query);
-  $result->execute();
-  $valores = $result->fetchAll();
-  ?>
+  if (!empty($user)):?>
+    <nav>
+      <ul class= "nav_links">
+        <li><a href="index.php" class="link">Inicio</a></li>
+        <li><a href="consultas/consulta_perfil.php" class="link">Perfil</a></li>
+        <li><a href="consultas/consulta_hoteles.php" class="link">Hoteles</a></li>
+        <li><a href="consultas/consulta_logout.php" class="link">Salir</a></li>
 
-  <h2 align="center">¡Conoce más sobre tus artistas favoritos!</h2>
-  <h3 align="center">Selecciona un artista:</h3>
-  <form align="center" action="consultas/consulta_artistas.php" method="post">
-  <div style="text-align: left; margin: 1em auto; width: 10%;">
-  <select name = "artista">
+      </ul>
+    </nav>
+
+    <!-------------- ARTISTAS E3 ---------------->
+    <?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+    require("config/conexion.php");
+    #Se construye la consulta como un string
+    $query = " SELECT anombre, aid FROM Artistas;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db30->prepare($query);
+    $result->execute();
+    $valores = $result->fetchAll();
+    ?>
+
+    <h2 align="center">¡Conoce más sobre tus artistas favoritos!</h2>
+    <h3 align="center">Selecciona un artista:</h3>
+    <form align="center" action="consultas/consulta_artistas.php" method="post">
+      <div style="text-align: left; margin: 1em auto; width: 10%;">
+        <select name = "artista">
+          <?php
+          foreach ($valores as $v) {
+            echo "<option value=$v[1]>$v[0]</option>";
+          }
+          ?>
+        </select>
+      </div>
+      <input type="submit" value="Enviar">
+    </form>
+
   <?php
-  foreach ($valores as $v) {
-    echo "<option value=$v[1]>$v[0]</option>";
-  }
-  ?>
-  </select>
-  </div>
-    <input type="submit" value="Enviar">
-  </form>
+  else:?>
+
+    <!-------------- INGRESAR E3 ---------------->
+    <h2 align="center"> Ingresa a tu cuenta</h2>
+    <form align="center" action="consultas/consulta_form_ingresar.php" method="post">
+      <input type="submit" value="Ingresar">
+    </form>
+
+    <br>
+    <!-------------- REGISTRARSE E3 ---------------->
+    <h2 align="center"> Regístrate como usuario:</h2>
+    <form align="center" action="consultas/consulta_registrar.php" method="post">
+      <input type="submit" value="Registrarme">
+    </form>
+  <?php endif;?>
 
 
+    <!-------------- FUNCIONALIDAD EXTRA E3 ---------------->
   <h2 align="center">¿Quieres conocer obras que se encuentran en algun pais?</h2>
   <h3 align="center">¡Cliquea algún país en el mapa!</h3>
   <img src="img/mapa.jpeg" usemap="#mapa">
@@ -88,7 +105,7 @@
   <area shape="circle" coords="170,181,20" href="consultas/consulta_mapa.php?pais='Belgica'">
 
 
-
+    <!-------------- ITINERARIOS E3 ---------------->
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
   require("config/conexion.php");
@@ -98,6 +115,16 @@
   $result = $db53->prepare($query);
   $result->execute();
   $ciudades = $result->fetchAll();
+  ?>
+  <?php
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
+  require("config/conexion.php");
+  #Se construye la consulta como un string
+  $query = " SELECT anombre, aid FROM Artistas;";
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db30->prepare($query);
+  $result->execute();
+  $valores = $result->fetchAll();
   ?>
 
   <h2 align="center">¡Crea tu itinerario para visitar las obras de tus artistas favoritos!</h2>
@@ -127,102 +154,6 @@
   <br /><br />
     <input type="submit" value="Enviar">
   </form>
-  <!-------------- CONSULTA 1 ---------------->
-
-
-  <h3 align="center">¿Quieres saber todos los nombres distintos de las obras?</h3>
-
-  <form align="center" action="consultas/consulta_uno.php" method="post">
-    <input type="submit" value="Buscar">
-  </form>
-
-  <br>
-  <br>
-  <br>
-
-  <!-------------- CONSULTA 2 ---------------->
-
-  <h3 align="center"> ¿Quieres saber todos los nombres de las plazas que contengan
-    al menos una escultura de “Gian Lorenzo Bernini"? </h3>
-
-  <form align="center" action="consultas/consulta_dos.php" method="post">
-    <!-- Id:
-    <input type="text" name="id_elegido">
-    <br /><br /> -->
-    <input type="submit" value="Buscar">
-  </form>
-
-  <br>
-  <br>
-  <br>
-
-
-  <!-------------- CONSULTA 3 ---------------->
-
-    <h3 align="center"> ¿Quieres conocer el nombre de todos
-      los museos de un país que tengan obras del renacimiento?</h3>
-
-    <form align="center" action="consultas/consulta_tres.php" method="post">
-      País:
-      <input type="text" name="npais">
-      <br /><br />
-      <input type="submit" value="Buscar">
-    </form>
-    <br>
-    <br>
-    <br>
-
-
-  <!-------------- CONSULTA 4 ---------------->
-
-  <h3 align="center"> ¿Quieres saber, para cada artista, su nombre
-    y el número de obras en las que ha participado? </h3>
-
-  <form align="center" action="consultas/consulta_cuatro.php" method="post">
-    <input type="submit" value="Buscar">
-  </form>
-  <br>
-  <br>
-  <br>
-
-
-  <!-------------- CONSULTA 5 ---------------->
-
-  <h3 align="center"> ¿Quieres conocer los nombres de las iglesias
-    ubicadas en una ciudad,</h3>
-  <h3 align="center"> abiertas entre algunas horas(inclusive), junto a
-    todos los nombres de los frescos que se encuentra en cada una de ellas?
-  </h3>
-
-  <form align="center" action="consultas/consulta_cinco.php" method="post">
-    Hora de Apertura (Formato XX:XX:XX):
-    <input type="text" name="hora_apertura">
-    <br /><br />
-    Hora de Cierre (Formato XX:XX:XX):
-    <input type="text" name="hora_cierre">
-    <br /><br />
-    Ciudad:
-    <input type="text" name="ciudad">
-    <br /><br />
-    <input type="submit" value="Buscar">
-  </form>
-  <br>
-  <br>
-  <br>
-
-  <!-------------- CONSULTA 6 ---------------->
-
-  <h3 align="center">¿Quieres saber el nombre de cada museo, plaza o
-    iglesia que tenga obras de todos los periodos del arte que existan
-    en la base de datos?</h3>
-
-  <form align="center" action="consultas/consulta_seis.php" method="post">
-    <br /><br />
-    <input type="submit" value="Buscar">
-  </form>
-  <br>
-  <br>
-  <br>
 
   <br>
 </body>

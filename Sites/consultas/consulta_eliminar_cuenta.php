@@ -4,14 +4,14 @@
 
   $_SESSION['eliminado'] = "1";
 
-  $user = $_POST["username"];
+  $user = $_SESSION['user_id'];
 
-  $query = "DELETE FROM usuarios WHERE username = '$user';";
-  $result = $db53 -> prepare($query);
-  $result -> execute();
+  $query = "DELETE FROM usuarios WHERE uid = '$user';";
+  $result = $db53->prepare($query);
+  $result->execute();
+  $dataCollected = $result -> fetchAll();
 
 
   header('Location: ../consultas/consulta_logout.php');
-
 
 ?>
