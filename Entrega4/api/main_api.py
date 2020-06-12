@@ -56,7 +56,7 @@ def messages():
     pass
 
 
-@app.route("/messages/:<int: id>")
+@app.route("/messages/")
 def messages_id():
     pass
 
@@ -64,7 +64,7 @@ def messages_id():
 def users():
     pass
 
-@app.route("/user/<int: id>")
+@app.route("/user/")
 def users_id():
     pass
 
