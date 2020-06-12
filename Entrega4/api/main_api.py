@@ -9,9 +9,9 @@ import os
 USER_KEYS = ['uid', 'name', 'last_name',
             'occupation', 'follows', 'age']
 
-USER = "grupo35"
-PASS = "grupo35"
-DATABASE = "grupo35"
+USER = "grupo30"
+PASS = "grupo30"
+DATABASE = "grupo30"
 
 ''' COMO CONECTARSE A NUESTRO SERVIDOR SEGUN AYUDANTÍA
 uri = "mongodb://grupoXX:grupoXX@gray.ing.puc.cl/grupoXX"
@@ -136,7 +136,7 @@ def test():
             <p>header: {param2}</p>
             <p>body: {body}</p>
             '''
-            
+
 if __name__ == "__main__":
     app.run()
     # app.run(debug=True) # Para debuggear!
