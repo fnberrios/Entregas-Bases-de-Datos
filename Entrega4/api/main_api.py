@@ -62,11 +62,11 @@ def messages_id():
 
 @app.route("/users")
 def users():
-        '''
+    '''
     Obtiene todos los usuarios
     '''
     # Omitir el _id porque no es json serializable
-    resultados = list(usuarios.find({}, {"_id": 0})
+    resultados = list(usuarios.find({}, {"uid": 0}))
     return json.jsonify(resultados)
 
 @app.route("/user/")
