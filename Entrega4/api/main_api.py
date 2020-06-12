@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request, abort, json
 from pymongo import MongoClient
 # import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import os
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
-USER_KEYS = ['uid', 'name', 'last_name',
-            'occupation', 'follows', 'age']
+USER_KEYS = ['name', 'age', 'description']
+MSG_KEYS = ['message', 'sender','receptant','lat','long','date']
 
 USER = "grupo30"
 PASS = "grupo30"
@@ -25,7 +25,7 @@ db = client.get_database()
 URL = f"mongodb://{USER}:{PASS}@gray.ing.puc.cl/{DATABASE}"
 client = MongoClient(URL)
 # Utilizamos la base de datos del grupo
-db = client["grupoXX"]
+db = client["grupo30"]
 # Seleccionamos la collección de usuarios
 usuarios = db.usuarios
 
