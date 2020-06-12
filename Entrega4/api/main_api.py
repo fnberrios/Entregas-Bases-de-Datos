@@ -49,6 +49,41 @@ def home():
     '''
     return "<h1>¡Hola!</h1>"
 
+# -------------------------- RUTAS TIPO GET --------------------------
+
+@app.route("/messages")
+def messages():
+    pass
+
+
+@app.route("/messages/:<int: id>")
+def messages_id():
+    pass
+
+@app.route("/users")
+def users():
+    pass
+
+@app.route("/user/<int: id>")
+def users_id():
+    pass
+
+
+
+
+# -------------------------- RUTAS TIPO POST --------------------------
+
+
+
+# -------------------------- RUTAS TIPO DELETE --------------------------
+
+
+
+
+
+
+
+
 # Mapeamos esta función a la ruta '/plot' con el método get.
 @app.route("/plot")
 def plot():
