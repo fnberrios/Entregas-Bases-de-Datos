@@ -27,7 +27,7 @@ client = MongoClient(URL)
 # Utilizamos la base de datos del grupo
 db = client["grupo30"]
 # Seleccionamos la collección de usuarios
-usuarios = db.usuarios
+usuarios = db.users
 
 '''
 Usuarios:
@@ -62,7 +62,12 @@ def messages_id():
 
 @app.route("/users")
 def users():
-    pass
+        '''
+    Obtiene todos los usuarios
+    '''
+    # Omitir el _id porque no es json serializable
+    resultados = list(usuarios.find({}, {"_id": 0}))
+    return json.jsonify(resultados)
 
 @app.route("/user/")
 def users_id():
@@ -111,14 +116,7 @@ def plot():
     # Retorna un html "rendereado"
     return render_template('plot.html')
 
-@app.route("/users")
-def get_users():
-    '''
-    Obtiene todos los usuarios
-    '''
-    # Omitir el _id porque no es json serializable
-    resultados = list(usuarios.find({}, {"_id": 0}))
-    return json.jsonify(resultados)
+
 
 @app.route("/users/<int:uid>")
 def get_user(uid):
