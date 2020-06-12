@@ -27,7 +27,7 @@ client = MongoClient(URL)
 # Utilizamos la base de datos del grupo
 db = client["grupo30"]
 # Seleccionamos la collección de usuarios
-usuarios = db.grupo30
+usuarios = db.users
 
 '''
 Usuarios:
@@ -66,7 +66,7 @@ def users():
     Obtiene todos los usuarios
     '''
     # Omitir el _id porque no es json serializable
-    resultados = list(usuarios.find({}, {"uid": 0}))
+    resultados = list(usuarios.find({}, {"uid": 1}))
     return json.jsonify(resultados)
 
 @app.route("/user/")
