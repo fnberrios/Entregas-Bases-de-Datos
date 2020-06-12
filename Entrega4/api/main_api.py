@@ -27,7 +27,7 @@ client = MongoClient(URL)
 # Utilizamos la base de datos del grupo
 db = client["grupo30"]
 # Seleccionamos la collección de usuarios
-usuarios = db.users
+usuarios = db.grupo35
 
 '''
 Usuarios:
