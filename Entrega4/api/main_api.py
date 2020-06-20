@@ -55,7 +55,7 @@ def home():
 # -------------------------- RUTAS TIPO GET --------------------------
 # -------------------------- RUTAS BASICAS  --------------------------
 @app.route("/messages")
-def users():
+def messages():
     '''
     Obtiene todos los mensajes
     '''
