@@ -143,10 +143,12 @@ def delete_msg(mid):
     '''
     resultado = list(mensajes.find({'mid': int(mid)}, {'_id': 0}))
     if resultado:
+        print('chao')
         mensajes.delete_one({"mid": mid})
         message = f'mensaje con mid={mid} ha sido eliminado.'
         return json.jsonify({'resulto': 'eliminado', 'message': message})
     else:
+        print('holi')
         message = f'mid={mid} no existe.'
         return json.jsonify({'resulto': 'no eliminado', 'message': message})
 
