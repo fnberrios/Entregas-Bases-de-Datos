@@ -117,8 +117,14 @@ def messages():
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-
-
+@app.route('/messages/delete/<int:mid>', methods=['DELETE'])
+def delete_msg(mid):
+    '''
+    Elimina un mensaje
+    '''
+    mensajes.delete_one({"id": mid})
+    message = f'mensaje con id={mid} ha sido eliminado.'
+    return json.jsonify({'result': 'success', 'message': message})
 
 
 if __name__ == "__main__":
