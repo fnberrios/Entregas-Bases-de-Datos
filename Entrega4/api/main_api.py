@@ -117,7 +117,7 @@ def post_messages():
     # Y los datos serán ingresados como json
     # Body > raw > JSON en Postman
     try:
-        data = {key: request.json[key] for key in MSG_KEYS[1:]}
+        data = {key: request.json[key] for key in MSG_KEYS}
         count = mensajes.count_documents({})
         revisar_ids = list(mensajes.find({}, {'_id': 0, 'mid': 1}))
         todos_ids = []
@@ -126,7 +126,8 @@ def post_messages():
         while count in todos_ids:
             count += 1
         data["id"] = count
-        return "<h1>¡Mensaje guardado con éxito!</h1>"
+        result = mensajes.insert_one(data)
+        return json.jsonify({'success': True, 'message': 'Mensaje creado'})
 
     except:
         print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO
