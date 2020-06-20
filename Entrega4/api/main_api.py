@@ -141,7 +141,7 @@ def delete_msg(mid):
     '''
     Elimina un mensaje
     '''
-    resultado = list(mensajes.find({'mid': int(id)}, {'_id': 0}))
+    resultado = list(mensajes.find({'mid': int(mid)}, {'_id': 0}))
     if resultado:
         mensajes.deleteOne({"id": mid})
         message = f'mensaje con id={mid} ha sido eliminado.'
