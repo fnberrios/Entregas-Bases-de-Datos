@@ -125,7 +125,7 @@ def post_messages():
             todos_ids.append(id_['mid'])
         while count in todos_ids:
             count += 1
-        data["id"] = count
+        data["mid"] = count
         result = mensajes.insert_one(data)
         return json.jsonify({'success': True, 'message': 'Mensaje creado'})
 
