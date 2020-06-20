@@ -108,7 +108,7 @@ def users_id(id):
 
 # -------------------------- RUTAS TIPO POST --------------------------
 @app.route("/messages", methods=['POST'])
-def messages():
+def post_messages():
     '''
     Crear un mensaje nuevo
     '''
