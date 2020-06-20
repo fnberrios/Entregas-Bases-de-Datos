@@ -136,18 +136,18 @@ def post_messages():
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route("/messages/delete/<mid>", methods=['DELETE'])
+@app.route("/messages/delete/<int:mid>", methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
     '''
-    resultado = list(mensajes.find({'mid': int(mid)}, {'_id': 0}))
+    resultado = list(mensajes.find({'mid': mid}, {'_id': 0}))
     if resultado:
-        mensajes.deleteOne({"mid": int(mid)})
+        mensajes.deleteOne({"mid": mid})
         message = f'mensaje con mid={mid} ha sido eliminado.'
         return json.jsonify({'resulto': 'eliminado', 'message': message})
     else:
-        message = f'id={mid} no existe.'
+        message = f'mid={mid} no existe.'
         return json.jsonify({'resulto': 'no eliminado', 'message': message})
 
 
