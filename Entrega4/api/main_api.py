@@ -76,8 +76,15 @@ def users():
 @app.route("/users/<id>")
 def users_id(id):
     print(f'El id recibido es: {type(id)} {id}')
-    resultados = list(usuarios.find({'uid': int(id)}, {'_id': 0}))
-    return json.jsonify(resultados)
+    user = list(usuarios.find({'uid': int(id)}, {'_id': 0}))
+    mensajes_enviados = list(mensajes.find({'sender': int(id)}, {'_id': 0, 'message': 1}))
+    todos_los_mensajes = []
+    for enviado in mensajes_enviados:
+        el_msn_es = enviado['message']
+        todos_los_mensajes.append(el_msn_es)
+    user[0]['mensajes_enviados'] = todos_los_mensajes
+
+    return json.jsonify(user)
 
 
 
