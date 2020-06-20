@@ -28,6 +28,7 @@ client = MongoClient(URL)
 db = client["grupo30"]
 # Seleccionamos la collección de usuarios
 usuarios = db.users
+mensajes = db.messages
 
 '''
 Usuarios:
@@ -41,6 +42,8 @@ Usuarios:
 
 # Iniciamos la aplicación de flask
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+
 
 @app.route("/")
 def home():
@@ -53,12 +56,13 @@ def home():
 
 @app.route("/messages")
 def messages():
-    pass
+    resultados = list(mensajes.find({}, {}))
+    return json.jsonify(resultados)
 
 
 @app.route("/messages/")
 def messages_id():
-    pass
+    pass 
 
 @app.route("/users")
 def users():
@@ -66,12 +70,14 @@ def users():
     Obtiene todos los usuarios
     '''
     # Omitir el _id porque no es json serializable
-    resultados = list(usuarios.find({}, {"_id": 0}))
+    resultados = list(usuarios.find({},{'_id': 0}))
     return json.jsonify(resultados)
 
-@app.route("/usasdfa")
-def users_id():
-    pass
+@app.route("/users/<id>")
+def users_id(id):
+    print(f'El id recibido es: {type(id)} {id}')
+    resultados = list(usuarios.find({'uid': int(id)}, {'_id': 0}))
+    return json.jsonify(resultados)
 
 
 
