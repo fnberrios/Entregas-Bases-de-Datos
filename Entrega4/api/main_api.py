@@ -54,22 +54,18 @@ def home():
 
 # -------------------------- RUTAS TIPO GET --------------------------
 
-@app.route("/messages")
-def messages():
-    resultados = list(mensajes.find({}, {}))
+@app.route("/messages/<id1>")
+def messages_intercambiados(id1):
+    print(f'id: {id1} y id2. ')
+    resultados = list(mensajes.find({'sender': int(id1)}, {'_id': 0}))
     return json.jsonify(resultados)
 
-
-@app.route("/messages/")
-def messages_id():
-    pass 
 
 @app.route("/users")
 def users():
     '''
     Obtiene todos los usuarios
     '''
-    # Omitir el _id porque no es json serializable
     resultados = list(usuarios.find({},{'_id': 0}))
     return json.jsonify(resultados)
 
