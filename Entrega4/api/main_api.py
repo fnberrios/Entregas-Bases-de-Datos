@@ -125,7 +125,7 @@ def post_messages():
             todos_ids.append(id_['mid'])
         while count in todos_ids:
             count += 1
-        data["id"] = count
+        data["mid"] = count
         result = mensajes.insert_one(data)
         return json.jsonify({'success': True, 'message': 'Mensaje creado'})
 
@@ -136,7 +136,7 @@ def post_messages():
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route('/messages/delete/<mid>', methods=['DELETE'])
+@app.route("/messages/delete/<mid>", methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
