@@ -3,6 +3,7 @@ from pymongo import MongoClient
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import sys
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
@@ -108,12 +109,29 @@ def users_id(id):
 
 # -------------------------- RUTAS TIPO POST --------------------------
 @app.route("/messages", methods=['POST'])
-def messages():
+def post_messages():
     '''
     Crear un mensaje nuevo
     '''
-    resultados = list(mensajes.find({}, {'_id': 0}))
-    return json.jsonify(resultados)
+    # En este caso nos entregarán la id del usuario,
+    # Y los datos serán ingresados como json
+    # Body > raw > JSON en Postman
+    try:
+        data = {key: request.json[key] for key in MSG_KEYS[1:]}
+        count = mensajes.count_documents({})
+        revisar_ids = list(mensajes.find({}, {'_id': 0, 'mid': 1}))
+        todos_ids = []
+        for id_ in revisar_ids:
+            todos_ids.append(id_['mid'])
+        while count in todos_ids:
+            count += 1 
+        data["id"] = count
+        return "<h1>¡Mensaje guardado con éxito!</h1>"
+    
+    except:
+        print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO 
+                    CORRESPONDE CON EL FORMATO DE LA BASE DE DATOS''')
+
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
