@@ -55,17 +55,22 @@ def home():
 # -------------------------- RUTAS TIPO GET --------------------------
 # -------------------------- RUTAS BASICAS  --------------------------
 @app.route("/messages")
-def users():
+def messages():
     '''
     Obtiene todos los mensajes
     '''
     resultados = list(mensajes.find({},{'_id': 0}))
     return json.jsonify(resultados)
 
-@app.route("/messages/<id1>")
-def messages_intercambiados(id1):
-    print(f'id: {id1} y id2. ')
-    resultados = list(mensajes.find({'sender': int(id1)}, {'_id': 0}))
+@app.route("/messages/exchange/<id1>/<id2>")
+def messages_intercambiados(id1, id2):
+    print(f'id: {id1} y id2: {id2}')
+    resultados = list(mensajes.find({
+                                        $and: [
+                                            $or: [{'sender': int(id1)}, {'receptant': int(id2)}],
+                                            $or: [{'sender': int(id2)}, {'receptant': int(id1)}]
+                                            ]
+                                        }, {'_id': 0}))
     return json.jsonify(resultados)
 
 
