@@ -136,7 +136,7 @@ def post_messages():
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route('/messages/delete/<mid>', methods=['DELETE'])
+@app.route("/messages/delete/<mid>", methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
