@@ -53,6 +53,14 @@ def home():
     return "<h1>¡Hola!</h1>"
 
 # -------------------------- RUTAS TIPO GET --------------------------
+# -------------------------- RUTAS BASICAS  --------------------------
+@app.route("/messages")
+def users():
+    '''
+    Obtiene todos los mensajes
+    '''
+    resultados = list(mensajes.find({},{'_id': 0}))
+    return json.jsonify(resultados)
 
 @app.route("/messages/<id1>")
 def messages_intercambiados(id1):
