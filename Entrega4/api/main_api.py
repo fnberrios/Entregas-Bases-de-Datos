@@ -65,13 +65,15 @@ def messages():
 @app.route("/messages/exchange/<id1>/<id2>")
 def messages_intercambiados(id1, id2):
     print(f'id: {id1} y id2: {id2}')
-    resultados = list(mensajes.find({
-                                        $and: [
-                                            $or: [{'sender': int(id1)}, {'receptant': int(id2)}],
-                                            $or: [{'sender': int(id2)}, {'receptant': int(id1)}]
-                                            ]
-                                        }, {'_id': 0}))
-    return json.jsonify(resultados)
+    resultados1 = list(mensajes.find({'sender': int(id1), 'receptant': int(id2)
+                                      }, {'_id': 0, 'sender': 1, 'receptant': 1, 
+                                      'message': 1}))
+    resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
+                                      }, {'_id': 0, 'sender': 1, 'receptant': 1,
+                                          'message': 1}))
+    resultados1.append(resultados2[0])
+
+    return json.jsonify(resultados1)
 
 
 @app.route("/users")
