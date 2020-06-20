@@ -124,18 +124,18 @@ def post_messages():
         for id_ in revisar_ids:
             todos_ids.append(id_['mid'])
         while count in todos_ids:
-            count += 1 
+            count += 1
         data["id"] = count
         return "<h1>¡Mensaje guardado con éxito!</h1>"
-    
+
     except:
-        print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO 
+        print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO
                     CORRESPONDE CON EL FORMATO DE LA BASE DE DATOS''')
 
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route('/messages/delete/<int:mid>', methods=['DELETE'])
+@app.route('/messages/delete/<mid>', methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
