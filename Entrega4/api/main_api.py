@@ -65,7 +65,7 @@ def messages():
 @app.route("/messages/<id>")
 def messages_id(id):
     print(f'El id recibido es: {type(id)} {id}')
-    resultados = list(mensajes.find({'uid': int(id)}, {'_id': 0}))
+    resultados = list(mensajes.find({'mid': int(id)}, {'_id': 0}))
     return json.jsonify(resultados)
 
 @app.route("/messages/exchange/<id1>/<id2>")
@@ -107,7 +107,13 @@ def users_id(id):
 
 
 # -------------------------- RUTAS TIPO POST --------------------------
-
+@app.route("/messages", methods=['POST'])
+def messages():
+    '''
+    Crear un mensaje nuevo
+    '''
+    resultados = list(mensajes.find({}, {'_id': 0}))
+    return json.jsonify(resultados)
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
