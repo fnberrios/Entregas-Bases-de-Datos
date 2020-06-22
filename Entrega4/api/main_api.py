@@ -74,16 +74,26 @@ def messages():
     if request.args.get("id1") and request.args.get("id2"):
         id1 = request.args.get("id1")
         id2 = request.args.get("id2")
-        print(f'id: {id1} y id2: {id2}')
-        resultados1 = list(mensajes.find({'sender': int(id1), 'receptant': int(id2)
-                                        }, {'_id': 0, 'sender': 1, 'receptant': 1,
-                                            'message': 1}))
-        resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
-                                        }, {'_id': 0, 'sender': 1, 'receptant': 1,
-                                            'message': 1}))
-        resultados1.append(resultados2[0])
-        return json.jsonify(resultados1)
 
+        uno = list(usuarios.find({'uid': int(id1)}, {'_id': 0}))
+        dos = list(usuarios.find({'uid': int(id2)}, {'_id': 0}))
+        if uno and dos:
+            print(f'id: {id1} y id2: {id2}')
+            resultados1 = list(mensajes.find({'sender': int(id1), 'receptant': int(id2)
+                                            }, {'_id': 0, 'sender': 1, 'receptant': 1,
+                                                'message': 1}))
+            resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
+                                            }, {'_id': 0, 'sender': 1, 'receptant': 1,
+                                                'message': 1}))
+            if resultados2 and resultados1:                                                
+                resultados1.append(resultados2[0])
+                return json.jsonify(resultados1)
+            else:
+                print('No hay mensajes')
+                return "<h1>¡No existen mensajes entre aquellos usuarios!</h1>"
+        else:
+            print('No existen dichos ids')
+            return "<h1>¡No existen dichos ids!</h1>" 
     else:
         resultados = list(mensajes.find({},{'_id': 0}))
         return json.jsonify(resultados)
