@@ -74,7 +74,7 @@ def messages():
     resultados = list(mensajes.find({},{'_id': 0}))
     return json.jsonify(resultados)
 
-@app.route("/messages/<id>")
+@app.route("/messages/<int:id>")
 def messages_id(id):
     print(f'El id recibido es: {type(id)} {id}')
     resultados = list(mensajes.find({'mid': int(id)}, {'_id': 0}))
@@ -102,7 +102,7 @@ def users():
     resultados = list(usuarios.find({},{'_id': 0}))
     return json.jsonify(resultados)
 
-@app.route("/users/<id>")
+@app.route("/users/<int:id>")
 def users_id(id):
     print(f'El id recibido es: {type(id)} {id}')
     user = list(usuarios.find({'uid': int(id)}, {'_id': 0}))
@@ -270,11 +270,12 @@ def post_messages():
     except:
         print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO
                     CORRESPONDE CON EL FORMATO DE LA BASE DE DATOS''')
+        return json.jsonify({'success': False, 'message': 'Mensaje no creado, formato incorrecto'})
 
 
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route("/messages/delete/<int:mid>", methods=['DELETE'])
+@app.route("/messages/<int:mid>", methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
@@ -283,10 +284,11 @@ def delete_msg(mid):
     if resultado:
         mensajes.delete_one({"mid": mid})
         message = f'mensaje con mid={mid} ha sido eliminado.'
-        return json.jsonify({'resulto': 'eliminado', 'message': message})
+        return json.jsonify({'success': True, 'message': message})
     else:
         message = f'mid={mid} no existe.'
-        return json.jsonify({'resulto': 'no eliminado', 'message': message})
+        print('''EL ID NO EXISTE''')
+        return json.jsonify({'success': False, 'message': message})
 
 
 
