@@ -76,9 +76,13 @@ def messages():
 
 @app.route("/messages/<int:id>")
 def messages_id(id):
-    print(f'El id recibido es: {type(id)} {id}')
     resultados = list(mensajes.find({'mid': int(id)}, {'_id': 0}))
-    return json.jsonify(resultados)
+    if resultados:
+        return json.jsonify(resultados)
+    else:
+        message = f'mid={id} no existe.'
+        print('''EL MID NO EXISTE''')
+        return json.jsonify({'success': False, 'message': message})
 
 @app.route("/messages/exchange/<id1>/<id2>")
 def messages_intercambiados(id1, id2):
@@ -104,16 +108,20 @@ def users():
 
 @app.route("/users/<int:id>")
 def users_id(id):
-    print(f'El id recibido es: {type(id)} {id}')
     user = list(usuarios.find({'uid': int(id)}, {'_id': 0}))
-    mensajes_enviados = list(mensajes.find({'sender': int(id)}, {'_id': 0, 'message': 1}))
-    todos_los_mensajes = []
-    for enviado in mensajes_enviados:
-        el_msn_es = enviado['message']
-        todos_los_mensajes.append(el_msn_es)
-    user[0]['mensajes_enviados'] = todos_los_mensajes
+    if user:
+        mensajes_enviados = list(mensajes.find({'sender': int(id)}, {'_id': 0, 'message': 1}))
+        todos_los_mensajes = []
+        for enviado in mensajes_enviados:
+            el_msn_es = enviado['message']
+            todos_los_mensajes.append(el_msn_es)
+        user[0]['mensajes_enviados'] = todos_los_mensajes
 
-    return json.jsonify(user)
+        return json.jsonify(user)
+    else:
+        message = f'uid={id} no existe.'
+        print('''EL UID NO EXISTE''')
+        return json.jsonify({'success': False, 'message': message})
 
 
 @app.route("/textsearch", methods=['GET'])
