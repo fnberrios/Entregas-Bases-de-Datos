@@ -85,15 +85,15 @@ def messages():
             resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
                                             }, {'_id': 0, 'sender': 1, 'receptant': 1,
                                                 'message': 1}))
-            if resultados2:                                                
+            if resultados2:
                 resultados1.append(resultados2[0])
                 return json.jsonify(resultados1)
             else:
                 print('No hay mensajes')
-                return "<h1>¡No existen mensajes entre aquellos usuarios!</h1>"
+                return json.jsonify({'success': False, 'message': 'No hay mensajes'})
         else:
             print('No existen dichos ids')
-            return "<h1>¡No existen dichos ids!</h1>" 
+            return json.jsonify({'success': False, 'message': 'No existen dichos ids'})
     else:
         resultados = list(mensajes.find({},{'_id': 0}))
         return json.jsonify(resultados)
@@ -137,7 +137,7 @@ def users_id(id):
 
 # -------------------------- RUTAS TEXTSEARCH  --------------------------
 
-@app.route("/textsearch", methods=['GET'])
+@app.route("/text-search", methods=['GET'])
 def text_search():
     # Se crea el indice invertido
     mensajes.create_index([("message","text")])
@@ -291,12 +291,30 @@ def post_messages():
     except:
         print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO
                     CORRESPONDE CON EL FORMATO DE LA BASE DE DATOS''')
-        return json.jsonify({'success': False, 'message': 'Mensaje no creado, formato incorrecto'})
-
-
+        errores = []
+        if "message" not in request.json:
+            print("No se encuentra: message")
+            errores.append("message")
+        if "sender" not in request.json:
+            print("No se encuentra: sender")
+            errores.append("sender")
+        if "receptant" not in request.json:
+            print("No se encuentra: receptant")
+            errores.append("receptant")
+        if "lat" not in request.json:
+            print("No se encuentra: lat")
+            errores.append("lat")
+        if "long" not in request.json:
+            print("No se encuentra: long")
+            errores.append("long")
+        if "date" not in request.json:
+            print("No se encuentra: date")
+            errores.append("data")
+        message = 'Mensaje no creado, falta(n) atributo(s).'
+        return json.jsonify({'success': False, 'message': message, 'error': errores})
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
-@app.route("/messages/<int:mid>", methods=['DELETE'])
+@app.route("/message/<int:mid>", methods=['DELETE'])
 def delete_msg(mid):
     '''
     Elimina un mensaje
