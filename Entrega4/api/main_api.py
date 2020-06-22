@@ -85,7 +85,7 @@ def messages():
             resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
                                             }, {'_id': 0, 'sender': 1, 'receptant': 1,
                                                 'message': 1}))
-            if resultados2 and resultados1:                                                
+            if resultados2:                                                
                 resultados1.append(resultados2[0])
                 return json.jsonify(resultados1)
             else:
