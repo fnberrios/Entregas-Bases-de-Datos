@@ -85,7 +85,7 @@ def messages():
             resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
                                             }, {'_id': 0, 'sender': 1, 'receptant': 1,
                                                 'message': 1}))
-            if resultados2:                                                
+            if resultados2:
                 resultados1.append(resultados2[0])
                 return json.jsonify(resultados1)
             else:
@@ -93,7 +93,7 @@ def messages():
                 return "<h1>¡No existen mensajes entre aquellos usuarios!</h1>"
         else:
             print('No existen dichos ids')
-            return "<h1>¡No existen dichos ids!</h1>" 
+            return "<h1>¡No existen dichos ids!</h1>"
     else:
         resultados = list(mensajes.find({},{'_id': 0}))
         return json.jsonify(resultados)
@@ -137,7 +137,7 @@ def users_id(id):
 
 # -------------------------- RUTAS TEXTSEARCH  --------------------------
 
-@app.route("/textsearch", methods=['GET'])
+@app.route("/text-search", methods=['GET'])
 def text_search():
     # Se crea el indice invertido
     mensajes.create_index([("message","text")])
