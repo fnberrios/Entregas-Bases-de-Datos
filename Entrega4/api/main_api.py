@@ -180,25 +180,35 @@ def text_search():
             #[Dos casos: 1) cuando se conoce el uid (debe ver si existe o si no existe y hacer la consulta),
             #2)caso en el que no se conoce el uid], Seria un if y un elif
             if uid == "userId":
-                mensajes_enviados = list(mensajes.find({"sender": int(data["userId"])},{"_id": 0}))
-                permitidos = []
+                mensajes_enviados = list(mensajes.find({"sender": int(data["userId"])},{"_id": 0, "message":1}))
+                permitidos = ""
                 if mensajes_enviados != []:
-                    for m in mensajes:
+                    for m in mensajes_enviados:
+                        control = True
                         for f in data["forbidden"]:
-                            if f not in m["message"]:
-                                permitidos.append(m)
+                            if f in m:
+                                control = False
+                        if control:
+                            permitidos += m
+                                
 
                 elif mensajes_enviados == []:
                     return "El usuario no envió ningun mensaje."
 
-            elif uid == "":
-                permitidos = []
-                for m in mensajes:
-                    for f in data["forbidden"]:
-                        if f not in m["message"]:
-                            permitidos.append(m)
+                resultados = list(mensajes.find({"$text":{"$search": permitidos}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
 
-            return json.jsonify(permitidos)
+            elif uid == "":
+                permitidos = ""
+                for m in mensajes_enviados:
+                    control = True
+                    for f in data["forbidden"]:
+                        if f in m:
+                            control = False
+                    if control:
+                        permitidos += m
+
+                resultados = list(mensajes.find({"$text":{"$search": string}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
+            return json.jsonify(resultados)
 
         #Caso en el que se entrega el uid
         elif (uid == "userId") and (len(claves) == 0):
