@@ -179,9 +179,9 @@ def text_search():
         elif ("forbidden" in claves) and (len(claves) == 1):
             #[Dos casos: 1) cuando se conoce el uid (debe ver si existe o si no existe y hacer la consulta),
             #2)caso en el que no se conoce el uid], Seria un if y un elif
+            permitidos = ''
             if uid == "userId":
-                mensajes_enviados = list(mensajes.find({"sender": int(data["userId"])},{"_id": 0, "message":1}))
-                permitidos = ""
+                mensajes_enviados = list(mensajes.find({'sender': int(data['userId'])},{'_id': 0, 'message':1}))
                 if mensajes_enviados != []:
                     for m in mensajes_enviados:
                         control = True
@@ -189,25 +189,23 @@ def text_search():
                             if f in m:
                                 control = False
                         if control:
-                            permitidos += m
-                                
-
-                elif mensajes_enviados == []:
+                            permitidos += m + " "
+                            
+                else:
                     return "El usuario no envió ningun mensaje."
 
                 resultados = list(mensajes.find({"$text":{"$search": permitidos}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
 
-            elif uid == "":
-                permitidos = ""
+            if uid == "":
                 for m in mensajes_enviados:
                     control = True
                     for f in data["forbidden"]:
                         if f in m:
                             control = False
                     if control:
-                        permitidos += m
+                        permitidos += m + " "
 
-                resultados = list(mensajes.find({"$text":{"$search": string}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
+                resultados = list(mensajes.find({"$text":{"$search": permitidos}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
             return json.jsonify(resultados)
 
         #Caso en el que se entrega el uid
@@ -221,7 +219,7 @@ def text_search():
 
         #Caso en el que se entrega el diccionario vacio
         elif (len(claves)==0) and (uid==""):
-            resultados = list(mensajes.find({"sender": 43}, {"_id": 0}))
+            resultados = list(mensajes.find({"sender": 50}, {"_id": 0}))
             return json.jsonify(resultados)
 
     except:
