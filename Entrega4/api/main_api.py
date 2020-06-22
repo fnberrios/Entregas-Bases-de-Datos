@@ -71,8 +71,22 @@ def messages():
     '''
     Obtiene todos los mensajes
     '''
-    resultados = list(mensajes.find({},{'_id': 0}))
-    return json.jsonify(resultados)
+    if request.args.get("id1") and request.args.get("id2"):
+        id1 = request.args.get("id1")
+        id2 = request.args.get("id2")
+        print(f'id: {id1} y id2: {id2}')
+        resultados1 = list(mensajes.find({'sender': int(id1), 'receptant': int(id2)
+                                        }, {'_id': 0, 'sender': 1, 'receptant': 1,
+                                            'message': 1}))
+        resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
+                                        }, {'_id': 0, 'sender': 1, 'receptant': 1,
+                                            'message': 1}))
+        resultados1.append(resultados2[0])
+        return json.jsonify(resultados1)
+
+    else:
+        resultados = list(mensajes.find({},{'_id': 0}))
+        return json.jsonify(resultados)
 
 @app.route("/messages/<int:id>")
 def messages_id(id):
@@ -83,19 +97,6 @@ def messages_id(id):
         message = f'mid={id} no existe.'
         print('''EL MID NO EXISTE''')
         return json.jsonify({'success': False, 'message': message})
-
-@app.route("/messages/exchange/<id1>/<id2>")
-def messages_intercambiados(id1, id2):
-    print(f'id: {id1} y id2: {id2}')
-    resultados1 = list(mensajes.find({'sender': int(id1), 'receptant': int(id2)
-                                      }, {'_id': 0, 'sender': 1, 'receptant': 1,
-                                      'message': 1}))
-    resultados2 = list(mensajes.find({'sender': int(id2), 'receptant': int(id1)
-                                      }, {'_id': 0, 'sender': 1, 'receptant': 1,
-                                          'message': 1}))
-    resultados1.append(resultados2[0])
-
-    return json.jsonify(resultados1)
 
 
 @app.route("/users")
@@ -123,6 +124,8 @@ def users_id(id):
         print('''EL UID NO EXISTE''')
         return json.jsonify({'success': False, 'message': message})
 
+
+# -------------------------- RUTAS TEXTSEARCH  --------------------------
 
 @app.route("/textsearch", methods=['GET'])
 def text_search():
