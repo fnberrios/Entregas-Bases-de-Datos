@@ -144,7 +144,7 @@ def text_search():
         #Se procesa la informacion
         string = ""
         #Caso en el que se entregan dos pares: [desired, required]  [desired, forbidden],  [forbidden, required]
-        if (len(claves) > 1):
+        if (len(claves) > 1) or ( (len(claves) == 1) and  ("required" in claves)) or ( (len(claves) == 1) and  ("desired" in claves)):
             if "desired" in claves:
                 if len(data["desired"]) != 0:
                     lista1 =[]
