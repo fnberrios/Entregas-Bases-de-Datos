@@ -173,40 +173,55 @@ def text_search():
                     resultados = list(mensajes.find({"$text":{"$search": string}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
                     return json.jsonify(resultados)
                 elif usuario == []:
-                    return "El uid ingresado no existe"
+                    return "El uid ingresado no existe o no ha enviado mensajes"
 
-        #Caso en el que se entrega solo forbbiden ------------------------EN PROCESO AUN
+        #Caso en el que se entrega solo forbbiden
         elif ("forbidden" in claves) and (len(claves) == 1):
             #[Dos casos: 1) cuando se conoce el uid (debe ver si existe o si no existe y hacer la consulta),
             #2)caso en el que no se conoce el uid], Seria un if y un elif
-            permitidos = ''
+            permitidos = ""
+            listos = []
+            #Caso cuando se conoce el uid
             if uid == "userId":
-                mensajes_enviados = list(mensajes.find({'sender': int(data['userId'])},{'_id': 0, 'message':1}))
+                usuario = list(mensajes.find({ "sender": int(data["userId"])}, {'sender': 1, "_id": 0}))
+                if usuario != []:
+                    mensajes_enviados = list(mensajes.find({'sender': int(data['userId'])},{'_id': 0}))
+                    if mensajes_enviados != []:
+                        for m in mensajes_enviados:
+                            control = True
+                            mensaje =""
+                            for f in data["forbidden"]:
+                                mensaje = m["message"]
+                                f = f.strip()
+                                for palabra in f.split(" "):
+                                    palabra_ = palabra.strip()
+                                    if palabra_.lower() in mensaje.lower():
+                                        control = False
+                            if control == True:
+                                listos.append(m)
+                    else:
+                        return "El usuario no envió ningun mensaje."
+
+                elif usuario == []:
+                    return "El uid ingresado no existe o no ha enviado mensajes"
+
+            #Caso cuando no se conoce el uid
+            if uid == "":
+                mensajes_enviados = list(mensajes.find({},{'_id': 0}))
                 if mensajes_enviados != []:
                     for m in mensajes_enviados:
                         control = True
                         for f in data["forbidden"]:
-                            if f in m['message']:
-                                control = False
+                            mensaje = m["message"]
+                            f = f.strip()
+                            for palabra in f.split(" "):
+                                palabra_ = palabra.strip()
+                                if palabra_.lower() in mensaje.lower():
+                                    control = False
                         if control:
-                            permitidos += m['message'] + " "
-                            
-                else:
-                    return "El usuario no envió ningun mensaje."
+                            listos.append(m)
 
-                resultados = list(mensajes.find({"$text":{"$search": permitidos}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
-
-            if uid == "":
-                for m in mensajes_enviados:
-                    control = True
-                    for f in data["forbidden"]:
-                        if f in m['message']:
-                            control = False
-                    if control:
-                        permitidos += m['message'] + " "
-
-                resultados = list(mensajes.find({"$text":{"$search": permitidos}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
-            return json.jsonify(resultados)
+            return json.jsonify(listos)
 
         #Caso en el que se entrega el uid
         elif (uid == "userId") and (len(claves) == 0):
@@ -215,7 +230,7 @@ def text_search():
                 resultados = list(mensajes.find({"sender": int(data["userId"])}, {"_id": 0}))
                 return json.jsonify(resultados)
             elif usuario == []:
-                return "El uid ingresado no existe"
+                return "El uid ingresado no existe o no ha enviado mensajes"
 
         #Caso en el que se entrega el diccionario vacio
         elif (len(claves)==0) and (uid==""):
