@@ -159,3 +159,12 @@
 </body>
 
 </html>
+
+    <!-------------- COMPRAR TICKETS E3 ---------------->
+  <h3 align="center"> Comprar un ticket:</h3>
+  <form align="center" action="consultas/comprar_ticket.php" method="post">
+    <input type="submit" value="Comprar">
+  </form>
+  <br>
+  <br>
+  <br>

@@ -179,8 +179,26 @@ def text_search():
         elif ("forbidden" in claves) and (len(claves) == 1):
             #[Dos casos: 1) cuando se conoce el uid (debe ver si existe o si no existe y hacer la consulta),
             #2)caso en el que no se conoce el uid], Seria un if y un elif
-            resultados = list(mensajes.find({"sender": 43}, {"_id": 0}))
-            return json.jsonify(resultados)
+            if uid == "userId":
+                mensajes_enviados = list(mensajes.find({"sender": int(data["userId"])},{"_id": 0}))
+                permitidos = []
+                if mensajes_enviados != []:
+                    for m in mensajes:
+                        for f in data["forbidden"]:
+                            if f not in m["message"]:
+                                permitidos.append(m)
+
+                elif mensajes_enviados == []:
+                    return "El usuario no envió ningun mensaje."
+
+            elif uid == "":
+                permitidos = []
+                for m in mensajes:
+                    for f in data["forbidden"]:
+                        if f not in m["message"]:
+                            permitidos.append(m)
+
+            return json.jsonify(permitidos)
 
         #Caso en el que se entrega el uid
         elif (uid == "userId") and (len(claves) == 0):
