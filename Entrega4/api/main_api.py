@@ -291,9 +291,27 @@ def post_messages():
     except:
         print('''EL FORMATO DEL JSON QUE TRATAS DE INGRESASR NO
                     CORRESPONDE CON EL FORMATO DE LA BASE DE DATOS''')
-        return json.jsonify({'success': False, 'message': 'Mensaje no creado, formato incorrecto'})
-
-
+        errores = []
+        if "message" not in request.json:
+            print("No se encuentra: message")
+            errores.append("message")
+        if "sender" not in request.json:
+            print("No se encuentra: sender")
+            errores.append("sender")
+        if "receptant" not in request.json:
+            print("No se encuentra: receptant")
+            errores.append("receptant")
+        if "lat" not in request.json:
+            print("No se encuentra: lat")
+            errores.append("lat")
+        if "long" not in request.json:
+            print("No se encuentra: long")
+            errores.append("long")
+        if "date" not in request.json:
+            print("No se encuentra: date")
+            errores.append("data")
+        message = 'Mensaje no creado, falta(n) atributo(s).'
+        return json.jsonify({'success': False, 'message': message, 'error': errores})
 
 # -------------------------- RUTAS TIPO DELETE --------------------------
 @app.route("/message/<int:mid>", methods=['DELETE'])
