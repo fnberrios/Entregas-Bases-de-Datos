@@ -90,10 +90,10 @@ def messages():
                 return json.jsonify(resultados1)
             else:
                 print('No hay mensajes')
-                return "<h1>¡No existen mensajes entre aquellos usuarios!</h1>"
+                return json.jsonify({'success': False, 'message': 'No hay mensajes'})
         else:
             print('No existen dichos ids')
-            return "<h1>¡No existen dichos ids!</h1>"
+            return json.jsonify({'success': False, 'message': 'No existen dichos ids'})
     else:
         resultados = list(mensajes.find({},{'_id': 0}))
         return json.jsonify(resultados)
