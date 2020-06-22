@@ -1,9 +1,5 @@
 from flask import Flask, render_template, request, abort, json
 from pymongo import MongoClient
-import pandas as pd
-import matplotlib.pyplot as plt
-import os
-import sys
 
 # Para este ejemplo pediremos la id
 # y no la generaremos automáticamente
