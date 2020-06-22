@@ -186,10 +186,10 @@ def text_search():
                     for m in mensajes_enviados:
                         control = True
                         for f in data["forbidden"]:
-                            if f in m:
+                            if f in m['message']:
                                 control = False
                         if control:
-                            permitidos += m + " "
+                            permitidos += m['message'] + " "
                             
                 else:
                     return "El usuario no envió ningun mensaje."
@@ -200,10 +200,10 @@ def text_search():
                 for m in mensajes_enviados:
                     control = True
                     for f in data["forbidden"]:
-                        if f in m:
+                        if f in m['message']:
                             control = False
                     if control:
-                        permitidos += m + " "
+                        permitidos += m['message'] + " "
 
                 resultados = list(mensajes.find({"$text":{"$search": permitidos}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
             return json.jsonify(resultados)
@@ -219,8 +219,7 @@ def text_search():
 
         #Caso en el que se entrega el diccionario vacio
         elif (len(claves)==0) and (uid==""):
-            resultados = list(mensajes.find({"sender": 50}, {"_id": 0}))
-            return json.jsonify(resultados)
+            return json.jsonify(mensajes)
 
     except:
         #Se muestran todos los mensajes en caso de que no se entrega nada
@@ -273,6 +272,7 @@ def delete_msg(mid):
     else:
         message = f'mid={mid} no existe.'
         return json.jsonify({'resulto': 'no eliminado', 'message': message})
+
 
 
 if __name__ == "__main__":
