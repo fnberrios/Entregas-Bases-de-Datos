@@ -22,11 +22,11 @@ Ruta que entrega todos los mensajes que ha enviado el usuario con uid=<id>. En c
 ### ruta **localhost:5000/text-search**
 Ruta que entrega todos los mensajes filtrados según los parametros entregados por medio de un diccionario json de la siguiente manera:
 
-{
-    "desired": ["mal"],
-    "required": ["origami", "pingüino"],
-    "forbbiden": ["buena"],
-    "userId": 13
+{  
+    "desired": ["mal"],  
+    "required": ["origami", "pingüino"],  
+    "forbbiden": ["buena"],  
+    "userId": 13  
 }
 
 Lo que se le entrega a esta ruta por medio de postman puede variar entre diversos casos los que pasare a nombrar a continuación:
