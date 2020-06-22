@@ -168,13 +168,28 @@ def text_search():
                 resultados = list(mensajes.find({"$text":{"$search": string}}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
                 return json.jsonify(resultados)
             if uid == "userId":
-                resultados = list(mensajes.find({"$text":{"$search": string}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
-                return json.jsonify(resultados)
+                usuario = list(mensajes.find({ "sender": int(data["userId"])},{'sender': 1, "_id": 0}))
+                if usuario != []:
+                    resultados = list(mensajes.find({"$text":{"$search": string}, "sender": int(data["userId"])}, {"_id": 0, "score": {"$meta": "textScore" }}).sort([("score", {"$meta": "textScore"})]))
+                    return json.jsonify(resultados)
+                elif usuario == []:
+                    return "El uid ingresado no existe"
 
         #Caso en el que se entrega solo forbbiden ------------------------EN PROCESO AUN
         elif ("forbidden" in claves) and (len(claves) == 1):
+            #[Dos casos: 1) cuando se conoce el uid (debe ver si existe o si no existe y hacer la consulta),
+            #2)caso en el que no se conoce el uid], Seria un if y un elif
             resultados = list(mensajes.find({"sender": 43}, {"_id": 0}))
             return json.jsonify(resultados)
+
+        #Caso en el que se entrega el uid
+        elif (uid == "userId") and (len(claves) == 0):
+            usuario = list(mensajes.find({ "sender": int(data["userId"])}, {'sender': 1, "_id": 0}))
+            if usuario != []:
+                resultados = list(mensajes.find({"sender": int(data["userId"])}, {"_id": 0}))
+                return json.jsonify(resultados)
+            elif usuario == []:
+                return "El uid ingresado no existe"
 
         #Caso en el que se entrega el diccionario vacio
         elif (len(claves)==0) and (uid==""):
