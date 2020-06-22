@@ -255,7 +255,8 @@ def text_search():
 
         #Caso en el que se entrega el diccionario vacio
         elif (len(claves)==0) and (uid==""):
-            return json.jsonify(mensajes)
+            resultados = list(mensajes.find({}, {"_id": 0}))
+            return json.jsonify(resultados)
 
     except:
         #Se muestran todos los mensajes en caso de que no se entrega nada
