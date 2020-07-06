@@ -70,6 +70,7 @@
           </form>
           </br>
           <form action="../cosulta_cinco_api.php" method="post">
+            Buscar Ubicaciones de los mensajes enviardos entre:
             Fecha de inicio búsqueda:
             <input type="date" id="start" name="fecha-inicio"
                     value="2020-05-28"
