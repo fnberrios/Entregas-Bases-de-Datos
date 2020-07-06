@@ -26,7 +26,7 @@
   ?>
   <?php
   foreach ($valores as $v) {
-    echo "$v[0], $v[1], $v[2], $v[3], $v[4], $v[5]\n";
+    echo "$v[0], $v[1], $v[2], $v[3], $v[4], $v[5] \r\n";
   }
   ?>
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
