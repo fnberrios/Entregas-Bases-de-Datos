@@ -23,7 +23,9 @@
     echo json_decode($data);
     $data_filtrada = array();
     foreach ($data as $message) {
-      echo $message;
+      if ($message[4]==$user){
+        echo $message[4];
+      }
     }
 
     ?>
