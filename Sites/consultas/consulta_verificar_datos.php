@@ -82,8 +82,8 @@
             <br /><br />
               <input type="submit" value="Buscar Ubicaciones de los mensajes">
           </form>
-          
-        
+
+
       <?php
         else:
           echo "La contraseña o el usuario es incorrecto";
