@@ -26,7 +26,7 @@
   ?>
   <?php
   foreach ($valores as $v) {
-    echo "<option value=$v[1]>$v[0]</option>";
+    echo "$v";
   }
   ?>
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
