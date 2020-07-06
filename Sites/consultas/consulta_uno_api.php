@@ -21,6 +21,10 @@
     }
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
     echo json_decode($data);
+    $data_filtrada = array();
+    foreach ($data as $data['sender'] => $user) {
+      echo $data
+    }
 
     ?>
     <?php include('../templates/footer.html'); ?>
