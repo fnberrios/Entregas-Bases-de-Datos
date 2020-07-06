@@ -27,9 +27,10 @@
         $data_filtrada[] = $message;
       }
     }
-    foreach ($data_filtrada as $p) {
-      echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
-      <td>$p[4]</td> <td>$p[5]</td></tr>";
+
+    foreach ($data_filtrada as $message) {
+      echo "<tr> <td>$message['date']</td>$message['lat']<td>$message['long']</td> <td>$message['message']</td>
+       <td>$message['mid']</td><td>$message['receptant']</td><td>$message['sender']</td></tr>";
     }
 
     ?>
