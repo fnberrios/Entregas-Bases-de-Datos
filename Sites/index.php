@@ -14,21 +14,6 @@
 
   <br>
 
-  <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $mb
-  require("config/conexion.php");
-  #Se construye la consulta como un string
-  $query = " SELECT * FROM usuarios;";
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-  $result = $db53->prepare($query);
-  $result->execute();
-  $valores = $result->fetchAll();
-  ?>
-  <?php
-  foreach ($valores as $v) {
-    echo "$v[0], $v[1], $v[2], $v[3], $v[4], $v[5] \r\n";
-  }
-  ?>
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
 
   <head>
