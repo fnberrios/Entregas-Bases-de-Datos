@@ -41,8 +41,8 @@
 
     <?php
     foreach ($data_filtrada as $message) {
-      echo "<tr> <td>$message['date']</td> $message['lat']<td> $message['long']</td> <td> $message['message']</td>
-       <td>$message['mid']</td> <td>$message['receptant']</td> <td>$message['sender']</td></tr>";
+      echo "<tr> <td>$message["date"]</td> $message["lat"]<td> $message["long"]</td> <td> $message["message"]</td>
+       <td>$message["mid"]</td> <td>$message["receptant"]</td> <td>$message["sender"]</td></tr>";
     }
 
     ?>
