@@ -20,6 +20,7 @@
         <td>$p[4]</td> <td>$p[5]</td></tr>";
     }
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
-    echo $data;
+    echo type($data);
+
     ?>
     <?php include('../templates/footer.html'); ?>
