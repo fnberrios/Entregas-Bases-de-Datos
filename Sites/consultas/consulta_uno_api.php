@@ -40,14 +40,6 @@
         <th>Receptant</th>
         <th>Sender</th>
       </tr>
-
-    <?php
-    foreach ($data_filtrada as $message) {
-      echo "<tr> <td>$message['date']</td> $message['lat']<td> $message['long']</td> <td> $message['message']</td>
-       <td>$message['mid']</td> <td>$message['receptant']</td> <td>$message['sender']</td></tr>";
-    }
-
-    ?>
     </table>
 
     <?php include('../templates/footer.html'); ?>
