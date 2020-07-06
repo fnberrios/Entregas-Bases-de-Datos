@@ -1,4 +1,7 @@
-<?php include('../templates/header.html');   ?>
+<?php 
+include('../templates/header.html');
+include('../config/call_api.php');   
+?>
 
 <body>
   <?php

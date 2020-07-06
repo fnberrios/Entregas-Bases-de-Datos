@@ -76,7 +76,7 @@
                     value="2020-05-28"
                     min="1500-05-28" max="2999-12-31">
             Fecha de final de la búsqueda:
-            <input type="date" id="start" name="fecha-final"
+            <input type="date" id="end" name="fecha-final"
                     value="2020-05-28"
                     min="1500-05-28" max="2999-12-31">
             <br /><br />
