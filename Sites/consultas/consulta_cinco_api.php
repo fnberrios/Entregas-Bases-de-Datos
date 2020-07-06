@@ -1,10 +1,9 @@
+<?php
+  session_start();
+?>
 <?php 
 include('../templates/header.html');
 include('../config/call_api.php');   
-?>
-
-<?php
-  session_start();
 ?>
 
 <body>
@@ -16,6 +15,7 @@ include('../config/call_api.php');
   $fecha_final =  $_POST["fecha-final"];
   $user =  $_SESSION["user_id"];
   $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages/$user');
+  echo $query;
   # CONSULTAS A LA API
 
   ?>
