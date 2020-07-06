@@ -70,17 +70,21 @@
           </form>
           </br>
           <form action="consulta_cinco_api.php" method="post">
-            Buscar Ubicaciones de los mensajes enviardos entre:
+            Buscar Ubicaciones de los mensajes enviados entre:
+            </br>
             Fecha de inicio búsqueda:
+            </br>
             <input type="date" id="start" name="fecha-inicio"
                     value="2020-05-28"
                     min="1500-05-28" max="2999-12-31">
+             </br>
             Fecha de final de la búsqueda:
-            <input type="date" id="end" name="fecha-final"
+             </br>
+             <input type="date" id="end" name="fecha-final"
                     value="2020-05-28"
                     min="1500-05-28" max="2999-12-31">
             <br /><br />
-              <input type="submit" value="Buscar Ubicaciones de los mensajes">
+              <input type="submit" value="Buscar Ubicaciones">
           </form>
 
 
