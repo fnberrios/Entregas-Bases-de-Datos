@@ -52,7 +52,28 @@
           <form action="../index.php" method="post">
             <input type="submit" value="Ir al Inicio">
           </form>
-
+          </br>
+          <form action="../cosulta_uno_api.php" method="post">
+            <input type="submit" value="Mostrar todos los atributos de tus mensajes recibidos">
+          </form>
+          </br>
+          <form action="../cosulta_dos_api.php" method="post">
+            <input type="submit" value="Mostrar todos los atributos de tus mensajes recibidos">
+          </form>
+          </br>
+          <form action="../cosulta_tres_api.php" method="post">
+            <input type="submit" value="Enviar mensaje a un usuario">
+          </form>
+          </br>
+          <form action="../cosulta_cuatro_api.php" method="post">
+            <input type="submit" value="Buscar Mensaje">
+          </form>
+          </br>
+          <form action="../cosulta_cinco_api.php" method="post">
+            <input type="submit" value="Ir al Inicio">
+          </form>
+          
+        
       <?php
         else:
           echo "La contraseña o el usuario es incorrecto";
