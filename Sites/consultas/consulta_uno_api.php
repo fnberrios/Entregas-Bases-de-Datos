@@ -2,6 +2,8 @@
   session_start();
 ?>
 <?php include('../templates/header.html');   ?>
+<?php include('../config/call_api.php');   ?>
+
 <body>
     <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -17,5 +19,7 @@
         echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
         <td>$p[4]</td> <td>$p[5]</td></tr>";
     }
+    $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
+    echo $data;
     ?>
     <?php include('../templates/footer.html'); ?>
