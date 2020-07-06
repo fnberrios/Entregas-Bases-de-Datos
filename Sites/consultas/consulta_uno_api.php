@@ -26,7 +26,7 @@
     $data_filtrada = array();
     echo gettype($user);
     foreach ($data as $message) {
-      echo $message[5];
+      echo $message['mid'];
     }
 
     ?>
