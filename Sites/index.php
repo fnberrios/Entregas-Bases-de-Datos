@@ -48,8 +48,8 @@
 
       return $result;
   }
-  $data= array('id1'=>'57',
-              'id2'=>'35');
+  $data= array('id1'=>'4',
+              'id2'=>'12');
   $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages',$data);
   echo $query;
   ?>
