@@ -25,6 +25,8 @@
     foreach ($data as $message) {
       if ($message['receptant']==$user){
         $data_filtrada[] = $message;
+        echo $message['message'];
+        echo $message['receptant']
       }
     }
   ?>
@@ -41,8 +43,7 @@
 
     <?php
     foreach ($data_filtrada as $message) {
-      echo "<tr> <td>$message['date']</td> $message['lat']<td> $message['long']</td> <td> $message['message']</td>
-       <td>$message['mid']</td> <td>$message['receptant']</td> <td>$message['sender']</td></tr>";
+      print_r($message);
     }
 
     ?>
