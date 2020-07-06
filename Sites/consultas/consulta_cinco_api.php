@@ -3,6 +3,10 @@ include('../templates/header.html');
 include('../config/call_api.php');   
 ?>
 
+<?php
+  session_start();
+?>
+
 <body>
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -10,13 +14,9 @@ include('../config/call_api.php');
 
   $fecha_inicio = $_POST["fecha-inicio"];
   $fecha_final =  $_POST["fecha-final"];
-  $data = array('id'=>1)
-  $query =  CallApi($POST, 'https://e5db.herokuapp.com/messages/', $data);
+  $user =  $_SESSION["user_id"];
+  $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages/$user');
   # CONSULTAS A LA API
-
-
-
-
 
   ?>
 
