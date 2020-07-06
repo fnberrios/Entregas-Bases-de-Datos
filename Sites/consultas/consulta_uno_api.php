@@ -22,12 +22,14 @@
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
     $data = json_decode($data, true);
     $data_filtrada = array();
-    echo gettype($user);
-    echo gettype($data[0]['receptant']);
     foreach ($data as $message) {
       if ($message['receptant']==$user){
-        echo $message['message'];
+        $data_filtrada[] = $message;
       }
+    }
+    foreach ($data_filtrada as $p) {
+      echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
+      <td>$p[4]</td> <td>$p[5]</td></tr>";
     }
 
     ?>
