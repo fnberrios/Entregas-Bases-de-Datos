@@ -70,7 +70,16 @@
           </form>
           </br>
           <form action="../cosulta_cinco_api.php" method="post">
-            <input type="submit" value="Ir al Inicio">
+            Fecha de inicio búsqueda:
+            <input type="date" id="start" name="fecha-inicio"
+                    value="2020-05-28"
+                    min="1500-05-28" max="2999-12-31">
+            Fecha de final de la búsqueda:
+            <input type="date" id="start" name="fecha-final"
+                    value="2020-05-28"
+                    min="1500-05-28" max="2999-12-31">
+            <br /><br />
+              <input type="submit" value="Buscar Ubicaciones de los mensajes">
           </form>
           
         
