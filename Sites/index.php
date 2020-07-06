@@ -48,8 +48,8 @@
 
       return $result;
   }
-  $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages')
-  echo $query
+  $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages');
+  echo $query;
   ?>
 
   <!-------------- CONSULTA POR ARTISTAS E3 ---------------->
