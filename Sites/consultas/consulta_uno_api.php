@@ -26,7 +26,7 @@
       if ($message['receptant']==$user){
         $data_filtrada[] = $message;
         echo $message['message'];
-        echo $message['receptant']
+        echo $message['receptant'];
       }
     }
   ?>
