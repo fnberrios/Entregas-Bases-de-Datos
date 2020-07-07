@@ -24,7 +24,7 @@ include('../config/call_api.php');
   echo gettype($response);
   #echo $response;
 
-  foreach $response as $resp{
+  foreach ($response as $resp){
     if ($resp['sender'] = $user) {
       echo $resp;
     }
