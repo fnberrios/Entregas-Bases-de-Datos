@@ -18,7 +18,7 @@ include('../config/call_api.php');
   $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages');
   #echo $query;
   echo gettype($query);
-
+  echo 'asdfasdf';
   $response = json_decode($query, true); //because of true, it's in an array
   echo gettype($response);
 
