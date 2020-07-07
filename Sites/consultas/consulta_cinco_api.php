@@ -28,22 +28,18 @@ crossorigin=""/>
   #echo gettype($response);
   #echo $response;
 
+  $direcciones = array();
   foreach ($response as $resp){
     if (($resp['sender'] == $user) and ($resp['date'] < $fecha_final) 
                   and ($resp['date'] > $fecha_inicio)) {
       print_r($resp);
       $lat = $resp["lat"];
       $long = $resp["long"];
-    }
-    else{
-      unset($resp);
+      array_push($direcciones, $resp);
+
     }
   }
 
-
-  foreach ($response as $resp){
-    print_r($resp);
-  }
   ?>
 
 <div id="mapid" style="height: 300px"></div>
@@ -59,7 +55,7 @@ crossorigin=""/>
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    <?php foreach($response as $resp) {
+    <?php foreach($direcciones as $resp) {
         echo 
         'L.marker([' . $resp["lat"] . ',' . $resp["long"] . ']).addTo(map);';
     } ?>
