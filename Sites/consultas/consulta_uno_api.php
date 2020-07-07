@@ -28,7 +28,9 @@
       <?php
     foreach ($data as $message) {
       if ($message['receptant']==$user){
-        echo "$message['message']";
+        print_r($message);
+        $msn=$message->receptant;
+        echo $msn;
       }
     }
   ?>
