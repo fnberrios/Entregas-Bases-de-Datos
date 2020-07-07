@@ -17,11 +17,12 @@ include('../config/call_api.php');
   # $data = array('id'=> $user);
   $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages');
   #echo $query;
+  echo $query;
   echo gettype($query);
   echo '---';
   $response = json_decode($query, true); //because of true, it's in an array
   echo gettype($response);
-
+  echo $response;
   #foreach($obj as $key => $value) 
   #{
   #echo 'Your key is: '.$key.' and the value of the key is:'.$value;
