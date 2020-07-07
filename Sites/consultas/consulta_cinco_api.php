@@ -26,7 +26,7 @@ include('../config/call_api.php');
 
   foreach ($response as $resp){
     if ($resp['sender'] = $user) {
-      echo $resp;
+      echo '$resp';
     }
   }
   #foreach($obj as $key => $value) 
