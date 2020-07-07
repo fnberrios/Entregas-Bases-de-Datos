@@ -30,8 +30,8 @@ crossorigin=""/>
 
   $direcciones = array();
   foreach ($response as $resp){
-    if (($resp['sender'] == $user) and ($resp['date'] < $fecha_final) 
-                  and ($resp['date'] > $fecha_inicio)) {
+    if (($resp['sender'] == $user) and ($resp['date'] <= $fecha_final) 
+                  and ($resp['date'] >= $fecha_inicio)) {
       print_r($resp);
       $lat = $resp["lat"];
       $long = $resp["long"];
