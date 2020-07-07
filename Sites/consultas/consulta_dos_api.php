@@ -28,7 +28,7 @@
       <?php
 
     foreach ($data as $message) {
-      if ($message['receptant']==$user){
+      if ($message['sender']==$user){
         echo "
         <tr>
         <td>'".$message['date']."'</td>
