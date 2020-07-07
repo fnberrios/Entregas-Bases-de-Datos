@@ -39,6 +39,11 @@ crossorigin=""/>
       unset($resp);
     }
   }
+
+
+  foreach ($response as $resp){
+    print_r($resp);
+  }
   ?>
 
 <div id="mapid" style="height: 300px"></div>
