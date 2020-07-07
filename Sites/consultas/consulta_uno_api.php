@@ -30,7 +30,7 @@
     foreach ($data as $message) {
       if ($message['receptant']==$user){
         print_r($message);
-        echo $message->'message';
+        echo $message->receptant;
       }
     }
   ?>
