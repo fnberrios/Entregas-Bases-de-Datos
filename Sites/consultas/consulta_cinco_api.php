@@ -18,15 +18,15 @@ include('../config/call_api.php');
   $query =  CallApi($GET, 'https://e5db.herokuapp.com/messages');
   #echo $query;
   #echo $query;
-  echo gettype($query);
-  echo '---';
+  #echo gettype($query);
+  #echo '---';
   $response = json_decode($query, true); //because of true, it's in an array
-  echo gettype($response);
+  #echo gettype($response);
   #echo $response;
 
   foreach ($response as $resp){
-    if ($resp['sender'] = $user) {
-      echo '$resp';
+    if ($resp['sender'] == $user) {
+      print_r($resp);
     }
   }
   #foreach($obj as $key => $value) 
