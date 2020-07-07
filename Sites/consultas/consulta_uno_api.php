@@ -26,11 +26,9 @@
         <th>Sender</th>
       </tr>
       <?php
-    foreach ($data as $message) {
-      if ($message['receptant']==$user){
+    foreach ($data as $info->$data) {
+      if ($info=='receptant' and $data==$user){
         print_r($message);
-        $msn=$message->receptant;
-        echo $msn;
       }
     }
   ?>
