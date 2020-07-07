@@ -32,6 +32,8 @@ crossorigin=""/>
     if (($resp['sender'] == $user) and ($resp['date'] < $fecha_final) 
                   and ($resp['date'] > $fecha_inicio)) {
       print_r($resp);
+      $lat = $resp["lat"];
+      $long = $resp["long"];
     }
     else{
       unset($resp);
@@ -56,5 +58,6 @@ crossorigin=""/>
         echo 
         'L.marker([' . $resp["lat"] . ',' . $resp["long"] . ']).addTo(map);';
     } ?>
+</script>
 
   <?php include('../templates/footer.html'); ?>
