@@ -25,8 +25,6 @@
     foreach ($data as $message) {
       if ($message['receptant']==$user){
         $data_filtrada[] = $message;
-        echo $message['message'];
-        echo $message['receptant']
       }
     }
   ?>
