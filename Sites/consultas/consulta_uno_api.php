@@ -28,7 +28,7 @@
       <?php
     foreach ($data as $message) {
       if ($message['receptant']==$user){
-        echo "$message->message";
+        echo $message->message;
       }
     }
   ?>
