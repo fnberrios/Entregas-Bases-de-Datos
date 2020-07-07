@@ -58,5 +58,6 @@ crossorigin=""/>
         echo 
         'L.marker([' . $resp["lat"] . ',' . $resp["long"] . ']).addTo(map);';
     } ?>
+</script>
 
   <?php include('../templates/footer.html'); ?>
