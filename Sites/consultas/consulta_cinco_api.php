@@ -19,7 +19,8 @@ include('../config/call_api.php');
   #echo $query;
 
   $response = json_decode($query, true); //because of true, it's in an array
-  echo 'Online: '. $response['players']['online'];
+  foreach $response as $mensaje_json
+    echo 'Online: '. $response['sender'];
   # CONSULTAS A LA API
   ?>
 
