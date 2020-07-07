@@ -30,9 +30,9 @@
     foreach ($data as $message) {
       if ($message['receptant']==$user){
         print_r($message);
-        $msn = array_values($message);
-        print_r($msn);
-        "<tr><td>$msn[0]</td> <td>$msn[1]</td> <td>$msn[2]</td> <td>$msn[3]</td> <td>$msn[4]</td> <td>$msn[5]</td></tr>";
+        echo "<tr><td>$message['date']</td> <td>$message['lat']</td> <td>$message['long']</td>
+         <td>$message['message']</td> <td>$message['mid']</td> <td>$message['receptant']</td>
+         <td>$message['sender']</td></tr>";
       }
     }
   ?>
