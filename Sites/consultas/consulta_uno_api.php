@@ -28,7 +28,8 @@
       <?php
     foreach ($data as $message) {
       if ($message['receptant']==$user){
-        echo $message->message;
+        print_r($message);
+        echo $message->receptant;
       }
     }
   ?>
