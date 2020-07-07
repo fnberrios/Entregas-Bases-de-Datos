@@ -25,7 +25,8 @@ include('../config/call_api.php');
   #echo $response;
 
   foreach ($response as $resp){
-    if ($resp['sender'] == $user) {
+    if (($resp['sender'] == $user) and ($resp['date'] < $fecha_final) 
+                  and ($resp['date'] > $fecha_inicio)) {
       print_r($resp);
     }
   }
