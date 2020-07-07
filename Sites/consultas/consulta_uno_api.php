@@ -31,7 +31,7 @@
       if ($message['receptant']==$user){
         print_r($message);
         $msn = array_values($message);
-        "<tr><td>$msn[0]</td> <td>$msn[1]</td> <td>$msn[2]</td> <td>$msn[3]</td> <td>$msn[4]</td> <td>$msn[5]</td></tr>"
+        "<tr><td>$msn[0]</td> <td>$msn[1]</td> <td>$msn[2]</td> <td>$msn[3]</td> <td>$msn[4]</td> <td>$msn[5]</td></tr>";
       }
     }
   ?>
