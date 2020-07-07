@@ -11,23 +11,10 @@
 
     #Se obtiene el id del usuario
     $user = $_SESSION['user_id'];
-    $query = "SELECT * FROM usuarios WHERE usuarios.uid=$user;";
-    $result = $db53 -> prepare($query);
-    $result -> execute();
-    $dataCollected = $result -> fetchAll();
-    foreach ($dataCollected as $p) {
-        echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>
-        <td>$p[4]</td> <td>$p[5]</td></tr>";
-    }
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
     $data = json_decode($data, true);
-    $data_filtrada = array();
-    foreach ($data as $message) {
-      if ($message['receptant']==$user){
-        $data_filtrada[] = $message;
-      }
-    }
-  ?>
+    ?>
+
     <table>
       <tr>
         <th>Date</th>
@@ -38,13 +25,14 @@
         <th>Receptant</th>
         <th>Sender</th>
       </tr>
-
-    <?php
-    foreach ($data_filtrada as $message) {
-      print_r($message);
+      <?php
+    foreach ($data as $message) {
+      if ($message['receptant']==$user){
+        echo "$message['message']";
+      }
     }
+  ?>
 
-    ?>
     </table>
 
     <?php include('../templates/footer.html'); ?>
