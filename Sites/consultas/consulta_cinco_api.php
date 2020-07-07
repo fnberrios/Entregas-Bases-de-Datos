@@ -32,6 +32,8 @@ crossorigin=""/>
     if (($resp['sender'] == $user) and ($resp['date'] < $fecha_final) 
                   and ($resp['date'] > $fecha_inicio)) {
       print_r($resp);
+      $lat = $resp["lat"];
+      $long = $resp["long"];
     }
     else{
       unset($resp);
