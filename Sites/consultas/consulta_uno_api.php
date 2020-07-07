@@ -29,7 +29,6 @@
 
     foreach ($data as $message) {
       if ($message['receptant']==$user){
-        print_r($message);
         echo "
         <tr>
         <td>'".$message['date']."'</td>
