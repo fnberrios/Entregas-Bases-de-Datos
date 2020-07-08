@@ -14,11 +14,17 @@
     $user = $_SESSION['user_id'];
     ?>
 
-    <h3> Que mensajes deseas ingresar
-    <form action="consulta_cuatro_api_2.php" method="post">
-    Buscar: <input type="text" name="messages_f">
+    <h3> Que mensajes deseas buscar:
+    <form action="consulta_cuatro_api_2.php" method="get">
+        </br>
+        Deseado: <input type="text" name="messages_f">
+        </br>
+        Requerido: <input type="text" name="messages_f">
+        </br>
+        Prohibido: <input type="text" name="messages_f">
     </br>
-    <input type = "submit" value = "Buacar">
+    </br>
+    <input type = "submit" value = "Buscar">
     </form>
 
 <?php include('../templates/footer.html'); ?>
