@@ -10,11 +10,29 @@
     require("../config/conexion.php");
 
     #Tomar los mensajes que se quiere buscar
-    $message = 
-    #Se obtiene el id del usuario
+    $d = $_GET["desired"];
+    $r = $_GET["required"];
+    $f = $_GET["forbidden"];
     $user = $_SESSION['user_id'];
-    $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
-    $data = json_decode($data, true);
+    
+    #Se obtiene todos los datos de los mensajes
+    $query = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
+    $data = json_decode($query, true);
+
+    $filtro = {}
+
+    foreach ($data as $d) {
+        #Si me dan las 3 claves
+        if $d != NULL and $r != NULL and $f != NULL{
+            if ($data['sender'] == $user) or ($data['receptant'] == $user) {
+                }
+        #Si ne dan solo 2 claves
+        elseif ($d != NULL) or ($f != NULL){
+            
+        }        
+
+        #si me dan 
+    }
     ?>
 
     <table>
@@ -26,23 +44,7 @@
       </tr>
       <?php
 
-    foreach ($data as $message) {
-      if ($message['sender']==$user){
-        echo "
-        <tr>
-        <td>'".$message['date']."'</td>
-        <td>'".$message['lat']."'</td>
-        <td>'".$message['long']."'</td>
-        <td>'".$message['message']."'</td>
-        <td>'".$message['mid']."'</td>
-        <td>'".$message['receptant']."'</td>
-        <td>'".$message['sender']."'</td>
-        </tr>
-        ";
-      }
-    }
-  ?>
-
+      ?>
     </table>
 
-    <?php include('../templates/footer.html'); ?>
+    
