@@ -18,6 +18,7 @@
 
     <h3> Que mensajes deseas ingresar
     <form action="consulta_cuatro_api_2.php" method="post">
-    Buscar: <input type="text" value="messages_f">
+    Buscar: <input type="text" name="messages_f">
+    </form>
 </body>
 <?php include('../templates/footer.html'); ?>
