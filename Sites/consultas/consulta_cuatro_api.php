@@ -1,3 +1,7 @@
+<?php
+   session_start();
+?>
+
 <?php include('../templates/header.html');   ?>
 <?php include('../config/call_api.php');   ?>
 
@@ -13,7 +17,8 @@
     <h3> Que mensajes deseas ingresar
     <form action="consulta_cuatro_api_2.php" method="post">
     Buscar: <input type="text" name="messages_f">
-    <input type = "submit" value = "Buscar">
+    </br>
+    <input type = "submit" value = "Buacar">
     </form>
-</body>
+
 <?php include('../templates/footer.html'); ?>
