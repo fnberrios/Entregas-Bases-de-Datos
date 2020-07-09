@@ -1,0 +1,332 @@
+\dT
+\db
+\dT
+\d Creo
+ALTER TABLE Creo ALTER COLUMN fecha_termino TYPE integer USING 0;
+\d Creo
+\COPY Creo FROM 'creo.csv' DELIMITER ';' CSV HEADER
+ALTER TABLE Creo ALTER COLUMN periodo SET DATA TYPE varchar(100);
+\d Creo
+\COPY Creo FROM 'creo.csv' DELIMITER ';' CSV HEADER
+\COPY Lugares FROM 'lugares.csv' DELIMITER ';' CSV HEADER
+SELECT * FROM Luegares; 
+SELECT * FROM Lugares; 
+\COPY LugaresIglesia FROM 'lugaresiglesia.csv' DELIMITER ';' CSV HEADER
+SELECT * FROM LugaresIglesia; 
+\COPY LugaresMuseo FROM 'lugaresmuseo.csv' DELIMITER ';' CSV HEADER
+\COPY Obras FROM 'obras.csv' DELIMITER ';' CSV HEADER
+\COPY ObrasEscultura FROM 'obrasescultura.csv' DELIMITER ';' CSV HEADER
+\COPY ObrasPintura FROM 'obrasespintura.csv' DELIMITER ';' CSV HEADER
+\COPY ObrasPintura FROM 'obraspintura.csv' DELIMITER ';' CSV HEADER
+\COPY Creo FROM 'creo.csv' DELIMITER ';' CSV HEADER
+SELECT * FROM LugaresIglesia; 
+\dt
+SELECT * FROM LugareMuseo; 
+SELECT * FROM LugarMuseo; 
+SELECT * FROM LugaresMuseo; 
+\dt
+SELECT * FROM Lugares; 
+\dt
+SELECT * FROM Obras; 
+\dt
+SELECT * FROM ObrasEscultura; 
+\dt
+SELECT * FROM ObrasPintura; 
+\dt
+SELECT * FROM Creo; 
+SELECT * FROM Ciudades; 
+\dt
+SELECT * FROM Artistas; 
+\dt
+SELECT * FROM ArtistasFallecidos; 
+\q
+\dt
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre, Lugar.lnombre FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre, Lugares.lnombre FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre, Lugares.lnombre, Obras.tipo FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini' AND Obras.tipo = 'escultura';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre, Obras.tipo FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid Join Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini' AND Obras.tipo = 'escultura';
+SELECT Artistas.anombre, Lugares.tipo, Obras.onombre, Obras.tipo FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid JOIN Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini' AND Obras.tipo = 'escultura';
+SELECT Lugares.lnombre FROM Artistas JOIN Creo ON Artistas.aid = Creo.aid JOIN Obras ON Obras.oid = Creo.oid JOIN Lugares ON Obras.lid = Lugares.lid WHERE Lugares.tipo = 'plaza' AND Artistas.anombre = 'Gian Lorenzo Bernini' AND Obras.tipo = 'escultura';
+SELECT onombre FROM Obras;
+SELECT DISTINTC onombre FROM Obras;
+SELECT DISTINCT onombre FROM Obras;
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudad.pnombre = 'Italia';
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudad.cpais = 'Italia';
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = 'Italia';
+SELECT Lugares.lnombre, Ciudades.cnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = 'Italia';
+SELECT Artista.anombre, COUNT(Creo.aid) FROM Artistas JOIN Creo On Creo.aid = Artista.aid;
+SELECT Artistas.anombre, COUNT(Creo.aid) FROM Artistas JOIN Creo On Creo.aid = Artista.aid;
+SELECT Artistas.anombre, COUNT(Creo.aid) FROM Artistas JOIN Creo On Creo.aid = Artistas.aid;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas JOIN Creo On Creo.aid = Artistas.aid GROUP BY Artitas.anombre;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas GROUP BY Artistas.anombre JOIN Creo On Creo.aid = Artistas.aid;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas GROUP BY Artistas.anombre JOIN Creo ON Creo.aid = Artistas.aid;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas JOIN Creo ON Creo.aid = Artistas.aid GROPU BY Artistas.anombre;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas JOIN Creo ON Creo.aid = Artistas.aid GROUP BY Artistas.anombre;
+SELECT Artistas.anombre, COUNT(Creo.aid) AS cantidad_de_obras FROM Artistas INNER JOIN Creo ON Creo.aid = Artistas.aid GROUP BY Artistas.anombre;
+SELECT Lugares.lnombre FROM Lugares INNER JOIN LugaresIglesia ON Luagres.lid = LugaresIglesia.lid INNER JOIN Obras ON Obras.lid = Lugares.lid INNER JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Ciudad.cnombre = 'Italia' AND LugaresIglesia.hora_apertura = '' AND LugaresIglesia.hora_cierre = 14 GROUP BY Artistas.anombre;
+q;
+\q
+SELECT Lugares.lnombre, Obras.lnombre FROM Lugares INNER JOIN LugaresIglesia ON Luagres.lid = LugaresIglesia.lid INNER JOIN Obras ON Obras.lid = Lugares.lid INNER JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Ciudad.cnombre = 'Italia' AND LugaresIglesia.hora_apertura = '' AND LugaresIglesia.hora_cierre ='' AND Obras.tipo = 'fresco';
+SELECT Lugares.lnombre, Obras.lnombre FROM Lugares INNER JOIN LugaresIglesia ON Lugares.lid = LugaresIglesia.lid INNER JOIN Obras ON Obras.lid = Lugares.lid INNER JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Ciudad.cnombre = 'Italia' AND LugaresIglesia.hora_apertura = '' AND LugaresIglesia.hora_cierre ='' AND Obras.tipo = 'fresco';
+\d Creo
+\d LugaresIglesia
+\time
+\?
+\dt
+\d LugaresIglesia
+SELECT hora_apertura FROM LugaresIglesia hora_apertura > 12:00;
+SELECT hora_apertura FROM LugaresIglesia hora_apertura = 12:00;
+SELECT hora_apertura FROM LugaresIglesia hora_apertura = '12:00';
+SELECT hora_apertura FROM LugaresIglesia hora_apertura = 12:00:00;
+SELECT hora_apertura FROM LugaresIglesia hora_apertura > 12:00:00;
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';;
+\q
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');;
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');;
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM hora_apertura) > EXTRACT(MICROSECONDS FROM '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME LugaresIglesia.hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia WHERE SELECT EXTRACT(MICROSECONDS FROM TIME LugaresIglesia.hora_apertura) > SELECT EXTRACT(MICROSECONDS FROM TIME '12:00:00');
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia WHERE LugaresIglesia.hora_apertura > '12:00:00';
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia WHERE LugaresIglesia.hora_apertura = '12:00:00';
+\dt
+\d LugaresIglesia
+SELECT hora_apertura FROM LugaresIglesia EXTRACT(MICROSECONDS FROM TIME hora_apertura) > EXTRACT(MICROSECONDS FROM TIME '12:00:00';)SELECT LugaresIglesia.hora_apertura FROM LugaresIglesia WHERE LugaresIglesia.hora_apertura => '12:00:00';
+\q
+SELECT COUNT(*) FROM Creo.periodo;
+SELECT COUNT (DISTINCT periodo) FROM Creo;
+SELECT * FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid ;
+;
+SELECT * FROM Lugares;
+SELECT DISTINCT lnombr FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid ;
+SELECT DISTINCT lnombr FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid ;
+SELECT DISTINCT lnombre From Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid;
+SELECT DISTINCT lnombre, COUNT(periodo) AS cantidad_periodo FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid;
+SELECT DISTINCT lnombre, COUNT(periodo) AS cantidad_periodo FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) AS cantidad_periodo FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre;
+SELECT DISTINCT lnombre HAVING ( COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid )>=6;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) AS cantidad_periodo FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(lnombre) >=6;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(lnombre) >=6 ORDER BY Lnombre desc;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(lnombre) >=6 ORDER BY lnombre desc;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) >=6 ORDER BY lnombre desc;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) >=6;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) == COUNT (DISTINCT period) FROM Creo;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) == COUNT (DISTINCT periodo) FROM Creo;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) = COUNT (DISTINCT periodo) FROM Creo;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING (COUNT( DISTINCT periodo) = COUNT (DISTINCT periodo) FROM Creo);
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING (COUNT( DISTINCT periodo) = 6;);
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) = 6;
+SELECT COUNT(*) FROM Creo.periodo;
+SELECT COUNT (DISTINCT periodo) FROM Creo;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) = COUNT(*) FROM Creo.periodo;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING (COUNT( DISTINCT periodo) = COUNT(*) FROM Creo.periodo);
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) = 6;
+SELECT DISTINCT lnombre, (SELECT COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre) as Resultado, (SELECT COUNT (DISTINCT periodo) FROM Creo) as Count;
+SELECT DISTINCT lnombre, COUNT( DISTINCT periodo) FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT( DISTINCT periodo) >=6;
+SELECT Lugares.lnombre FROM Lugares INNER JOIN Obras ON Obras.lid=Lugares.lid INNER JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT Creo.perio}};q
+\
+);
+SELECT Lugares.lnombre FROM Lugares INNER JOIN Obras ON Obras.lid=Lugares.lid INNER JOIN Creo ON Creo.oid=Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT Creo.periodo) = ANY (SELECT COUNT(DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) = ANY (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) = ANY (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) = ALL (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) = L (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) =  (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) =  (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+SELECT Lugares.lnombre FROM Lugares JOIN Obras ON Obras.lid = Lugares.lid JOIN Creo ON Creo.oid = Obras.oid GROUP BY Lugares.lnombre HAVING COUNT(DISTINCT CREO.periodo) =  (SELECT COUNT (DISTINCT Creo.periodo) FROM Creo);
+\q
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudad.cpais = 'italia';
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = 'italia';
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = 'Italia';
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = uper('Italia');
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND Ciudades.cpais = upper('Italia');
+SELECT Lugares.lnombre FROM Lugares JOIN Ciudades ON Ciudades.cid = Lugares.cid WHERE Lugares.tipo = 'museo' AND upper(Ciudades.cpais) = upper('Italia');
+git pull
+\q
+CREATE TABLE Personas (run varchar(50), nombre varchar(50), apellido varchar(50), PRIMARY KEY (run));
+\d
+\q
+\i grupo30stored1/insertar_persona.psql
+\i grupo30stored1\insertar_persona.psql
+\i insertar_persona.psql
+\q
+\i insertar_persona.psql
+\i insertar_persona.sql
+SELECT insertar_persona('unrut', 'unnombre', 'unapellido')SELECT * FROM Personas;
+SELECT insertar_persona('unrut', 'unnombre', 'unapellido')SELECT * FROM Personas;
+SELECT * FROM Peronas;
+SELECT * FROM Personas;
+SELECT insertar_persona('unrut', 'unnombre', 'unapellido');
+SELECT * FROM Personas;
+\q
+\i isercion_radical.sql
+\q
+\i insercion_radical.sql
+SELECT insercion_radical(10000);
+SELECT * FROM Personas;
+CREATE TABLE PersonasCompleto (run varchar(50), nombrecompleto varchar(50), PRIMARY KEY (run));
+\q
+\i tranferencia.sql
+\i transferencia.sql
+SELECT transferencia();
+\q
+\q
+\i transferencia.sql
+SELECT transferencia();
+\d
+\ddb
+\d
+\d PersonasCumpleto
+\d PersonasCompleto
+\q
+\l+
+grupo30_e2;
+\d
+\dt
+\q
+\dt
+host;
+\'
+\?
+\conninfo
+\conninfo
+\?
+SELECT inet_server_addr();
+SELECT inet_server_addr();
+SELECT inet_server_addr();
+\?
+SELECT inet_server_addr();
+SELECT inet_server_addr();
+SELECT inet_server_addr;
+inet_server_addr();
+inet_server_addr;
+inet_server_addr;
+\conninfo
+SELECT inet_server_addr();
+q;
+\q
+SELECT inet_server_addr();
+SELECT inet_server_port();
+SELECT inet_client_port();
+\q
+SELECT inet_server_port();
+\q
+\?
+\conninfo
+inet_server_port();
+inet_server_port;
+SELECT inet;
+\conninfo
+SELECT inet_client_port();
+\h
+\?
+\? options
+\q
+\g
+\q
+create table personas(run varchar, nombre varchar, apellido varchar);
+\q
+\i insertar_persona.sql
+\i insertar_persona.sql
+\q
+\i insertar_persona.sql
+\1
+\q
+\q
+\i insertar_persona.sql
+create table personas(run varchar, nombre varchar, apellido varchar);
+SELECT insertar_persona('unrut','unnombre','unapellido');
+select * from personas;
+\q
+\i insercion_radical.sql
+SELECT insercion_radical(10);
+SELECT * FROM PERSONAS;
+SELECT * FROM PERSONAS;
+SELECT insercion_radical(10);
+SELECT * FROM PERSONAS;
+SELECT * FROM Artistas WHERE (SELECT * FROM   ArtistasFallecidos WHERE aid.Artistas = aid.ArtistasFallecidos) HAVING aid.Artistas=SELECT * FROM Artistas WHERE (SELECT * FROM SELECT insercion_radical(10);\q
+SELECT * FROM ARTISTAS;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos WHERE anombre ='$nom'   AND Artistas.aid=ArtistasFallecidos.aid;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos WHERE Artistas.aid=ArtistasFallecidos.aid;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre='' ;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre='' ;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre='' ;m
+;
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE anombre='' ;m
+\q
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artista.nombre='Dontaello';
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.nombre='Dontaello';
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Dontaello';
+SELECT * FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+SELECT anombre FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+SELECT aid, anombre FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+SELECT Artista.aid, anombre FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+SELECT Artistas.aid, anombre FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+SELECT Artistas.aid, anombre, nacimiento, descripcion, fallecimiento FROM Artistas LEFT JOIN ArtistasFallecidos ON Artistas.aid=ArtistasFallecidos.aid WHERE Artistas.anombre='Donatello';
+\q
+SELECT aid, oid, fecha_inicio, fecha_termino, periodo FROM Creo INNER JOIN ON Artistas.aid=Creo.aid AND Artistas.anombre='Donatello';
+SELECT aid, oid, fecha_inicio, fecha_termino, periodo FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid AND Artistas.anombre='Donatello';
+SELECT Artistas.aid, oid, fecha_inicio, fecha_termino, periodo FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid AND Artistas.anombre='Donatello';
+\q
+SELECT onombre, fecha_inicio, fecha_termino, periodo, tipo, tecnica,  material FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid  LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid  LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid   AND Artistas.anombre='$nom';
+SELECT onombre, fecha_inicio, fecha_termino, periodo, tipo, tecnica, material FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid AND Artistas.anombre='Donatello';
+SELECT * FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid AND Artistas.anombre='Donatello';
+SELECT * FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid AND Artistas.anombre='Donatello';
+SELECT * FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPinura ON Creo.oid=ObrasPinura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid WHERE Artistas.anombre='Donatello';
+SELECT * FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPinura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid WHERE Artistas.anombre='Donatello';
+SELECT * FROM Creo INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid WHERE Artistas.anombre='Donatello';
+\q
+SELECT Obras.onombre, Creo.fecha_inicio, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material FROM Obras INNER JOIN Creo ON Creo.oid=Obras.oid INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid WHERE Artistas.anombre='Donatello';
+\q
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais, FROM Obras INNER JOIN Creo ON Creo.oid=Obras.oid INNER JOIN Lugares ON Obras.lid=Lugares.lid INNER JOIN Ciudades ON Ciudades.cid=Lugares.cid INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid LEFT JOIN ObrasEscultura ON;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Creo.periodo, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais, FROM Obras INNER JOIN Creo ON Creo.oid=Obras.oid INNER JOIN Lugares ON Obras.lid=Lugares.lid INNER JOIN Ciudades ON Ciudades.cid=Lugares.cid INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid LEFT JOIN ObrasEscultura ON;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre, Ciudades.cnombre FROM Obras INNER JOIN Creo O;
+\Q
+\q
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, ObrasPintura.tecnica, ObrasEscultura.material, Lugares.lnombre, Ciudades.cnombre FROM Obras INNER JOIN Creo O;
+SELECT Obras.onombre, Creo.fecha_inicio, Obras.tipo, ObrasPintura.tecnica, ObrasEscultura.material FROM Obras INNER JOIN Creo ON Creo.oid=Obras.oid INNER JOIN Artistas ON Artistas.aid=Creo.aid LEFT JOIN ObrasPintura ON Creo.oid=ObrasPintura.oid LEFT JOIN ObrasEscultura ON Creo.oid=ObrasEscultura.oid WHERE Artistas.anombre='Donatello';
+SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais,     Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre,     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='Galeria Uffizi';
+\q
+SELECT Artistas.anombre, Obras.onombre FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Artistas.anombre, Obras.onombre, Creo.inicio, Creo.termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais,     Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre,     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='Galeria Uffizi';
+SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais,     Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre,     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='Galeria Uffizi';
+<?php    #Llama a conexión, crea el objeto PDO y obtiene la variable $db    require("../config/conexion.php");
+    $nom = $_GET["lugar"];
+    $query = "SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais,     Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre,     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='$nom';";
+    $result = $db->prepare($query);
+    $result->execute();
+    $dataCollected = $result->fetchAll();
+    ?>    <table>        <tr>            <th>Nombre del Lugar</th>            <th>Ciudad</th>            <th>Pais</th>            <th>Tipo</th>            <th>Hora Apertura Museo</th>            <th>Hora Cierre Museo</th>            <th>Hora Apertura Iglesia</th>            <th>Hora Cierre Iglesia</th>            <th>Precio</th>        </tr>        <?php        foreach ($dataCollected as $p) {            echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>            <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td>            <td>$p[7]</td> <td>$p[8]</td>             <td>$p[9]</td></tr>";
+        }        ?>    </table><?php    #Llama a conexión, crea el objeto PDO y obtiene la variable $db    require("../config/conexion.php");
+    $nom = $_GET["lugar"];
+    $query = "SELECT Lugares.lnombre, Ciudades.cnombre, Ciudades.cpais,     Lugares.tipo, LugaresMuseo.hora_apertura, LugaresMuseo.hora_cierre,     LugaresIglesia.hora_apertura, LugaresIglesia.hora_cierre,     LugaresMuseo.precio FROM Lugares INNER JOIN Ciudades ON Lugares.cid=Ciudades.cid    LEFT JOIN LugaresIglesia ON LugaresIglesia.lid = Lugares.lid LEFT JOIN     LugaresMuseo ON LugaresMuseo.lid=Lugares.lid WHERE Lugares.lnombre='$nom';";
+    $result = $db->prepare($query);
+    $result->execute();
+    $dataCollected = $result->fetchAll();
+    ?>    <table>        <tr>            <th>Nombre del Lugar</th>            <th>Ciudad</th>            <th>Pais</th>            <th>Tipo</th>            <th>Hora Apertura Museo</th>            <th>Hora Cierre Museo</th>            <th>Hora Apertura Iglesia</th>            <th>Hora Cierre Iglesia</th>            <th>Precio</th>        </tr>        <?php        foreach ($dataCollected as $p) {            echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td>            <td>$p[4]</td> <td>$p[5]</td> <td>$p[6]</td>            <td>$p[7]</td> <td>$p[8]</td>             <td>$p[9]</td></tr>";
+        }        ?>    </table>
+\q
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid;
+qSELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Lugares.lnombre FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid;
+SELECT Artistas.anombre, Obras.onombre, Creo.fecha_inicio, Creo.fecha_termino, Lugares.lnombre FROM Artistas INNER JOIN Creo ON Creo.aid=Artistas.aid INNER JOIN Obras ON Obras.oid=Creo.oid INNER JOIN Lugares ON Lugares.lid=Obras.lid;
+\q
+\?
+\conninfo
+SELECT * from Artistas INNER JOIN dblink('dbname=grupo53e3 host=localhost user=grupo53 password=grupo53','select pid, nombrepais, fonocontacto from Paises') as t1(pid int, nombrepais varchar, fonocontacto varchar) ON Artistas.aid=t1.pid;   
+SELECT * from Artistas INNER JOIN dblink('dbname=grupo53e3 host=localhost user=grupo53 password=grupo53','select pid, nombrepais, fonocontac from Paises') as t1(pid int, nombrepais varchar) ON Artistas.aid=t1.pid;   
+SELECT * from Artistas INNER JOIN dblink('dbname=grupo53e3 host=localhost user=grupo53 password=grupo53','select pid, nombrepais, fonocontacto from Paises') as t1(pid int, nombrepais varchar) ON Artistas.aid=t1.pid;   
+SELECT * from Artistas INNER JOIN dblink('dbname=grupo53e3 host=localhost us
