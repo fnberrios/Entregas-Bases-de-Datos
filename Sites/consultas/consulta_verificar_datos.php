@@ -7,9 +7,14 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
-
-  $username_ = $_POST["username_"];
-  $contrasena_ = $_POST["contrasena_"];
+  if empty($_SESSION['user_id']){
+    $username_ = $_POST["username_"];
+    $contrasena_ = $_POST["contrasena_"];
+  }
+  else{
+    $username_ = $_SESSION['username'];
+    $contrasena_= $_SESSION['contrasena'];
+  }
 
   #Se construye la consulta como un string
   $query = "SELECT uid,username,correo,contrasena FROM usuarios WHERE username = '$username_' and contrasena = '$contrasena_';";
@@ -32,8 +37,12 @@
         elseif ($filas == 1):
           foreach ($users as $u) {
             $uid = $u[0];
+            $username = $u[2];
+            $contrasena = $u[5];
         }
           $_SESSION['user_id'] = $uid;
+          $_SESSION['username'] = $username;
+          $_SESSION['contrasena'] = $contrasena;
           $a = $_SESSION['user_id'];
           $_SESSION['eliminado'] = NULL;
           $_SESSION['entrada'] = NULL;
