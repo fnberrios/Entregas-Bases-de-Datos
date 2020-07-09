@@ -14,7 +14,7 @@
   }
   else{
     $username_ = $_SESSION['username'];
-    $contrasena_= $_SESSION['contrasena'];
+    $contrasena_ = $_SESSION['contrasena'];
   }
 
   #Se construye la consulta como un string
@@ -38,8 +38,8 @@
         elseif ($filas == 1):
           foreach ($users as $u) {
             $uid = $u[0];
-            $username = $u[2];
-            $contrasena = $u[5];
+            $username = $u[1];
+            $contrasena = $u[3];
         }
           $_SESSION['user_id'] = $uid;
           $_SESSION['username'] = $username;
