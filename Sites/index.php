@@ -42,6 +42,7 @@
         <li><a href="index.php" class="link">Inicio</a></li>
         <li><a href="consultas/consulta_perfil.php" class="link">Perfil</a></li>
         <li><a href="consultas/consulta_hoteles.php" class="link">Hoteles</a></li>
+        <li><a href="consulta_verificar_datos.php" class="link">Datos</a></li>
         <li><a href="consultas/consulta_logout.php" class="link">Salir</a></li>
 
       </ul>
