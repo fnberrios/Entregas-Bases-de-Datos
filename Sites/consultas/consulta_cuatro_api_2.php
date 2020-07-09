@@ -22,7 +22,7 @@
       'userId' => $user,
     );
 
-    echo $data
+    echo var_dump($data);
 
 
 
