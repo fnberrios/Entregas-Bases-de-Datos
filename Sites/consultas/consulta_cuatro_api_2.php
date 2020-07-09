@@ -14,25 +14,36 @@
     $r = $_GET["required"];
     $f = $_GET["forbidden"];
     $user = $_SESSION['user_id'];
-    
+
+    $data = array(
+      'desired'     => $d,
+      'required'    => $r,
+      'forbidden'   => $f,
+      'userId' => $user,
+    );
+
+    echo $data
+
+
+
     #Se obtiene todos los datos de los mensajes
-    $query = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
-    $data = json_decode($query, true);
-
-    $filtro = {}
-
-    foreach ($data as $d) {
-        #Si me dan las 3 claves
-        if $d != NULL and $r != NULL and $f != NULL{
-            if ($data['sender'] == $user) or ($data['receptant'] == $user) {
-                }
-        #Si ne dan solo 2 claves
-        elseif ($d != NULL) or ($f != NULL){
-            
-        }        
-
-        #si me dan 
-    }
+    // $query = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
+    // $data = json_decode($query, true);
+    //
+    // $filtro = {}
+    //
+    // foreach ($data as $d) {
+    //     #Si me dan las 3 claves
+    //     if $d != NULL and $r != NULL and $f != NULL{
+    //         if ($data['sender'] == $user) or ($data['receptant'] == $user) {
+    //             }
+    //     #Si ne dan solo 2 claves
+    //     elseif ($d != NULL) or ($f != NULL){
+    //
+    //     }
+    //
+    //     #si me dan
+    // }
     ?>
 
     <table>
@@ -46,5 +57,3 @@
 
       ?>
     </table>
-
-    
