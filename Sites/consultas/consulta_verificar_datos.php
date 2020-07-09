@@ -7,7 +7,7 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
-  if empty($_SESSION['user_id']){
+  if (isset($_SESSION['user_id'])){
     $username_ = $_POST["username_"];
     $contrasena_ = $_POST["contrasena_"];
   }
