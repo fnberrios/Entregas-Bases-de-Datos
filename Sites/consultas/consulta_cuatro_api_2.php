@@ -16,13 +16,13 @@
     $user = $_SESSION['user_id'];
 
     $data = array(
-      'desired'     => $d,
-      'required'    => $r,
-      'forbidden'   => $f,
+      'desired'     => [$d],
+      'required'    => [$r],
+      'forbidden'   => [$f],
       'userId' => $user,
     );
-
-    echo var_dump($data);
+    print_r($data);
+    // echo var_dump($data);
 
 
 
