@@ -60,7 +60,8 @@
 
     // echo $result;
     echo $context;
-    
+    print_r($context);
+
 
     // echo json_encode($result);
 
