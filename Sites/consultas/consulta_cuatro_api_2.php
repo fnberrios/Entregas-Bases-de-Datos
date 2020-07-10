@@ -61,6 +61,7 @@
     //
     //     #si me dan
     // }
+    $prueba = json_encode($result);
     ?>
 
     <table>
@@ -71,7 +72,7 @@
         <th>Sender</th>
       </tr>
       <?php
-      foreach (json_encode($result) as $message) {
+      foreach ($prueba as $message) {
           echo "
           <tr>
           <td>'".$message['date']."'</td>
