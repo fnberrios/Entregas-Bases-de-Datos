@@ -23,11 +23,12 @@
       'userId' => $user,
     );
     print_r($data);
+    json_encode($data);
 
     $options = array(
       'http' => array(
       'method'  => 'GET',
-      'content' => json_encode( $data ),
+      'content' => json_encode($data),
       'header'=>  "Content-Type: application/json\r\n" .
                   "Accept: application/json\r\n"
                 )
