@@ -51,7 +51,7 @@
           'desired'     => [$d],
         );
       }
-      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+      elseif(empty($_POST["desired"]) and !empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
           'required'     => [$r],
         );
