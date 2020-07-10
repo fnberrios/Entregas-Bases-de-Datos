@@ -14,20 +14,32 @@
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
     $user = $_POST["userId"];
-    // if $user != "":
-    //   $user = (int)$user;
+    if empty($_POST["userId"]):
+      $data = array(
+        'desired'     => [$d],
+        'required'    => [$r],
+        'forbidden'   => [$f],
+        'userId' => $user,
+      );
+    else:
+      $user = (int)$user;
+      $data = array(
+        'desired'     => [$d],
+        'required'    => [$r],
+        'forbidden'   => [$f],
+        'userId' => $user,
+      );
+
+
     echo $user;
     echo gettype($user);
 
-    $data = array(
-      'desired'     => [$d],
-      'required'    => [$r],
-      'forbidden'   => [$f],
-      'userId' => $user,
-    );
-    echo $data.'userId';
-    // if $data['userId'] != "":
-    //    $data['userId'] = (int)$data['userId'];
+    // $data = array(
+    //   'desired'     => [$d],
+    //   'required'    => [$r],
+    //   'forbidden'   => [$f],
+    //   'userId' => $user,
+    // );
     // print_r($data);
     echo json_encode($data);
 
