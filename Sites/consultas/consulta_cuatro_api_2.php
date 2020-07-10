@@ -25,6 +25,8 @@
       'forbidden'   => [$f],
       'userId' => $user,
     );
+    if $data[$user] != "":
+       $data[$user] = (int)$data[$user];
     print_r($data);
     echo json_encode($data);
 
