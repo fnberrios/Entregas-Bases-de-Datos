@@ -40,7 +40,7 @@
     //   'forbidden'   => [$f],
     //   'userId' => $user,
     // );
-    // print_r($data);
+    print_r($data);
     echo json_encode($data);
 
     $options = array(
