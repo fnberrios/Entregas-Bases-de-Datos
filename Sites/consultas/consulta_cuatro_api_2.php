@@ -71,6 +71,20 @@
         <th>Sender</th>
       </tr>
       <?php
-
+      foreach ($response as $message) {
+        if ($message['receptant']==$user){
+          echo "
+          <tr>
+          <td>'".$message['date']."'</td>
+          <td>'".$message['lat']."'</td>
+          <td>'".$message['long']."'</td>
+          <td>'".$message['message']."'</td>
+          <td>'".$message['mid']."'</td>
+          <td>'".$message['receptant']."'</td>
+          <td>'".$message['sender']."'</td>
+          </tr>
+          ";
+        }
+      }
       ?>
     </table>
