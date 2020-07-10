@@ -20,7 +20,7 @@
       'desired'     => [$d],
       'required'    => [$r],
       'forbidden'   => [$f],
-      'userId' => [$user],
+      'userId' => $user,
     );
     print_r($data);
 
@@ -37,6 +37,7 @@
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
     echo json_encode($result);
+    echo $response
 
     // echo var_dump($data);
 
