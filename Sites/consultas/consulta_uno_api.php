@@ -13,7 +13,7 @@
     $user = $_SESSION['user_id'];
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
     $data = json_decode($data, true);
-    echo $data
+    
     ?>
 
     <table>
