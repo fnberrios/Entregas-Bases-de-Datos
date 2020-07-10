@@ -3,7 +3,7 @@
 ?>
 <?php include('../templates/header.html');   ?>
 <?php include('../config/call_api.php');   ?>
-
+<?php include('../templates/navbar.html'); ?>
 <body>
     <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -13,7 +13,7 @@
     $user = $_SESSION['user_id'];
     $data = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
     $data = json_decode($data, true);
-    
+
     ?>
 
     <table>
