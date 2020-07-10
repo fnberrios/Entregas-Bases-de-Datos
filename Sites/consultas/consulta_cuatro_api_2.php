@@ -13,7 +13,7 @@
     $d = $_POST["desired"];
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
-    $user = $_POST["userid"];
+    $user = $_POST["userId"];
     echo $user;
     echo gettype($user);
 
