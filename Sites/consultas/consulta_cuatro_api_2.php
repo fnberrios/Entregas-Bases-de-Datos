@@ -69,7 +69,10 @@
     <table>
       <tr>
         <th>Date</th>
+        <th>Lat</th>
+        <th>Long</th>
         <th>Message</th>
+        <th>Mid</th>
         <th>Receptant</th>
         <th>Sender</th>
       </tr>
