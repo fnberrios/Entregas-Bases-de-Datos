@@ -14,6 +14,7 @@
     $r = $_GET["required"];
     $f = $_GET["forbidden"];
     $user = $_SESSION['user_id'];
+    echo gettype($d);
 
     $data = array(
       'desired'     => [$d],
