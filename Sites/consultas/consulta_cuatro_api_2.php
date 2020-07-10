@@ -14,22 +14,24 @@
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
     $user = $_POST["userId"];
-    if (!isset($_POST["userId"])):
+    if (!isset($_POST["userId"])){
       $data = array(
         'desired'     => [$d],
         'required'    => [$r],
         'forbidden'   => [$f],
         'userId' => $user,
       );
-    // else:
-    //   $user = (int)$user;
-    //   $data = array(
-    //     'desired'     => [$d],
-    //     'required'    => [$r],
-    //     'forbidden'   => [$f],
-    //     'userId' => $user,
-    //   );
+    }
+    else{
+      $user = (int)$user;
+      $data = array(
+        'desired'     => [$d],
+        'required'    => [$r],
+        'forbidden'   => [$f],
+        'userId' => $user,
+      );
 
+    }
 
     echo $user;
     echo gettype($user);
