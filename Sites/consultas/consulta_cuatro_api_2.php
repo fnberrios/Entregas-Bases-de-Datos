@@ -118,11 +118,10 @@
       }
     }
 
-    echo $user;
-    echo gettype($user);
-
-    print_r($data);
-    echo json_encode($data);
+    // echo $user;
+    // echo gettype($user);
+    // print_r($data);
+    // echo json_encode($data);
 
     $options = array(
       'http' => array(
@@ -136,39 +135,13 @@
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
-    // echo $result;
+
     echo $context;
     print_r($context);
     echo json_encode($context);
 
-    // echo json_encode($result);
 
-
-    // echo print_r($response);
     $array = json_decode(json_encode($response), true);
-
-    // echo var_dump($data);
-
-
-
-    #Se obtiene todos los datos de los mensajes
-    // $query = CallAPI($GET, 'https://e5db.herokuapp.com/messages');
-    // $data = json_decode($query, true);
-    //
-    // $filtro = {}
-    //
-    // foreach ($data as $d) {
-    //     #Si me dan las 3 claves
-    //     if $d != NULL and $r != NULL and $f != NULL{
-    //         if ($data['sender'] == $user) or ($data['receptant'] == $user) {
-    //             }
-    //     #Si ne dan solo 2 claves
-    //     elseif ($d != NULL) or ($f != NULL){
-    //
-    //     }
-    //
-    //     #si me dan
-    // }
 
     ?>
 
