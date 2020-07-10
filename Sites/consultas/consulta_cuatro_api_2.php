@@ -20,7 +20,7 @@
       'desired'     => [$d],
       'required'    => [$r],
       'forbidden'   => [$f],
-      'userId' => $user,
+      'userId' => ,
     );
     print_r($data);
 
