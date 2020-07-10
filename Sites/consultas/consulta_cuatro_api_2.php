@@ -22,12 +22,9 @@
         'userId' => $user,
       );
     }
-    else{
+    elif (empty($_POST["forbidden"]) and empty($_POST["required"]) and empty($_POST["desired"]) and !empty($_POST["userId"])){
       $user = (int)$user;
       $data = array(
-        'desired'     => [$d],
-        'required'    => [$r],
-        'forbidden'   => [$f],
         'userId' => $user,
       );
 
@@ -36,12 +33,6 @@
     echo $user;
     echo gettype($user);
 
-    // $data = array(
-    //   'desired'     => [$d],
-    //   'required'    => [$r],
-    //   'forbidden'   => [$f],
-    //   'userId' => $user,
-    // );
     print_r($data);
     echo json_encode($data);
 
@@ -57,7 +48,6 @@
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
-    echo $response->date;
     // echo $result;
     echo $context;
     print_r($context);
