@@ -14,7 +14,8 @@
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
     $user = $_POST["userId"];
-    $user = (int)$user;
+    // if $user != "":
+    //   $user = (int)$user;
     echo $user;
     echo gettype($user);
 
