@@ -15,7 +15,7 @@
     ?>
 
     <h3> Que mensajes deseas buscar:
-    <form action="consulta_cuatro_api_2.php" method="get">
+    <form action="consulta_cuatro_api_2.php" method="post">
         </br>
         Deseado: <input type="text" name="desired">
         </br>
