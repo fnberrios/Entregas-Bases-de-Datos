@@ -72,7 +72,7 @@
         <th>Sender</th>
       </tr>
       <?php
-      foreach ($prueba as $message) {
+      foreach ($result as $message) {
           echo "
           <tr>
           <td>'".$message['date']."'</td>
