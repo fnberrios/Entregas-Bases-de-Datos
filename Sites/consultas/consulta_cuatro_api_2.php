@@ -57,10 +57,15 @@
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
-    // echo json_encode($result);
-    echo print_r($response);
 
-    $array = json_decode(json_encode($response), true);
+    echo $context;
+
+    echo $result;
+    // echo json_encode($result);
+
+
+    // echo print_r($response);
+    // $array = json_decode(json_encode($response), true);
 
     // echo var_dump($data);
 
