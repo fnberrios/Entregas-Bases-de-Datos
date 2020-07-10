@@ -39,6 +39,8 @@
     // echo json_encode($result);
     echo print_r($response);
 
+    $array = json_decode(json_encode($response), true);
+
     // echo var_dump($data);
 
 
@@ -72,7 +74,7 @@
         <th>Sender</th>
       </tr>
       <?php
-      foreach ($response as $message) {
+      foreach ($array as $message) {
         echo "
         <tr>
         <td>'".$message['date']."'</td>
