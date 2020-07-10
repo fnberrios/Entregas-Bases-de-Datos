@@ -71,7 +71,7 @@
         <th>Sender</th>
       </tr>
       <?php
-      foreach ($response as $message) {
+      foreach (json_encode($result) as $message) {
           echo "
           <tr>
           <td>'".$message['date']."'</td>
