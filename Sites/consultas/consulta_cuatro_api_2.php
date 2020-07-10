@@ -17,9 +17,9 @@
     echo gettype($d);
 
     $data = array(
-      'desired'     => [$d],
-      'required'    => [$r],
-      'forbidden'   => [$f],
+      'desired'     => $d,
+      'required'    => $r,
+      'forbidden'   => $f,
       'userId' => $user,
     );
     print_r($data);
