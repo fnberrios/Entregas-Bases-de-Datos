@@ -23,7 +23,7 @@
       'userId' => $user,
     );
     print_r($data);
-    json_encode($data);
+    echo json_encode($data);
 
     $options = array(
       'http' => array(
@@ -38,7 +38,7 @@
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
     // echo json_encode($result);
-    echo print_r($response);
+    // echo print_r($response);
 
     $array = json_decode(json_encode($response), true);
 
