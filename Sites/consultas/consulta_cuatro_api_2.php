@@ -61,7 +61,7 @@
     //
     //     #si me dan
     // }
-    $prueba = json_encode($result);
+
     ?>
 
     <table>
@@ -72,19 +72,18 @@
         <th>Sender</th>
       </tr>
       <?php
-      foreach ($result as $message) {
-          echo "
-          <tr>
-          <td>'".$message['date']."'</td>
-          <td>'".$message['lat']."'</td>
-          <td>'".$message['long']."'</td>
-          <td>'".$message['message']."'</td>
-          <td>'".$message['mid']."'</td>
-          <td>'".$message['receptant']."'</td>
-          <td>'".$message['sender']."'</td>
-          </tr>
-          ";
-
+      foreach ($response as $message) {
+        echo "
+        <tr>
+        <td>'".$message['date']."'</td>
+        <td>'".$message['lat']."'</td>
+        <td>'".$message['long']."'</td>
+        <td>'".$message['message']."'</td>
+        <td>'".$message['mid']."'</td>
+        <td>'".$message['receptant']."'</td>
+        <td>'".$message['sender']."'</td>
+        </tr>
+        ";
       }
       ?>
     </table>
