@@ -22,7 +22,7 @@
         'userId' => $user,
       );
     }
-    elif (empty($_POST["forbidden"]) and empty($_POST["required"]) and empty($_POST["desired"]) and !empty($_POST["userId"])){
+    elseif (empty($_POST["forbidden"]) and empty($_POST["required"]) and empty($_POST["desired"]) and !empty($_POST["userId"])){
       $user = (int)$user;
       $data = array(
         'userId' => $user,
