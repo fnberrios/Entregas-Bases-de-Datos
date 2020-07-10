@@ -14,6 +14,7 @@
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
     $user = $_POST["userId"];
+    // Casos cuando no me entregan el userId----------------------------------------------------------
     if (empty($_POST["userId"])){
       if(!empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
         $data = array(
@@ -22,13 +23,90 @@
           'forbidden'   => [$f],
         );
       }
+      elseif(empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'required'    => [$r],
+          'forbidden'   => [$f],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'forbidden'   => [$f],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and !empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'required'    => [$r],
+        );
+      }
+      elseif(empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'forbidden'   => [$f],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'required'     => [$r],
+        );
+      }
     }
-    elseif (empty($_POST["forbidden"]) and empty($_POST["required"]) and empty($_POST["desired"]) and !empty($_POST["userId"])){
+    // Casos cuando me entregan el userId------------------------------------------------------------------------------------
+    elseif (!empty($_POST["userId"])){
       $user = (int)$user;
-      $data = array(
-        'userId' => $user,
-      );
-
+      if(!empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'required'    => [$r],
+          'forbidden'   => [$f],
+          'userId' => [$user],
+        );
+      }
+      elseif(empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'required'    => [$r],
+          'forbidden'   => [$f],
+          'userId' => [$user],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'forbidden'   => [$f],
+          'userId' => [$user],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and !empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'required'    => [$r],
+          'userId' => [$user],
+        );
+      }
+      elseif(empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
+        $data = array(
+          'forbidden'   => [$f],
+          'userId' => [$user],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'desired'     => [$d],
+          'userId' => [$user],
+        );
+      }
+      elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+          'required'     => [$r],
+          'userId' => [$user],
+        );
+      }
     }
 
     echo $user;
