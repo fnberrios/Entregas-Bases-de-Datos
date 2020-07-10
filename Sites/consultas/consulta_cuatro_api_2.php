@@ -10,10 +10,10 @@
     require("../config/conexion.php");
 
     #Tomar los mensajes que se quiere buscar
-    $d = $_GET["desired"];
-    $r = $_GET["required"];
-    $f = $_GET["forbidden"];
-    $user = $_GET['user_id'];
+    $d = $_POST["desired"];
+    $r = $_POST["required"];
+    $f = $_POST["forbidden"];
+    $user = $_POST['user_id'];
     echo $user;
     echo gettype($user);
 
