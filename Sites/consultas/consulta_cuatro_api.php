@@ -10,7 +10,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require("../config/conexion.php");
 
-    #Tenemos el id del usuario 
+    #Tenemos el id del usuario
     $user = $_SESSION['user_id'];
     ?>
 
@@ -22,6 +22,8 @@
         Requerido: <input type="text" name="required">
         </br>
         Prohibido: <input type="text" name="forbidden">
+        </br>
+        UserId: <input type="text" name="userId">
     </br>
     </br>
     <input type = "submit" value = "Buscar">

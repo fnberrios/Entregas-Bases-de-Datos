@@ -13,14 +13,14 @@
     $d = $_GET["desired"];
     $r = $_GET["required"];
     $f = $_GET["forbidden"];
-    $user = $_SESSION['user_id'];
+    $user = $_GET['user_id'];
     echo gettype($d);
 
     $data = array(
       'desired'     => [$d],
       'required'    => [$r],
       'forbidden'   => [$f],
-      'userId' => ,
+      'userId' => [$user],
     );
     print_r($data);
 
