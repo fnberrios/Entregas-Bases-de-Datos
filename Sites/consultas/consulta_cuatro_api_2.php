@@ -55,7 +55,7 @@
     );
     $url = 'https://e5db.herokuapp.com/text-search';
     $context  = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    $result = file_get_contents($url, false, $options);
     $response = json_decode($result);
 
     echo $context;
