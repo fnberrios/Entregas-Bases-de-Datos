@@ -25,6 +25,7 @@
       'forbidden'   => [$f],
       'userId' => $user,
     );
+    echo $data['userId'];
     if $data['userId'] != "":
        $data['userId'] = (int)$data['userId'];
     print_r($data);
