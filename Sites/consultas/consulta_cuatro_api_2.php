@@ -56,6 +56,10 @@
           'required'     => [$r],
         );
       }
+      elseif(empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
+        );
+      }
     }
     // Casos cuando me entregan el userId------------------------------------------------------------------------------------
     elseif (!empty($_POST["userId"])){
@@ -104,6 +108,11 @@
       elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
           'required'     => [$r],
+          'userId' => [$user],
+        );
+      }
+      elseif(empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
+        $data = array(
           'userId' => [$user],
         );
       }
