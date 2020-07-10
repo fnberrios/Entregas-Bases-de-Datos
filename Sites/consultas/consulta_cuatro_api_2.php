@@ -53,7 +53,7 @@
                   "Accept: application/json\r\n"
                 )
     );
-    $url = 'https://e5db.herokuapp.com/text-search';
+    $url = 'https://e5db.herokuapp.com/text-search/';
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
