@@ -14,7 +14,7 @@
     $r = $_POST["required"];
     $f = $_POST["forbidden"];
     $user = $_POST["userId"];
-    if (!isset($_POST["userId"])){
+    if (empty($_POST["userId"])){
       $data = array(
         'desired'     => [$d],
         'required'    => [$r],
