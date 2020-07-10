@@ -72,7 +72,6 @@
       </tr>
       <?php
       foreach ($response as $message) {
-        if ($message['receptant']==$user){
           echo "
           <tr>
           <td>'".$message['date']."'</td>
@@ -84,7 +83,7 @@
           <td>'".$message['sender']."'</td>
           </tr>
           ";
-        }
+
       }
       ?>
     </table>
