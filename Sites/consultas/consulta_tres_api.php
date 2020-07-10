@@ -12,14 +12,18 @@ include('../templates/navbar.html'); ?>
 	$user = $_SESSION['user_id'];
 	?>
 
-	<h3>
+	<h3> Mensajería
 	<form action="consulta_tres_api_1.php" method="post">
         </br>
-        Mensaje: <input type="text" size="15" maxlength="30" value="mensaje..." name="message_">
+        Destinatario: <input type="text" name="receptant_">
         <br/><br/>
-        <input type="text" name="receptant_">
+        Cuadro de texto:
+        <input type="text" name="message_" size = "200"
+        style= "width : 250px" placeholder="Escribe aquí...">
         <br/><br/>
-        <input type="text" name="forbidden">
+        
+       
+        
     </br>
     </br>
     <input type = "submit" value = "Enviar">
