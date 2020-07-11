@@ -42,8 +42,11 @@ include('../templates/navbar.html'); ?>
       $uid = $u[0];
       $username = $u[1];
       $contrasena = $u[3];
+    }
   }
-  }
+
+  echo date("Y-m-d");
+
 
 
 
@@ -54,8 +57,8 @@ include('../templates/navbar.html'); ?>
   //     'long' => -72.201691,
   //     'message' => $mensaje,
   //     'mid'=> 215,
-  //     'receptant' => 41,
-  //     'sender' => $user
+  //     'receptant' => $uid,
+  //     'sender' => $user,
   //   );
   // }
   //
