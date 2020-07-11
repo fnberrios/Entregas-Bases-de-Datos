@@ -47,7 +47,7 @@ include('../templates/navbar.html'); ?>
 
   $fecha = date("Y-m-d");
 
-  if(!empty($_POST["receptant_"]) and !empty($_POST["message_"])){
+  if(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and !empty($uid)){
     $data = array(
       'date' => $fecha ,
       'lat' => -46.059365,
@@ -55,6 +55,16 @@ include('../templates/navbar.html'); ?>
       'message' => $mensaje,
       'mid'=> 215,
       'receptant' => $uid,
+      'sender' => $user,
+    );
+  }
+  elseif(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and empty($uid)){
+    $data = array(
+      'date' => $fecha ,
+      'lat' => -46.059365,
+      'long' => -72.201691,
+      'message' => $mensaje,
+      'mid'=> 215,
       'sender' => $user,
     );
   }
