@@ -84,8 +84,6 @@ include('../templates/navbar.html'); ?>
     echo $uid . PHP_EOL;
 
 
-    }
-
   }
   elseif(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and empty($uid)){
     echo "El username ingresado no existe";
