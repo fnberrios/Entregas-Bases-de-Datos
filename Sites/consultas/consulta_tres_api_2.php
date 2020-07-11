@@ -88,7 +88,7 @@ include('../templates/navbar.html'); ?>
 
   }
   elseif(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and empty($uid)){
-    echo "El username ingresado no existe"
+    echo "El username ingresado no existe";
   }
 ?>
 
