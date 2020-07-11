@@ -13,7 +13,7 @@ include('../templates/navbar.html'); ?>
 	?>
 
 	<h3> Mensajería</h3>
-	<form action="consulta_tres_api_1.php" method="post">
+	<form action="consulta_tres_api_2.php" method="post">
         </br>
         Destinatario: <input type="text" name="receptant_">
         <br/><br/>
