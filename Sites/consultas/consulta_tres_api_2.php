@@ -80,9 +80,10 @@ include('../templates/navbar.html'); ?>
       echo $message;
     }
     echo "<br>";
-    echo $destinatario . PHP_EOL;
-    echo $mensaje . PHP_EOL;
-    echo $uid . PHP_EOL;
+    echo "Se ha mandado a "$destinatario "el siguiente mensaje:";
+    echo "<br>";
+    echo $mensaje;
+
 
 
   }
