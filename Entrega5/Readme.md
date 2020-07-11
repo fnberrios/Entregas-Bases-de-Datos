@@ -18,9 +18,9 @@ Las opciones marcadas corresponden las nuevas funciones.
 
 ### Funcion 2:
 
-### Funcion 3:
+### Funcion 3: 
 
-### Funcion 4:
+### Funcion 4: Busca los mensajes que el ususuario quiera, indicando lo que este pueda o no contener.
 
 ### Funcion 5: Mostrar ubicaciones de los mensajes 
 
