@@ -136,11 +136,6 @@
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result);
 
-    echo $context;
-    print_r($context);
-    echo json_encode($context);
-
-
     $array = json_decode(json_encode($response), true);
 
     ?>
