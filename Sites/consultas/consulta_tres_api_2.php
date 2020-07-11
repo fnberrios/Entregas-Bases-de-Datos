@@ -84,9 +84,9 @@ include('../templates/navbar.html'); ?>
 
 
     <?php
-    foreach ($array as $message) {
-      echo $message;
-    }
+    // foreach ($array as $message) {
+    //   echo $message;
+    // }
     ?>
 
 
