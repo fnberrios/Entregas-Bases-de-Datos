@@ -27,14 +27,15 @@ include('../templates/navbar.html'); ?>
 	$users = $result -> fetchAll();
   $filas = count($users);
 
-  if ($destinatario == NULL && $mensaje == NUL):
+  if ($destinatario == NULL && $mensaje == NUL){
     echo "Usted no ha ingresado los datos. Porfavor vuelva e ingreselos";
-
-  elseif ($destinatario == NULL):
+  }
+  elseif ($destinatario == NULL){
     echo "No ha ingresado el username del destinatario";
-
-  elseif ($mensaje == NULL):
+  }
+  elseif ($mensaje == NULL){
     echo "No ha ingresado el mensaje";
+  }
 
   elseif ($filas == 1):
     foreach ($users as $u) {
