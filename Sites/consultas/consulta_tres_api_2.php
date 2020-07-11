@@ -76,14 +76,14 @@ include('../templates/navbar.html'); ?>
 
   	<h3> Mensajería </h3>
     <?php
-    echo $destinatario;
+    foreach ($array as $message) {
+      echo $message "<br>";
+    }
+    echo $destinatario ;
     echo $mensaje;
     echo $uid;
-  	?>
 
-    <?php
-    foreach ($array as $message) {
-      echo $message;
+
     }
 
   }
