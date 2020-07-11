@@ -57,47 +57,41 @@ include('../templates/navbar.html'); ?>
       'receptant' => $uid,
       'sender' => $user,
     );
-  }
-  elseif(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and empty($uid)){
-    $data = array(
-      'date' => $fecha ,
-      'lat' => -46.059365,
-      'long' => -72.201691,
-      'message' => $mensaje,
-      'mid'=> 215,
-      'sender' => $user,
+
+    $options = array(
+      'http' => array(
+      'method'  => 'POST',
+      'content' => json_encode($data),
+      'header'=>  "Content-Type: application/json\r\n" .
+                  "Accept: application/json\r\n"
+                )
     );
-  }
+    $url = 'https://e5db.herokuapp.com/messages';
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $response = json_decode($result);
 
-  $options = array(
-    'http' => array(
-    'method'  => 'POST',
-    'content' => json_encode($data),
-    'header'=>  "Content-Type: application/json\r\n" .
-                "Accept: application/json\r\n"
-              )
-  );
-  $url = 'https://e5db.herokuapp.com/messages';
-  $context  = stream_context_create($options);
-  $result = file_get_contents($url, false, $context);
-  $response = json_decode($result);
+    $array = json_decode(json_encode($response), true);
+  	?>
 
-  $array = json_decode(json_encode($response), true);
-	?>
-
-	<h3> Mensajería </h3>
-  <?php
-  echo $destinatario;
-  echo $mensaje;
-  echo $uid;
-	?>
-
+  	<h3> Mensajería </h3>
+    <?php
+    echo $destinatario;
+    echo $mensaje;
+    echo $uid;
+  	?>
 
     <?php
     foreach ($array as $message) {
       echo $message;
     }
-    ?>
+
+  }
+  elseif(!empty($_POST["receptant_"]) and !empty($_POST["message_"]) and empty($uid)){
+    echo "El username ingresado no existe"
+  }
+?>
+
 
 
 <?php include('../templates/footer.html'); ?>
