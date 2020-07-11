@@ -37,11 +37,12 @@ include('../templates/navbar.html'); ?>
     echo "No ha ingresado el mensaje";
   }
 
-  elseif ($filas == 1):
+  elseif ($filas == 1){
     foreach ($users as $u) {
       $uid = $u[0];
       $username = $u[1];
       $contrasena = $u[3];
+  }
   }
 
 
