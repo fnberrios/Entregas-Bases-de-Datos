@@ -77,11 +77,11 @@ include('../templates/navbar.html'); ?>
   	<h3> Mensajería </h3>
     <?php
     foreach ($array as $message) {
-      echo $message "<br>";
+      echo $message . PHP_EOL;
     }
-    echo $destinatario ;
-    echo $mensaje;
-    echo $uid;
+    echo $destinatario . PHP_EOL;
+    echo $mensaje . PHP_EOL;
+    echo $uid . PHP_EOL;
 
 
     }
