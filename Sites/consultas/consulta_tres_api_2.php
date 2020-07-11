@@ -77,7 +77,7 @@ include('../templates/navbar.html'); ?>
   	<h3> Mensajería </h3>
     <?php
     foreach ($array as $message) {
-      echo $message.PHP_EOL;
+      echo $message."\n";
     }
     echo $destinatario . PHP_EOL;
     echo $mensaje . PHP_EOL;
