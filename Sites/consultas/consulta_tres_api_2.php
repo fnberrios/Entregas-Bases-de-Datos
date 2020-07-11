@@ -80,7 +80,9 @@ include('../templates/navbar.html'); ?>
       echo $message;
     }
     echo "<br>";
-    echo "Se ha mandado a "$destinatario "el siguiente mensaje:";
+    echo "Se ha mandado a ";
+    echo $destinatario;
+    echo "el siguiente mensaje:";
     echo "<br>";
     echo $mensaje;
 
