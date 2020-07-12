@@ -63,57 +63,57 @@
     }
     // Casos cuando me entregan el userId------------------------------------------------------------------------------------
     elseif (!empty($_POST["userId"])){
-      $user = (int)$user;
+      $users = (int)$user;
       if(!empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
         $data = array(
           'desired'     => [$d],
           'required'    => [$r],
           'forbidden'   => [$f],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(empty($_POST["desired"]) and !empty($_POST["required"]) and !empty($_POST["forbidden"])){
         $data = array(
           'required'    => [$r],
           'forbidden'   => [$f],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
         $data = array(
           'desired'     => [$d],
           'forbidden'   => [$f],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(!empty($_POST["desired"]) and !empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
           'desired'     => [$d],
           'required'    => [$r],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(empty($_POST["desired"]) and empty($_POST["required"]) and !empty($_POST["forbidden"])){
         $data = array(
           'forbidden'   => [$f],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
           'desired'     => [$d],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(!empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
           'required'     => [$r],
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
       elseif(empty($_POST["desired"]) and empty($_POST["required"]) and empty($_POST["forbidden"])){
         $data = array(
-          'userId' => [$user],
+          'userId' => $users,
         );
       }
     }
