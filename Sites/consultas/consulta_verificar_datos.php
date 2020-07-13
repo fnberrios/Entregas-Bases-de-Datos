@@ -63,15 +63,15 @@
           </form>
           </br>
           <form action="consulta_uno_api.php" method="post">
-            <input type="submit" value="Mostrar todos los atributos de tus mensajes recibidos">
+            <input type="submit" value="Mensajes recibidos">
           </form>
           </br>
           <form action="consulta_dos_api.php" method="post">
-            <input type="submit" value="Mostrar todos los atributos de tus mensajes recibidos">
+            <input type="submit" value="Mensajes enviados">
           </form>
           </br>
           <form action="consulta_tres_api.php" method="post">
-            <input type="submit" value="Enviar mensaje a un usuario">
+            <input type="submit" value="Enviar mensaje">
           </form>
           </br>
           <form action="consulta_cuatro_api.php" method="post">
