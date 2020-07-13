@@ -14,7 +14,8 @@
     $user = $_SESSION['user_id'];
     ?>
 
-    <h3> Que mensajes deseas buscar:
+    <h3> Que mensajes deseas buscar:</h3>
+    <p>(Si desea filtrar por mas de una palabra debe ingresarlas separadas por espacio)</p>
     <form action="consulta_cuatro_api_2.php" method="post">
         </br>
         Deseado: <input type="text" name="desired">

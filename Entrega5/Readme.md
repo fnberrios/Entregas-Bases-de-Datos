@@ -22,17 +22,17 @@ Esta funcion muestra al usuario que ingresó, todos los mensajes que ha recibido
 
 Esta función permite al usuario que inició sesión ver todos los mensajes que el usuario a enviado a otras personas con toda la información en cuestión. El código se puede encintrar en el archivo ```consulta_dos_api.php```
 
-### Funcion 3: 
+### Funcion 3:
 
-Con esta función el usuario puede enviar mensajes a otros usuarios. Primero se ingresa a ```consulta_tres_api.php```, donde se ingresan los datos necesarios para enciar el mensaje, este es, el nombre del destinatario y el mensaje en cuestion, para luego ingresar a ```consulta_tres_api_2.php```, donde el mensaje es enviado y registrado en la base de datos. El mensaje se envia si todos los campos son llenado correctamente, en caso contrario enviará un mensaje. 
+Con esta función el usuario puede enviar mensajes a otros usuarios. Primero se ingresa a ```consulta_tres_api.php```, donde se ingresan los datos necesarios para enciar el mensaje, este es, el nombre del destinatario y el mensaje en cuestion, para luego ingresar a ```consulta_tres_api_2.php```, donde el mensaje es enviado y registrado en la base de datos. El mensaje se envia si todos los campos son llenado correctamente, en caso contrario enviará un mensaje.
 
-### Funcion 4: 
+### Funcion 4:
 
-Busca los mensajes que el ususuario quiera, indicando lo que este pueda o no contener. Para esto se le piden los mismo datos que pide text-search para buscar el mensaje. El código está implementado en ```consulta_cuatro_api.php```, el cual pide estos datos de búsqueda, para luego pasar a ```consulta_cuatro_api_2.php```, el cual genera la coneccioón con la api. 
+Busca los mensajes que el ususuario quiera, indicando lo que este pueda o no contener. Para esto se le piden los mismo datos que pide text-search para buscar el mensaje. El código está implementado en ```consulta_cuatro_api.php```, el cual pide estos datos de búsqueda, para luego pasar a ```consulta_cuatro_api_2.php```, el cual genera la conexión con la api. Cuando se quiera que los campos filtren por mas de una palabra estas se deben ingresar separadas por un espacio, como se muestra a continuación:  mal feliz origami.
 
-### Funcion 5: Mostrar ubicaciones de los mensajes 
+### Funcion 5: Mostrar ubicaciones de los mensajes
 
-Esta funcion muestras las ubicaciones desde las cuales se enviaron los mensajes entre las fechas seleccionadas. En términos de código debes revisar ```Sites/consultas/consulta_cinco_api.php``` para analizar su funcionalidad. 
+Esta funcion muestras las ubicaciones desde las cuales se enviaron los mensajes entre las fechas seleccionadas. En términos de código debes revisar ```Sites/consultas/consulta_cinco_api.php``` para analizar su funcionalidad.
 Ej: Si utilizas el usuario BrianDuke (contraseña: 1234), entre los años 2018 y 2020, deberias ver algo como:
 
 
